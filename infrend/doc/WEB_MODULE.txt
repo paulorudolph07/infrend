@@ -1,0 +1,23 @@
+1 - CRIAR PROJETO (MODULO) WEB NO MAVEN
+	1 - criar modulo maven
+	2 - criar folder src/main/java
+	3 - Propriedades -> Java Build Path -> Source (aba)
+	3.1 - remover src/main/resources
+	3.2 - add folder, clicar no diretorio criado (src/main/java), OK.
+
+2 - EXPORTAR DEPENDENICAS (.jar) DO REPOSITORIO MAVEN PARA DIRETORIO WEB-INF/lib
+
+	1 - executar comando mvn war:inplace. Com isso, os *.jar's importados pelo maven, 
+		serão exportados para o diretorio src/main/webapp/WEB-INF/lib. Diretorio default no qual o tomcat visualiza os .jar's.
+		
+3 - VISUALIZANDO MODULO "modelo" PARA ACESSAR .java E EXPORTAR PARA O WAR OS .class
+	1 - inserir no pom.xml
+		<dependencyManagement>
+		  <dependencies>
+		      <dependency>
+		        <groupId>${project.groupId}</groupId>
+		        <artifactId>modelo</artifactId>
+		        <version>${project.version}</version>
+		    </dependency>
+		  </dependencies>
+	  </dependencyManagement>

@@ -1,0 +1,243 @@
+/* primefaces */
+.ui-layout-unit .ui-layout-unit-content {
+    border: 0 none;
+    overflow: hidden;
+    padding: 0.2em 0;
+}
+
+/* configuracao dos campos somente para o layout center*/
+.ui-inputfield, .ui-layout-center .ui-widget-content .ui-inputfield, .ui-widget-header .ui-inputfield {
+    background-color: #F8FEF0;
+    background-position: 5px 10px;
+    border: 1px solid #CCCCCC;
+    color: #000000;
+    font-family: Tahoma;
+    font-size: 11px;
+    margin-bottom: 4px;
+    margin-top: 4px;
+}
+
+/* layout north */
+.ui-layout-pane-north {     
+	border: 0;
+}
+#ui-layout-north-id {
+    padding: 0;
+    margin: 0;
+    visibility: hidden;
+}
+#ui-layout-north-id  .ui-layout-unit-content {
+	padding: 0;
+}
+
+.ui-layout-resizer-north {
+	background-color: #fdc246;
+}
+
+/* layout center */
+#ui-layout-center-id {
+	background: transparent;
+	margin-top: -28px !important; /* alinha as abas a linha horizontal da class .ui-layout-resizer-north*/
+	margin-left: -7px !important;
+	/* fica acima de .ui-layout-resizer-north */
+	z-index: 3 !important;
+}
+
+
+#ui-layout-center-id .ui-layout-unit-content {
+	background: transparent;
+}
+
+.ui-layout-pane-center {
+	border: 0;
+}
+
+/* layout south */
+.ui-layout-pane-south {     
+	border: 0;
+}
+#ui-layout-south-id {
+    padding: 0;
+    margin: 0;
+    visibility: hidden;
+}
+#ui-layout-south-id  .ui-layout-unit-content {
+	padding: 0;
+}
+.ui-layout-resizer-south {
+	background-color: #009933;
+}
+
+/* layout west */
+#ui-layout-west-id {
+	margin: 0;
+	padding: 0;
+}
+/* para sobrepor #ui-layout-center-id */
+.ui-layout-resizer-west {
+	z-index: 4 !important;
+}
+
+.ui-layout-pane-west  {   
+	border: 0;
+}
+.ui-layout-pane-west div {   
+	background-color: #EFEFF1;/*#52514F*/
+}
+/* layout header */
+.ui-layout-unit-header {
+    /*padding: 0.4em 0.2em 0.4em 0.4em;*/
+    background: none repeat scroll 0 0 #FFFFFF;
+    color: #685551;
+    font: bold 10px Tahoma,Verdana,Arial,Helvetica,sans-serif;
+    border: 0;
+    border-bottom: 1px dashed;
+    height: 40px;
+    text-align: center;
+}
+#ui-layout-west-id div.ui-corner-all {
+    border-radius: 0px 0px 0px 0px;
+}
+
+div.ui-layout-resizer-west-closed {
+	border-radius: 0px 0px 0px 0px;
+}
+
+/* toda a divisoria */
+.ui-layout-resizer {
+	border: 0;
+	height: 0;
+}
+.ui-layout-resizer-west {
+	background-color: #EFEFF1;
+	border-right: 1px solid #C0C0C0;
+	border-left: 1px solid #C0C0C0;
+	width: 8px;
+}
+
+/* accordion west */
+.ui-layout-west .ui-state-default, .ui-layout-west .ui-widget-content .ui-state-default,.ui-layout-west .ui-widget-header .ui-state-default {
+    background: -moz-linear-gradient(center top , rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0)) repeat scroll 0 0 #C4C4C4;
+    border: 0 /*1px solid #A8A8A8*/;
+    color: #4F4F4F;
+    font-weight: bold;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+/* efeito hover somente para o layout west(menu vertical) */
+.ui-layout-west .ui-state-hover, .ui-layout-west .ui-widget-content .ui-state-hover, .ui-layout-west .ui-widget-header .ui-state-hover, .ui-layout-west .ui-state-focus, .ui-layout-west .ui-widget-content .ui-state-focus, .ui-layout-west .ui-widget-header .ui-state-focus {
+    background: -moz-linear-gradient(center top , rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0)) repeat scroll 0 0 #EFEFF1;
+    border: 0/*1px solid #7096AB*/;
+    box-shadow: 0 0 8px #006835/*#85B2CB*/;
+    color: #313131;
+    font-weight: bold;
+}
+
+/* efeito hover somente para as abas contidas no layout center */
+.ui-state-hover, .ui-widget-content ul li.ui-state-hover, .ui-widget-header ul li.ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus {
+    background: -moz-linear-gradient(center top , rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0)) repeat scroll 0 0 #EFEFF1;
+    border: 0/*1px solid #7096AB*/;
+    box-shadow: 0 0 8px #006835/*#85B2CB*/;
+    color: #313131;
+    font-weight: bold;
+}
+
+.ui-layout-west .ui-state-active, .ui-layout-west .ui-widget-content .ui-state-active, .ui-layout-west .ui-widget-header .ui-state-active {
+    background: -moz-linear-gradient(center top , rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.4)) repeat scroll 0 0 #85B2CB;
+    border: 0/*1px solid #7096AB*/;
+    border-bottom: 1px dashed;
+    color: #1C4257;
+    font-weight: bold;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+/* header do accordion */
+.ui-accordion h3 {
+    color: #685551;
+    font: bold 10px Tahoma,Verdana,Arial,Helvetica,sans-serif;
+    border-bottom: 1px dashed;
+}
+.ui-accordion h3 a {
+	background: none repeat scroll 0 0 #FFFFFF;
+    color: #685551;
+    font: bold 10px Tahoma,Verdana,Arial,Helvetica,sans-serif;
+    border-bottom: 1px dashed;
+}
+.ui-accordion h3 a:hover {
+    background: none repeat scroll 0 0 #EFEFF1;
+    color: #009933;
+    font: bold 10px Tahoma,Verdana,Arial,Helvetica,sans-serif;
+    border-bottom: 1px dashed;
+    text-decoration: none;
+}
+
+/* conteudo do accordion */
+.ui-accordion .ui-accordion-content {
+	background: none repeat scroll 0 0 #FFFFFF;
+	color: #685551;
+    font: normal 10px Tahoma,Verdana,Arial,Helvetica,sans-serif;
+    text-decoration: none;
+    border-bottom: 1px dashed;
+    border-top: 0 none;
+    margin-bottom: 2px;
+    margin-top: -2px;
+    overflow: auto;
+    padding: 1em 3.5em;
+    position: relative;
+    top: 1px;
+}
+.ui-accordion-content a {
+	background: none repeat scroll 0 0 #FFFFFF;
+	color: #685551;
+	font: normal 10px Tahoma,Verdana,Arial,Helvetica,sans-serif;
+	text-decoration: none;
+	display: block;
+}
+.ui-accordion-content a:hover {
+    color: #009933;
+    font: bold 10px Tahoma,Verdana,Arial,Helvetica,sans-serif;
+    text-decoration: none;
+}
+
+/* abas */
+#tab-view {
+	background: transparent;
+	border: 0;
+}
+
+/* conteudo das abas */
+#tab-view .ui-tabs-panels {
+	/* padding: 10px; */
+	/* height: auto;
+	width: 100%;
+	position: relative;
+	overflow: hidden; */
+}
+
+#ui-layout-center-id .ui-tabs-nav {
+	background: transparent;
+	height: 20px;
+}
+
+.ui-tabs .ui-state-default {
+	height: 17px; /* ao alterar o tamanho, deve-se alterar '#ui-layout-center-id' (margin-top) */
+}
+
+.ui-tabs .ui-tabs-selected {
+	height: 18px; /* ao alterar o tamanho, deve-se alterar '#ui-layout-center-id' (margin-top) e '.ui-tabs .ui-state-default' (height)*/
+}
+
+.ui-tabs .ui-state-default a {
+	margin-top: -3px;
+}
+
+/* dataTable */
+.ui-datatable .ui-datatable-data .even-row td
+{  
+    background-color:#E6E6FA;  
+}  
+
+.ui-datatable .ui-datatable-data .odd-row td
+{  
+    background-color:#F8F8FF;  
+}

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+  <appender name="consoleAppender" class="org.apache.log4j.ConsoleAppender">
+	<param name="Threshold" value="info" />
+	<param name="Target" value="System.out"/>
+	<layout class="org.apache.log4j.PatternLayout">
+		<param name="ConversionPattern" value="[%d{dd/MM/yyyy HH:mm:ss}] [%5p] %m%n" />
+	</layout>
+	<filter class="org.apache.log4j.varia.LevelRangeFilter">
+		<param name="levelMin" value="INFO" />
+		<param name="levelMax" value="INFO" />
+	</filter>
+  </appender>
+  <appender name="fileAppender" class="org.apache.log4j.DailyRollingFileAppender">
+  	<!-- <param name="ImmediateFlush" value="true" /> --> 
+  	<param name="file" value="logs/infrend.log" />
+  	<param name="datePattern" value="'.'yyyy-MM-dd" />
+  	<layout class="org.apache.log4j.PatternLayout">
+  		<param name="ConversionPattern" value="[%d{dd/MM/yyyy HH:mm:ss}] [%5p] {%F->%M} %m%n" /> 
+  	</layout> 
+  </appender>
+  <category name="br.com.bancoamazonia.infrend" additivity="false">
+    <priority value="debug" />
+    <appender-ref ref="fileAppender" />
+ </category>
+ <category name="br.com.bancoamazonia.integracao" additivity="true">
+    <priority value="debug" />
+    <appender-ref ref="fileAppender" />
+ </category>
+  
+  <logger name="org.hibernate">     
+  	<level value="off"/>
+  </logger>  
+  <logger name="net.sf.ehcache">     
+  	<level value="off" />
+  </logger>
+  <logger name="org.springframework">     
+  	<level value="off" />
+  </logger>
+  <!-- default configuration -->
+  <root>
+	<priority value="info"></priority>
+	<appender-ref ref="consoleAppender" />
+  </root>
+</log4j:configuration>

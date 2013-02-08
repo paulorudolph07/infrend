@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>br.com.bancoamazonia.infrend</groupId>
+    <artifactId>infrend-job</artifactId>
+    <version>1.0.0</version>
+  </parent>
+  <artifactId>infrend-job-core</artifactId>
+  <name>infrend-job-core</name>
+  <url>http://maven.apache.org</url>
+  <properties>
+    <project.build.sourceEncoding>Cp1252</project.build.sourceEncoding>
+    <job.numero>01</job.numero>
+	<sigla.sistema>INFREND</sigla.sistema>
+	<versao.opcon>${project.version}</versao.opcon>
+	<sigla.basah1>TRI</sigla.basah1>
+	<codigo.numerico>06</codigo.numerico>
+	<token.name>${ambiente}-${sigla.sistema}-J${job.numero}-Fase</token.name>
+	<target.package.dir>${project.build.directory}/environment/${ambiente}</target.package.dir>
+  </properties>
+  
+  <dependencies>
+  	<dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>service</artifactId>
+        <version>1.0.0</version>
+    </dependency>
+    
+    <dependency>
+		<groupId>br.com.bancoamazonia.integracao</groupId>
+		<artifactId>opcon</artifactId>
+		<version>1.0.0</version>
+	</dependency>
+  </dependencies>
+</project>

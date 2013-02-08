@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+						http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
+	 
+	 <bean id="arqProcService" parent="transactionProxy">
+	    <property name="target">
+	        <bean class="br.com.bancoamazonia.infrend.service.ArquivoProcessadoService" scope="singleton">
+	        	<property name="arquivoProcessadoDao"><ref bean="arquivoProcessadoDao"/></property>
+				<property name="statusArquivoDao"><ref bean="statusArquivoDao"/></property>
+	        </bean>
+	    </property>
+	 </bean>
+	 
+	 <bean id="clienteService" parent="transactionProxy">
+	    <property name="target">
+	        <bean class="br.com.bancoamazonia.infrend.service.ClienteService" scope="singleton">
+	            <property name="clienteDao"><ref bean="clienteDao"/></property>
+				<property name="tipoClienteDao"><ref bean="tipoClienteDao"/></property>
+	        </bean>
+	    </property>
+	 </bean>
+	 
+	 <bean id="ocorrenciaPfService" parent="transactionProxy">
+	    <property name="target">
+	        <bean class="br.com.bancoamazonia.infrend.service.OcorrenciaPfService" scope="singleton">
+				<property name="operacaoService"><ref bean="operacaoService"/></property>
+				<property name="ocorrenciaPfDao"><ref bean="ocorrenciaPfDao"/></property>
+	        </bean>
+	        
+	    </property>
+	 </bean> 
+	 
+	 <bean id="ocorrenciaPjService" parent="transactionProxy">
+	    <property name="target">
+	        <bean class="br.com.bancoamazonia.infrend.service.OcorrenciaPjService" scope="singleton">
+				<property name="operacaoService"><ref bean="operacaoService"/></property>
+				<property name="ocorrenciaPjDao"><ref bean="ocorrenciaPjDao"/></property>
+	        </bean>
+	    </property>
+	 </bean>
+	 
+	 <bean id="operacaoService" parent="transactionProxy">
+	    <property name="target">
+	        <bean class="br.com.bancoamazonia.infrend.service.OperacaoService" scope="singleton">
+				<property name="operacaoDao"><ref bean="operacaoDao"/></property>
+	        </bean>
+	    </property>
+	 </bean>
+	 
+	 <bean id="propriedadeService" parent="transactionProxy">
+	    <property name="target">
+	        <bean class="br.com.bancoamazonia.infrend.service.PropriedadeService" scope="singleton">
+	        	<property name="layoutArquivoDao"><ref bean="layoutArquivoDao"/></property>
+				<property name="propriedadeDao"><ref bean="propriedadeDao"/></property>
+	        </bean>
+	    </property>
+	 </bean>
+	 
+	 <bean id="specArquivoService" parent="transactionProxy">
+	    <property name="target">
+	        <bean class="br.com.bancoamazonia.infrend.service.SpecArquivoService" scope="singleton">
+	        	<property name="specArquivoDao"><ref bean="specArquivoDao"/></property>
+	        </bean>
+	    </property>
+	 </bean>
+
+</beans>

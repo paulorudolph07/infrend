@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+				xmlns:h="http://java.sun.com/jsf/html"
+				xmlns:f="http://java.sun.com/jsf/core"
+				xmlns:ui="http://java.sun.com/jsf/facelets"
+				xmlns:p="http://primefaces.org/ui">   
+  
+  	<ui:define name="title">Editar ArquivoProcessado</ui:define>
+  	
+    <h:form id="arquivo-processado-edit-tab-form" rendered="#{not empty arquivoProcessadoBean.selectedArquivoProcessado}">
+    	<center>
+			<p:messages autoUpdate="true" />
+		</center>
+    	<h:panelGrid columns="2">
+    		<h:outputLabel value="ID:" for="id" />
+    		<h:outputText id="id" value="#{arquivoProcessadoBean.selectedArquivoProcessado.id}"/>
+    	
+    		<h:outputLabel value="Nome:" for="nome" />
+    		<p:inputText id="nome" value="#{arquivoProcessadoBean.selectedArquivoProcessado.nome}"
+    			required="true" requiredMessage="Campo *Nome obrigatorio!"/>
+    		
+    		<h:outputLabel value="Data Calendario:" for="data-calendario" />
+    		<p:calendar id="data-calendario" pattern="dd/MM/yyyy" value="#{arquivoProcessadoBean.selectedArquivoProcessado.dataCalendario}"
+    			required="true" requiredMessage="Campo *Data Processamento obrigatorio!"/>
+    			
+    		<h:outputLabel value="Status:" for="status" />
+    		<h:selectOneMenu value="#{arquivoProcessadoBean.selectedArquivoProcessado.status}" converter="statusArquivoConverter">
+    			<f:selectItems id="status" value="#{statusArquivoBean.list}"
+    				var="s"
+    				itemLabel="#{s.descricao}"
+    				itemValue="#{s}"
+    			/>
+    		</h:selectOneMenu>
+    		
+    		<h:outputLabel value="SpecArquivo:" for="spec-arquivo" />
+    		<h:selectOneMenu value="#{arquivoProcessadoBean.selectedArquivoProcessado.specArquivo}" converter="specArquivoConverter">
+    			<f:selectItems id="spec-arquivo" value="#{specArquivoBean.list}"
+    				var="sa"
+    				itemLabel="#{sa}"
+    				itemValue="#{sa}"
+    			/>
+    		</h:selectOneMenu>
+    	</h:panelGrid>
+    	
+    	<div class="bgbotao">
+			<h:commandButton id="edit-button" styleClass="botao" value="editar" 
+				action="#{arquivoProcessadoBean.update}"
+				update="@form"/>
+				
+			<h:commandButton type="button" id="delete-button" styleClass="botao" value="deletar" onclick="confirmation.show();"/>
+		</div>
+		
+		<p:dialog id="confirm-dialog" appendToBody="true"
+			header="Deletar ArquivoProcessado id: #{arquivoProcessadoBean.selectedArquivoProcessado.id}" 
+			widgetVar="confirmation" modal="true"  
+            draggable="false" resizable="false">  
+            <h:panelGrid id="grid" columns="3" cellpadding="5" cellspacing="5">
+              	<h:outputText value="Voce tem certeza?"/>
+              	<p:commandButton id="confirm" value="Sim" actionListener="#{arquivoProcessadoBean.delete}"
+					update=":tab-view" oncomplete="confirmation.hide()"/>
+				<p:commandButton id="decline" value="Nao" onclick="confirmation.hide()" type="button" />
+          	</h:panelGrid>
+		</p:dialog>
+    </h:form>
+</ui:composition> 
