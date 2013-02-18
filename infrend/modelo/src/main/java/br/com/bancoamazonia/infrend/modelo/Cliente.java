@@ -16,16 +16,9 @@ import javax.persistence.UniqueConstraint;
 @Table
 (
 	name="CLIENTE",
-	uniqueConstraints=
-	{
-		@UniqueConstraint
-		(
-			columnNames={"cd_cliente"}
-		)
-	}
+	uniqueConstraints={@UniqueConstraint(columnNames={"cd_cliente"})}
 )
-public class Cliente
-{
+public class Cliente {
 	@Id
 	@Column(name="ID_CLIENTE")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -47,8 +40,6 @@ public class Cliente
 	@ManyToOne
 	@JoinColumn(name="ID_TIPO_CLIENTE", referencedColumnName="ID_TIPO_CLIENTE")
 	private TipoCliente tipo;
-	/*@Embedded
-	private DadoBancario dadoBancario;*/
 	public BigInteger getId() {
 		return id;
 	}
@@ -103,10 +94,4 @@ public class Cliente
 	public void setTipo(TipoCliente tipo) {
 		this.tipo = tipo;
 	}
-	/*public DadoBancario getDadoBancario() {
-		return dadoBancario;
-	}
-	public void setDadoBancario(DadoBancario dadoBancario) {
-		this.dadoBancario = dadoBancario;
-	}*/
 }

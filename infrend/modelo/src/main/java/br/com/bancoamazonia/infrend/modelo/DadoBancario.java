@@ -1,29 +1,42 @@
 package br.com.bancoamazonia.infrend.modelo;
 
-import javax.persistence.Column;
-import javax.persistence.Embeddable;
+import java.math.BigInteger;
 
-@Embeddable
-public class DadoBancario
-{
-	public DadoBancario()
-	{
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
+
+@Entity
+@Table(
+		name="DADO_BANCARIO",
+		uniqueConstraints={@UniqueConstraint(columnNames={"nu_agencia", "nu_conta"})}
+		)
+public class DadoBancario {
+	
+	public DadoBancario() {
 		super();
 	}
 	public DadoBancario(String numeroAgencia, String numeroConta) {
 		this.numeroAgencia=numeroAgencia;
 		this.numeroConta=numeroConta;
 	}
-	public DadoBancario(String numeroAgencia, String numeroConta, String digito) {
-		this(numeroAgencia, numeroConta);
-		this.digito=digito;
-	}
+	@Id
+	@Column(name="ID_DADO_BANCARIO")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private BigInteger id;
 	@Column(name="NU_AGENCIA", nullable=false, length=3)
 	private String numeroAgencia;
-	@Column(name="NU_CONTA", nullable=false, length=6)
+	@Column(name="NU_CONTA", nullable=false, length=7)
 	private String numeroConta;
-	@Column(name="NU_DIGITO", nullable=false, length=1)
-	private String digito;
+	@ManyToOne
+	@JoinColumn(name="ID_CLIENTE", referencedColumnName="ID_CLIENTE")
+	private Cliente cliente;
 	public String getNumeroAgencia() {
 		return numeroAgencia;
 	}
@@ -36,42 +49,4 @@ public class DadoBancario
 	public void setNumeroConta(String numeroConta) {
 		this.numeroConta = numeroConta;
 	}
-	public String getDigito() {
-		return digito;
-	}
-	public void setDigito(String digito) {
-		this.digito = digito;
-	}
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result
-				+ ((numeroAgencia == null) ? 0 : numeroAgencia.hashCode());
-		result = prime * result
-				+ ((numeroConta == null) ? 0 : numeroConta.hashCode());
-		return result;
-	}
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		DadoBancario other = (DadoBancario) obj;
-		if (numeroAgencia == null) {
-			if (other.numeroAgencia != null)
-				return false;
-		} else if (!numeroAgencia.equals(other.numeroAgencia))
-			return false;
-		if (numeroConta == null) {
-			if (other.numeroConta != null)
-				return false;
-		} else if (!numeroConta.equals(other.numeroConta))
-			return false;
-		return true;
-	}
-	
 }

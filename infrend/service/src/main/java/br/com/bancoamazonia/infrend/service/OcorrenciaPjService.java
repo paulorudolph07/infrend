@@ -12,6 +12,7 @@ import org.springframework.dao.DataIntegrityViolationException;
 import br.com.bancoamazonia.infrend.callback.UpdateOcorrenciaPjCallback;
 import br.com.bancoamazonia.infrend.dao.OcorrenciaPjDao;
 import br.com.bancoamazonia.infrend.modelo.Cliente;
+import br.com.bancoamazonia.infrend.modelo.DadoBancario;
 import br.com.bancoamazonia.infrend.modelo.OcorrenciaPessoaJuridica;
 import br.com.bancoamazonia.infrend.modelo.Operacao;
 
@@ -41,7 +42,7 @@ public class OcorrenciaPjService
 	{
 		this.operacaoService = operacaoService;
 	}
-	public void insert(Cliente cliente, Integer ano, Integer mesFinal, String operacao, String rendimentos)
+	public void insert(DadoBancario dadoBancario, Integer ano, Integer mesFinal, String operacao, String rendimentos)
 	{
 		StringBuffer rendText, impostoText;
 		BigDecimal rendValue = new BigDecimal(0), 
@@ -61,7 +62,7 @@ public class OcorrenciaPjService
 			try
 			{
 				ocorrencia = new OcorrenciaPessoaJuridica();
-				ocorrencia.setCliente(cliente);
+				ocorrencia.setDadoBancario(dadoBancario);
 				ocorrencia.setAno(ano);
 				ocorrencia.setMes(mes);
 				ocorrencia.setOperacao(operacaoInstance);
@@ -73,7 +74,7 @@ public class OcorrenciaPjService
 			{
 				ocorrenciaPjDao.clear();
 				ocorrenciaPjDao.getHibernateTemplate().executeWithNewSession(
-						new UpdateOcorrenciaPjCallback(cliente, operacaoInstance, ano, mes, rendValue, impostoValue));
+						new UpdateOcorrenciaPjCallback(dadoBancario, operacaoInstance, ano, mes, rendValue, impostoValue));
 			}
 		}
 	}
@@ -100,8 +101,8 @@ public class OcorrenciaPjService
 		}
 		// setamos os parametros de conta corrente separadamente
 		Operacao contaCorrenteOp = operacaoService.get(new BigInteger("1"));
-		params.put("conta_corrente_1", formatador.format(ocorrenciaPjDao.sumImpostoRendaByClienteAndOperacao(cliente, contaCorrenteOp, ano-1, 1)));
-		params.put("conta_corrente_2", formatador.format(ocorrenciaPjDao.sumImpostoRendaByClienteAndOperacao(cliente, contaCorrenteOp, ano, 1)));
+		params.put("conta_corrente_1", formatador.format(ocorrenciaPjDao.sumImpostoRendaByClienteAndOperacao(cliente, contaCorrenteOp, ano-1, 12)));
+		params.put("conta_corrente_2", formatador.format(ocorrenciaPjDao.sumImpostoRendaByClienteAndOperacao(cliente, contaCorrenteOp, ano, 12)));
 		return params;
 	}
 }

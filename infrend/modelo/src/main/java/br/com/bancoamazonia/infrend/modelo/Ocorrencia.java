@@ -15,8 +15,8 @@ public class Ocorrencia
 	@JoinColumn(name="ID_OPERACAO", referencedColumnName="ID_OPERACAO")
 	private Operacao operacao;
 	@ManyToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name="ID_CLIENTE", referencedColumnName="ID_CLIENTE")
-	private Cliente cliente;
+	@JoinColumn(name="ID_DADO_BANCARIO", referencedColumnName="ID_DADO_BANCARIO")
+	private DadoBancario dadoBancario;
 	public Integer getAno() {
 		return ano;
 	}
@@ -29,10 +29,11 @@ public class Ocorrencia
 	public void setOperacao(Operacao operacao) {
 		this.operacao = operacao;
 	}
-	public Cliente getCliente() {
-		return cliente;
+	public DadoBancario getDadoBancario() {
+		return dadoBancario;
 	}
-	public void setCliente(Cliente cliente) {
-		this.cliente = cliente;
+	public void setDadoBancario(DadoBancario dadoBancario) {
+		this.dadoBancario = dadoBancario;
 	}
+	
 }

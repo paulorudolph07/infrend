@@ -29,12 +29,13 @@ public class OcorrenciaPjDao extends Dao<OcorrenciaPessoaJuridica> {
 	{
 		DetachedCriteria criteria = DetachedCriteria.forClass(OcorrenciaPessoaJuridica.class, "o");
 		criteria
+		.createAlias("o.dadoBancario", "db")
 		.setProjection(Projections.projectionList()
 				.add(Projections.sum("o.rendimento")))
 		.add(Restrictions.eq("o.operacao", op))
 		.add(Restrictions.eq("o.ano", ano))
 		.add(Restrictions.eq("o.mes", mes))
-		.add(Restrictions.eq("o.cliente", cliente));
+		.add(Restrictions.eq("db.cliente.id", cliente.getId()));
 		BigDecimal sum = (BigDecimal)DataAccessUtils.uniqueResult(getHibernateTemplate().findByCriteria(criteria));
 		return sum!=null?sum:new BigDecimal(0);
 	}
@@ -44,12 +45,13 @@ public class OcorrenciaPjDao extends Dao<OcorrenciaPessoaJuridica> {
 	{
 		DetachedCriteria criteria = DetachedCriteria.forClass(OcorrenciaPessoaJuridica.class, "o");
 		criteria
+		.createAlias("o.dadoBancario", "db")
 		.setProjection(Projections.projectionList()
 				.add(Projections.sum("o.impostoRenda")))
 		.add(Restrictions.eq("o.operacao", op))
 		.add(Restrictions.eq("o.ano", ano))
 		.add(Restrictions.eq("o.mes", mes))
-		.add(Restrictions.eq("o.cliente", cliente));
+		.add(Restrictions.eq("db.cliente.id", cliente.getId()));
 		BigDecimal sum = (BigDecimal)DataAccessUtils.uniqueResult(getHibernateTemplate().findByCriteria(criteria));
 		return sum!=null?sum:new BigDecimal(0);
 	}

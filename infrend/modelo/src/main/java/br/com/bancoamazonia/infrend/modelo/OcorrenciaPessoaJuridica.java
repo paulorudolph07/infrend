@@ -18,7 +18,7 @@ import javax.persistence.UniqueConstraint;
 	name="OCORRENCIA_PJ", 
 	uniqueConstraints={
 			@UniqueConstraint(
-					columnNames={"an_ocorrencia", "me_ocorrencia", "id_operacao", "id_cliente"}
+					columnNames={"an_ocorrencia", "me_ocorrencia", "id_operacao", "id_dado_bancario"}
 			)
 	}
 )

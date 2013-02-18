@@ -13,6 +13,7 @@ import org.springframework.dao.DataIntegrityViolationException;
 import br.com.bancoamazonia.infrend.callback.UpdateOcorrenciaPfCallback;
 import br.com.bancoamazonia.infrend.dao.OcorrenciaPfDao;
 import br.com.bancoamazonia.infrend.modelo.Cliente;
+import br.com.bancoamazonia.infrend.modelo.DadoBancario;
 import br.com.bancoamazonia.infrend.modelo.OcorrenciaPessoaFisica;
 import br.com.bancoamazonia.infrend.modelo.Operacao;
 
@@ -75,7 +76,7 @@ public class OcorrenciaPfService
 		return new BigDecimal(new StringBuffer(value).insert(value.length()-2, ".").toString()).multiply(signal);
 	}
 	
-	public void insert(Cliente cliente, Integer ano, String operacao, String saldoAnterior, String saldoAtual, String rendimento)
+	public void insert(DadoBancario dadoBancario, Integer ano, String operacao, String saldoAnterior, String saldoAtual, String rendimento)
 	{
 		OcorrenciaPessoaFisica ocorrencia = null;
 		Operacao operacaoInstance;
@@ -83,7 +84,7 @@ public class OcorrenciaPfService
 		try
 		{
 			ocorrencia = new OcorrenciaPessoaFisica();
-			ocorrencia.setCliente(cliente);
+			ocorrencia.setDadoBancario(dadoBancario);
 			ocorrencia.setAno(ano);
 			ocorrencia.setOperacao(operacaoInstance);
 			ocorrencia.setSaldoAnterior(setSignal(saldoAnterior));
@@ -95,7 +96,7 @@ public class OcorrenciaPfService
 		{
 			ocorrenciaPfDao.clear();
 			ocorrenciaPfDao.getHibernateTemplate().executeWithNewSession(
-					new UpdateOcorrenciaPfCallback(cliente, operacaoInstance, 
+					new UpdateOcorrenciaPfCallback(dadoBancario, operacaoInstance, 
 							ano, setSignal(saldoAnterior), setSignal(saldoAtual), setSignal(rendimento)));
 		}
 	}

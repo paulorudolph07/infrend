@@ -7,23 +7,23 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.springframework.orm.hibernate3.HibernateCallback;
 
-import br.com.bancoamazonia.infrend.modelo.Cliente;
+import br.com.bancoamazonia.infrend.modelo.DadoBancario;
 import br.com.bancoamazonia.infrend.modelo.OcorrenciaPessoaJuridica;
 import br.com.bancoamazonia.infrend.modelo.Operacao;
 
 public class InsertOcorrenciaPjCallback implements HibernateCallback<OcorrenciaPessoaJuridica>
 {
 	
-	private Cliente cliente;
+	private DadoBancario dadoBancario;
 	private Operacao operacao;
 	private Integer ano, mes;
 	private BigDecimal rendimento, imposto;
 	
 	
-	public InsertOcorrenciaPjCallback(Cliente cliente, Operacao operacao, Integer ano, 
+	public InsertOcorrenciaPjCallback(DadoBancario dadoBancario, Operacao operacao, Integer ano, 
 			Integer mes, BigDecimal rendimento, BigDecimal imposto)
 	{
-		this.cliente=cliente;
+		this.dadoBancario=dadoBancario;
 		this.operacao=operacao;
 		this.ano=ano;
 		this.mes=mes;
@@ -35,7 +35,7 @@ public class InsertOcorrenciaPjCallback implements HibernateCallback<OcorrenciaP
 	public OcorrenciaPessoaJuridica doInHibernate(Session session) throws HibernateException, SQLException
 	{
 		OcorrenciaPessoaJuridica ocorrencia = new OcorrenciaPessoaJuridica();
-		ocorrencia.setCliente(cliente);
+		ocorrencia.setDadoBancario(dadoBancario);
 		ocorrencia.setAno(ano);
 		ocorrencia.setMes(mes);
 		ocorrencia.setOperacao(operacao);

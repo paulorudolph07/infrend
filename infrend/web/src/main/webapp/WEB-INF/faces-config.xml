@@ -30,11 +30,11 @@
   	 -->
   	
   	<!-- ordem inversa de execução, sentido: de baixo para cima -->
-  	<lifecycle> 
+  	<!-- <lifecycle> 
   		<phase-listener>br.com.bancoamazonia.infrend.web.listeners.RequestToSessionListener</phase-listener>
   		<phase-listener>br.com.bancoamazonia.infrend.web.listeners.TransactionAuthorizationListener</phase-listener>
   		<phase-listener>br.com.bancoamazonia.infrend.web.listeners.AuthorizationListener</phase-listener>
-  	</lifecycle>
+  	</lifecycle> -->
 	
 	<!--<managed-bean>
 	    <managed-bean-name>reportController</managed-bean-name>

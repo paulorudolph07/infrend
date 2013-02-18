@@ -9,23 +9,23 @@ import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.orm.hibernate3.HibernateCallback;
 
-import br.com.bancoamazonia.infrend.modelo.Cliente;
+import br.com.bancoamazonia.infrend.modelo.DadoBancario;
 import br.com.bancoamazonia.infrend.modelo.OcorrenciaPessoaJuridica;
 import br.com.bancoamazonia.infrend.modelo.Operacao;
 
 public class UpdateOcorrenciaPjCallback implements HibernateCallback<OcorrenciaPessoaJuridica>
 {
 	
-	private Cliente cliente;
+	private DadoBancario dadoBancario;
 	private Operacao operacao;
 	private Integer ano, mes;
 	private BigDecimal rendimento, imposto;
 	
 	
-	public UpdateOcorrenciaPjCallback(Cliente cliente, Operacao operacao, Integer ano, 
+	public UpdateOcorrenciaPjCallback(DadoBancario dadoBancario, Operacao operacao, Integer ano, 
 			Integer mes, BigDecimal rendimento, BigDecimal imposto)
 	{
-		this.cliente=cliente;
+		this.dadoBancario=dadoBancario;
 		this.operacao=operacao;
 		this.ano=ano;
 		this.mes=mes;
@@ -38,7 +38,7 @@ public class UpdateOcorrenciaPjCallback implements HibernateCallback<OcorrenciaP
 	{
 		Criteria criteria = session.createCriteria(OcorrenciaPessoaJuridica.class);
 		criteria
-		.add(Restrictions.eq("cliente", cliente))
+		.add(Restrictions.eq("dadoBancario", dadoBancario))
 		.add(Restrictions.eq("operacao", operacao))
 		.add(Restrictions.eq("ano", ano))
 		.add(Restrictions.eq("mes", mes));
