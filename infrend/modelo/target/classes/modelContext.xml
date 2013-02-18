@@ -28,6 +28,7 @@
             <list>
                 <value>br.com.bancoamazonia.infrend.modelo.ArquivoProcessado</value>
                 <value>br.com.bancoamazonia.infrend.modelo.Cliente</value>
+                <value>br.com.bancoamazonia.infrend.modelo.DadoBancario</value>
                 <value>br.com.bancoamazonia.infrend.modelo.LayoutArquivo</value>
                 <value>br.com.bancoamazonia.infrend.modelo.OcorrenciaPessoaFisica</value>
                 <value>br.com.bancoamazonia.infrend.modelo.OcorrenciaPessoaJuridica</value>

@@ -1,9 +1,0 @@
-<connections>
-  <connection name="INFRENDCON01">
-   <database>sqlserver</database>
-    <driverclass>net.sourceforge.jtds.jdbc.Driver</driverclass>
-    <url>jdbc:jtds:sqlserver://srv2031:1433/infrend</url>
-    <username>u_infrend</username>
-    <password>Fqt8v9H/Qh27DWI2FfN/Rw==</password>
-  </connection>
-</connections>
