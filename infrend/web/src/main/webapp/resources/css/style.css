@@ -190,3 +190,12 @@ div.content {
 	color: #026A37;
 	margin-right: 2px;
 }
+
+.customer-data-table th {
+	width: 90px;	
+}
+
+.customer-data-table th.ui-state-default {
+	text-align: left;
+	margin: 0px;
+}

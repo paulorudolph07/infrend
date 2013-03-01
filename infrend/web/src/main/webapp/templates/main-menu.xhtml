@@ -12,33 +12,16 @@
 		p:tab title="": eh processado pelo br.com.bancoamazonia.infrend.web.beans.AccordionBean 
 						para o texto de navegabilidade das paginas
 	-->
-				
-	<h:form id="accordion-panel-form" prependId="false">
-		<p:accordionPanel dynamic="false" multiple="false" activeIndex="#{accordionBean.tabIndex}">
+	<!-- <script type="text/javascript">
+	  	$(document).ready(function() {
+	  	    $("a.menu-item").each(function() {
+	  	    	$(this).append('<param name="currentLink" value="'+$(this).text()+'"/>')
+	  	    });
+	  	});
+	</script> -->
+	<h:form id="accordion-panel-form" prependId="true">
+		<p:accordionPanel binding="#{accordionBean.panel}" dynamic="false" multiple="false">
 			<p:ajax event="tabChange" listener="#{accordionBean.onTabChange}" />
-			<p:tab title="Informe de Rendimento" id="informe" index="0" >
-				<h:link value="Gerar Relatorio" outcome="/pages/report/main.xhtml" >
-					<f:param name="currentLink" value="Gerar Relatorio" />
-				</h:link>
-			</p:tab>
-			<p:tab title="Configuracao" id="configuracao" index="1">
-			<!-- <p:tab title="Configuracao" id="configuracao" index="1"> -->
-				<h:link value="Layout Arquivo" outcome="/pages/layoutArquivo/main.xhtml" >
-					<f:param name="currentLink" value="Layout Arquivo" />
-				</h:link>
-				<br/>
-				<h:link value="Propriedade" outcome="/pages/propriedade/main.xhtml" >
-					<f:param name="currentLink" value="Propriedade" />
-				</h:link>
-				<br/>
-				<h:link value="Especificacao de Arquivo" outcome="/pages/specArquivo/main.xhtml" >
-					<f:param name="currentLink" value="Especificacao de Arquivo" />
-				</h:link>
-				<br/>
-				<h:link value="Arquivo Processado" outcome="/pages/arquivoProcessado/main.xhtml" >
-					<f:param name="currentLink" value="Arquivo Processado" />
-				</h:link>
-			</p:tab>
 		</p:accordionPanel>
 	</h:form>
 </ui:composition>

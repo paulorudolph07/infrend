@@ -17,18 +17,14 @@ import br.com.bancoamazonia.infrend.modelo.DadoBancario;
 import br.com.bancoamazonia.infrend.modelo.OcorrenciaPessoaFisica;
 import br.com.bancoamazonia.infrend.modelo.Operacao;
 
-public class OcorrenciaPfService
-{
+public class OcorrenciaPfService {
 	
-	public class OcorrenciaPfServiceException extends RuntimeException
-	{
+	public class OcorrenciaPfServiceException extends RuntimeException {
 		private static final long serialVersionUID = 1L;
-		public OcorrenciaPfServiceException(String message)
-		{
+		public OcorrenciaPfServiceException(String message) {
 			super(message);
 		}
-		public OcorrenciaPfServiceException(Throwable e)
-		{
+		public OcorrenciaPfServiceException(Throwable e) {
 			super(e);
 		}
 	}
@@ -50,39 +46,37 @@ public class OcorrenciaPfService
 	private BigDecimal positive = new BigDecimal("1");
 	private OcorrenciaPfDao ocorrenciaPfDao;
 	private OperacaoService operacaoService;
-	public OcorrenciaPfDao getOcorrenciaPfDao()
-	{
+	public OcorrenciaPfDao getOcorrenciaPfDao() {
 		return ocorrenciaPfDao;
 	}
-	public void setOcorrenciaPfDao(OcorrenciaPfDao ocorrenciaPfDao)
-	{
+	public void setOcorrenciaPfDao(OcorrenciaPfDao ocorrenciaPfDao) {
 		this.ocorrenciaPfDao = ocorrenciaPfDao;
 	}
-	public void setOperacaoService(OperacaoService operacaoService)
-	{
+	public void setOperacaoService(OperacaoService operacaoService) {
 		this.operacaoService = operacaoService;
 	}
-	private BigDecimal setSignal(String value)
-	{
+	
+	public List<OcorrenciaPessoaFisica> listByCodigoAndAno(String codigo, Integer ano) {
+		return ocorrenciaPfDao.listByCodigoAndAno(codigo, ano);
+	}
+	
+	private BigDecimal setSignal(String value) {
 		char c = value.charAt(value.length()-1);
 		BigDecimal signal = positive;
 		if("}JKLMNOPQR".contains(String.valueOf(c)))
 			signal = negative;
-		try
-		{
+		try {
 			value = value.replace(c, caracters.get(c));
-		} 
-		catch(NullPointerException e) {/*para valores inteiros*/}
+		} catch(NullPointerException e) {/*para valores inteiros*/}
 		return new BigDecimal(new StringBuffer(value).insert(value.length()-2, ".").toString()).multiply(signal);
 	}
 	
-	public void insert(DadoBancario dadoBancario, Integer ano, String operacao, String saldoAnterior, String saldoAtual, String rendimento)
-	{
+	public void insert(DadoBancario dadoBancario, Integer ano, String operacao, String saldoAnterior, 
+			String saldoAtual, String rendimento) {
 		OcorrenciaPessoaFisica ocorrencia = null;
 		Operacao operacaoInstance;
 		operacaoInstance = operacaoService.load(new BigInteger(operacao));
-		try
-		{
+		try {
 			ocorrencia = new OcorrenciaPessoaFisica();
 			ocorrencia.setDadoBancario(dadoBancario);
 			ocorrencia.setAno(ano);
@@ -91,9 +85,7 @@ public class OcorrenciaPfService
 			ocorrencia.setSaldoAtual(setSignal(saldoAtual));
 			ocorrencia.setRendimento(setSignal(rendimento));
 			ocorrenciaPfDao.save(ocorrencia);
-		}
-		catch(DataIntegrityViolationException e)
-		{
+		} catch(DataIntegrityViolationException e) {
 			ocorrenciaPfDao.clear();
 			ocorrenciaPfDao.getHibernateTemplate().executeWithNewSession(
 					new UpdateOcorrenciaPfCallback(dadoBancario, operacaoInstance, 
@@ -101,8 +93,7 @@ public class OcorrenciaPfService
 		}
 	}
 	
-	public Map<String, Object> toMap(Cliente cliente, Integer ano)
-	{
+	public Map<String, Object> toMap(Cliente cliente, Integer ano) {
 		Map<String, Object> params = new HashMap<String, Object>();
 		List<Operacao> operacoes = operacaoService.pfOperacaoList();
 		DecimalFormat formatador = new DecimalFormat("###,###,###,##0.00");
@@ -110,21 +101,17 @@ public class OcorrenciaPfService
 		Field fields[] = OcorrenciaPessoaFisica.class.getDeclaredFields();
 		BigDecimal rendimentoTotal = new BigDecimal(0);
 		
-		for(Operacao op : operacoes)
-		{
-			for(Field f : fields)
-			{
-				if(f.getType().equals(BigDecimal.class))
-				{
+		for(Operacao op : operacoes) {
+			for(Field f : fields) {
+				if(f.getType().equals(BigDecimal.class)) {
 					BigDecimal value = ocorrenciaPfDao.sumFieldByClienteAndOperacao(f.getName(), cliente, op, ano);
 					params.put(op.getTipo().toLowerCase()+"_"+f.getName(), formatador.format(value));
 					// para operacoes de fundos e prazo
 					if((op.getId().equals(new BigInteger("2")) ||
 							op.getId().equals(new BigInteger("3"))) &&
-							f.getName().equals("rendimento"))
-						{
+							f.getName().equals("rendimento")) {
 							rendimentoTotal = rendimentoTotal.add(value);
-						}
+					}
 				}
 			}
 		}

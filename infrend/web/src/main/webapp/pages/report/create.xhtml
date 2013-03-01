@@ -16,7 +16,7 @@
   
   	<ui:define name="title">Informe de Rendimento</ui:define>
   	
-  	<h:form id="report-tab-form" prependId="false">
+  	<h:form id="report-tab-form" prependId="false" >
   		
 		<p:messages autoUpdate="true" />
 	
@@ -46,6 +46,39 @@
 				</h:selectOneMenu>
 			</h:panelGrid>
 		</p:outputPanel>
+		<!-- as tabelas estao fora do outputPanel para manter o css padrao -->
+		<p:dataTable id="ocorrencia-pf-table"
+	    	rowIndexVar="rowIx" rowStyleClass="#{empty rowIx or rowIx mod 2 ne 0 ? 'even-row' : 'odd-row'}"
+	    	var="o" value="#{reportBean.ocorrenciaPfList}" rowKey="#{o.id}"
+	    	paginator="true" rows="5" paginatorPosition="bottom"
+	    	emptyMessage="Nao ha registro na base."
+	    	rendered="#{reportBean.tipoCliente == 'pf' and not empty reportBean.ocorrenciaPfList}">
+	    	
+	    	<p:column headerText="Operacao">
+	    		<h:outputText value="#{o.operacao.tipo}"/>
+	    	</p:column>
+	    	<p:column headerText="Agencia">
+	    		<h:outputText value="#{o.dadoBancario.numeroAgencia}"/>
+	    	</p:column>
+	    	<p:column headerText="Conta">
+	    		<h:outputText value="#{o.dadoBancario.numeroConta}" />
+	    	</p:column>
+	    	<p:column headerText="Saldo Anterior">
+	    		<h:outputText value="#{o.saldoAnterior}">
+	    			<f:convertNumber pattern="R$###,###,###,##0.00" />
+	    		</h:outputText>
+	    	</p:column>
+	    	<p:column headerText="Saldo Atual">
+	    		<h:outputText value="#{o.saldoAtual}">
+	    			<f:convertNumber pattern="R$###,###,###,##0.00" />
+	    		</h:outputText>
+	    	</p:column>
+	    	<p:column headerText="Rendimento">
+	    		<h:outputText value="#{o.rendimento}">
+	    			<f:convertNumber pattern="R$###,###,###,##0.00" />
+	    		</h:outputText>
+	    	</p:column>
+	    </p:dataTable>
 	
 		<p:outputPanel id="cnpj-panel" styleClass="texto" rendered="#{reportBean.tipoCliente == 'pj'}">
 			<h:panelGrid columns="2">
@@ -71,10 +104,76 @@
 					<f:selectItem itemLabel="Quarto" itemValue="4" />
 				</h:selectOneMenu>
 			</h:panelGrid>
+			
 		</p:outputPanel>
+		
+		<p:dataTable id="ocorrencia-pj-table"
+	    	rowIndexVar="rowIx" rowStyleClass="#{empty rowIx or rowIx mod 2 ne 0 ? 'even-row' : 'odd-row'}"
+	    	var="o" value="#{reportBean.ocorrenciaPjList}" rowKey="#{o.id}"
+	    	paginator="true" rows="5" paginatorPosition="bottom"  
+               rowsPerPageTemplate="5,10,15"
+	    	emptyMessage="Nao ha registro na base."
+	    	rendered="#{reportBean.tipoCliente == 'pj' and not empty reportBean.ocorrenciaPjList}">
+	    	
+	    	<p:column headerText="Operacao">
+	    		<h:outputText value="#{o.operacao.tipo}"/>
+	    	</p:column>
+	    	<p:column headerText="Mes">
+	    		<h:outputText value="#{reportBean.getMonthName(o.mes)}"/>
+	    	</p:column>
+	    	<p:column headerText="Agencia">
+	    		<h:outputText value="#{o.dadoBancario.numeroAgencia}"/>
+	    	</p:column>
+	    	<p:column headerText="Conta">
+	    		<h:outputText value="#{o.dadoBancario.numeroConta}"/>
+	    	</p:column>
+	    	<p:column headerText="Rendimento">
+	    		<h:outputText value="#{o.rendimento}">
+	    			<f:convertNumber pattern="R$###,###,###,##0.00" />
+	    		</h:outputText>
+	    	</p:column>
+	    	<p:column headerText="Imposto Renda">
+	    		<h:outputText value="#{o.impostoRenda}">
+	    			<f:convertNumber pattern="R$###,###,###,##0.00" />
+	    		</h:outputText>
+	    	</p:column>
+	    </p:dataTable>
+		<br></br>
+		<p:dataTable id="conta-corrente-ocorrencia-pj-table"
+	    	rowIndexVar="rowIx" rowStyleClass="#{empty rowIx or rowIx mod 2 ne 0 ? 'even-row' : 'odd-row'}"
+	    	var="o" value="#{reportBean.contaCorrenteList}" rowKey="#{o.id}"
+	    	paginator="true" rows="5" paginatorPosition="bottom"  
+               rowsPerPageTemplate="5,10,15"
+	    	emptyMessage="Nao ha registro na base."
+	    	rendered="#{reportBean.tipoCliente == 'pj' and not empty reportBean.contaCorrenteList}">
+	    	<p:column headerText="Operacao" >
+	    		<h:outputText value="#{o.operacao.tipo}" />
+	    	</p:column>
+	    	<p:column headerText="Agencia" >
+	    		<h:outputText value="#{o.dadoBancario.numeroAgencia}" />
+	    	</p:column>
+	    	<p:column headerText="Conta" >
+	    		<h:outputText value="#{o.dadoBancario.numeroConta}" />
+	    	</p:column>
+	    	<p:column headerText="Saldo Anterior" >
+	    		<h:outputText value="#{o.rendimento}" >
+	    			<f:convertNumber pattern="R$###,###,###,##0.00" />
+	    		</h:outputText>
+	    	</p:column>
+	    	<p:column headerText="Saldo Atual" >
+	    		<h:outputText value="#{o.impostoRenda}" >
+	    			<f:convertNumber pattern="R$###,###,###,##0.00" />
+	    		</h:outputText>
+	    	</p:column>
+	    </p:dataTable>
+		
 		<div class="bgbotao">
-			<h:commandButton id="bot" styleClass="botao" value="Imprimir" 
-				ajax="false" actionListener="#{reportBean.loadReport}">
+			<h:commandButton id="analytic-button" styleClass="botao" value="Analitico" 
+				action="#{reportBean.setOcorrenciaList}"
+				update="@form"/>
+		
+			<h:commandButton id="bot" styleClass="botao" value="Gerar Comprovante" 
+				ajax="false" actionListener="#{reportBean.loadReport}" style="width: 130px;">
 				<p:fileDownload value="#{reportBean.report}" /> <!-- contentDisposition="inline" -->
 			</h:commandButton>
 		</div>

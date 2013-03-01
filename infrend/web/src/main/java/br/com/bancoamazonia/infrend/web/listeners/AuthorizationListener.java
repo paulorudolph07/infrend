@@ -25,32 +25,35 @@ public class AuthorizationListener implements PhaseListener {
 	public void afterPhase(PhaseEvent event) {
 		FacesContext context = event.getFacesContext();
 		HttpSession session = (HttpSession)context.getExternalContext().getSession(true);
-		HttpServletRequest request = (HttpServletRequest)context.getExternalContext().getRequest();
-		HttpServletResponse response = (HttpServletResponse)context.getExternalContext().getResponse();
-		
-		String authKey = (String)session.getAttribute("authkey");
-		authKey = authKey==null || authKey.equals("")?request.getParameter("authkey"):authKey;
-		
-		ApplicationContext webContext = WebApplicationContextUtils.getWebApplicationContext(
-				(ServletContext)context.getExternalContext().getContext());
-		SeguClientService seguClientService = webContext.getBean(SeguClientService.class);
-		
-		try {
-			//if(session.isNew()) seguClientService.setSessionTimeout(session);
+		Boolean authenticated = (Boolean)session.getAttribute("authenticated");
+		if(authenticated == null) {
+			HttpServletRequest request = (HttpServletRequest)context.getExternalContext().getRequest();
+			HttpServletResponse response = (HttpServletResponse)context.getExternalContext().getResponse();
 			
-			if(authKey == null || authKey.equals("")) {seguClientService.login(response);return;}
+			String authKey = (String)session.getAttribute("authkey");
+			authKey = authKey==null || authKey.equals("")?request.getParameter("authkey"):authKey;
 			
-			AutenticaServiceWrapper autentica = seguClientService.validateUserByAuthKey(authKey);
-			if(!autentica.getResultado().equals("0")) {seguClientService.login(response);return;}
+			ApplicationContext webContext = WebApplicationContextUtils.getWebApplicationContext(
+					(ServletContext)context.getExternalContext().getContext());
+			SeguClientService seguClientService = webContext.getBean(SeguClientService.class);
 			
-			session.setAttribute("authkey", authKey);
-			session.setAttribute("username", autentica.getUsuario().getNome());
-		}
-		catch (Exception e) {
-			e.printStackTrace();
-			NavigationHandler nh = context.getApplication().getNavigationHandler();
-			context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, e.getMessage(), "msg_detail"));
-			nh.handleNavigation(context, null, "/error.xhtml");
+			try {
+				if(authKey == null || authKey.equals("")) {seguClientService.login(response);return;}
+				
+				AutenticaServiceWrapper autentica = seguClientService.validateUserByAuthKey(authKey);
+				
+				if(!autentica.getResultado().equals("0")) {seguClientService.login(response);return;}
+				
+				session.setAttribute("authkey", authKey);
+				session.setAttribute("username", autentica.getUsuario().getNome());
+				session.setAttribute("authenticated", true);
+			}
+			catch (Exception e) {
+				e.printStackTrace();
+				NavigationHandler nh = context.getApplication().getNavigationHandler();
+				context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, e.getMessage(), "msg_detail"));
+				nh.handleNavigation(context, null, "/error.xhtml");
+			}
 		}
 	}
 

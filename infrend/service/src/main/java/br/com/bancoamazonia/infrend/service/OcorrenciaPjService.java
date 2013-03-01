@@ -16,34 +16,34 @@ import br.com.bancoamazonia.infrend.modelo.DadoBancario;
 import br.com.bancoamazonia.infrend.modelo.OcorrenciaPessoaJuridica;
 import br.com.bancoamazonia.infrend.modelo.Operacao;
 
-public class OcorrenciaPjService
-{
+public class OcorrenciaPjService {
 	
-	public class OcorrenciaPjServiceException extends RuntimeException
-	{
+	public class OcorrenciaPjServiceException extends RuntimeException {
 		private static final long serialVersionUID = 1L;
-		public OcorrenciaPjServiceException(String message)
-		{
+		public OcorrenciaPjServiceException(String message) {
 			super(message);
 		}
-		public OcorrenciaPjServiceException(Throwable e)
-		{
+		public OcorrenciaPjServiceException(Throwable e) {
 			super(e);
 		}
 	}
 	
 	private OcorrenciaPjDao ocorrenciaPjDao;
 	private OperacaoService operacaoService;
-	public void setOcorrenciaPjDao(OcorrenciaPjDao ocorrenciaPjDao)
-	{
+	public void setOcorrenciaPjDao(OcorrenciaPjDao ocorrenciaPjDao) {
 		this.ocorrenciaPjDao = ocorrenciaPjDao;
 	}
-	public void setOperacaoService(OperacaoService operacaoService)
-	{
+	public void setOperacaoService(OperacaoService operacaoService) {
 		this.operacaoService = operacaoService;
 	}
-	public void insert(DadoBancario dadoBancario, Integer ano, Integer mesFinal, String operacao, String rendimentos)
-	{
+	public List<OcorrenciaPessoaJuridica> listByCodigoAndAno(String codigo, Integer ano) {
+		return ocorrenciaPjDao.listByCodigoAndAno(codigo, ano);
+	}
+	public List<OcorrenciaPessoaJuridica> listByCodigoAndAnoAndOperacao(String codigo, Integer ano, BigInteger[] operacoes) {
+		return ocorrenciaPjDao.listByCodigoAndAnoAndOperacao(codigo, ano, operacoes);
+	}
+	
+	public void insert(DadoBancario dadoBancario, Integer ano, Integer mesFinal, String operacao, String rendimentos) {
 		StringBuffer rendText, impostoText;
 		BigDecimal rendValue = new BigDecimal(0), 
 					impostoValue = new BigDecimal(0);
@@ -52,15 +52,13 @@ public class OcorrenciaPjService
 			mes = mesFinal-2;
 			Operacao operacaoInstance = operacaoService.load(new BigInteger(operacao));
 			OcorrenciaPessoaJuridica ocorrencia = null;
-		for(; mes <= mesFinal; mes++)
-		{
+		for(; mes <= mesFinal; mes++) {
 			rendText = new StringBuffer(rendimentos.substring(posicao, posicao+=inc));
 			rendValue = new BigDecimal(rendText.insert(rendText.length()-2, ".").toString());
 			
 			impostoText = new StringBuffer(rendimentos.substring(posicao, posicao+=inc));
 			impostoValue = new BigDecimal(impostoText.insert(impostoText.length()-2, ".").toString());
-			try
-			{
+			try {
 				ocorrencia = new OcorrenciaPessoaJuridica();
 				ocorrencia.setDadoBancario(dadoBancario);
 				ocorrencia.setAno(ano);
@@ -69,9 +67,7 @@ public class OcorrenciaPjService
 				ocorrencia.setRendimento(rendValue);
 				ocorrencia.setImpostoRenda(impostoValue);
 				ocorrenciaPjDao.save(ocorrencia);
-			}
-			catch(DataIntegrityViolationException e)
-			{
+			} catch(DataIntegrityViolationException e) {
 				ocorrenciaPjDao.clear();
 				ocorrenciaPjDao.getHibernateTemplate().executeWithNewSession(
 						new UpdateOcorrenciaPjCallback(dadoBancario, operacaoInstance, ano, mes, rendValue, impostoValue));
@@ -79,8 +75,7 @@ public class OcorrenciaPjService
 		}
 	}
 	
-	public Map<String, Object> toMap(Cliente cliente, Integer ano, Integer trimestre)
-	{
+	public Map<String, Object> toMap(Cliente cliente, Integer ano, Integer trimestre) {
 		Map<String, Object> params = new HashMap<String, Object>(); 
 		Integer mesFinal = 3*trimestre;
 		Integer mesInicial = mesFinal-2;
@@ -88,8 +83,7 @@ public class OcorrenciaPjService
 		List<Operacao> operacoes = operacaoService.pjOperacaoList();
 		
 		DecimalFormat formatador = new DecimalFormat("###,###,###,##0.00");
-		for(Operacao op : operacoes)
-		{
+		for(Operacao op : operacoes) {
 			for(int mes = mesInicial; mes <= mesFinal; mes++)
 			{
 				// criamos as chaves referentes aos nomes dos parametros no relatorio
@@ -101,8 +95,9 @@ public class OcorrenciaPjService
 		}
 		// setamos os parametros de conta corrente separadamente
 		Operacao contaCorrenteOp = operacaoService.get(new BigInteger("1"));
-		params.put("conta_corrente_1", formatador.format(ocorrenciaPjDao.sumImpostoRendaByClienteAndOperacao(cliente, contaCorrenteOp, ano-1, 12)));
-		params.put("conta_corrente_2", formatador.format(ocorrenciaPjDao.sumImpostoRendaByClienteAndOperacao(cliente, contaCorrenteOp, ano, 12)));
+		// conta_corrente_1=saldo anterior, conta_corrente_2=saldo atual
+		params.put("conta_corrente_1", formatador.format(ocorrenciaPjDao.sumRendimentoByClienteAndOperacao(cliente, contaCorrenteOp, ano, 1)));
+		params.put("conta_corrente_2", formatador.format(ocorrenciaPjDao.sumImpostoRendaByClienteAndOperacao(cliente, contaCorrenteOp, ano, 1)));
 		return params;
 	}
 }

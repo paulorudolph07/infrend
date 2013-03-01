@@ -1,82 +1,83 @@
-[14/02/2013 13:13:37] [ INFO] {OpconExec.java->showInitProcess} &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
-[14/02/2013 13:13:37] [ INFO] {OpconExec.java->showInitProcess} Inicio do Processamento
-[14/02/2013 13:13:37] [DEBUG] {OpconConfig.java->logProperties} %%%%%%%%%%%%%%%%%%%%%%%%%%%
-[14/02/2013 13:13:37] [DEBUG] {OpconConfig.java->logProperties} OpconConfig properties:
+[25/02/2013 09:56:00] [ INFO] {OpconExec.java->showInitProcess} &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+[25/02/2013 09:56:00] [ INFO] {OpconExec.java->showInitProcess} Inicio do Processamento
+[25/02/2013 09:56:00] [DEBUG] {OpconConfig.java->logProperties} %%%%%%%%%%%%%%%%%%%%%%%%%%%
+[25/02/2013 09:56:00] [DEBUG] {OpconConfig.java->logProperties} OpconConfig properties:
 {msgindir=F:\opcon\msgindir, connectionfile.0=C:\Users\7485\git\infrend\infrend\infrend-job\infrend-job-core/src/main/resources/db/Connection-INFREND.xml, fase.0=br.com.bancoamazonia.infrend.job.core.fases.Fase0, nome.conexao.teste.0=INFRENDCON01, tokenname=D-INFREND-J01-Fase, -----------------------------------------=}
-[14/02/2013 13:13:37] [DEBUG] {OpconConfig.java->logProperties} %%%%%%%%%%%%%%%%%%%%%%%%%%%
-[14/02/2013 13:13:37] [DEBUG] {ConexaoFactoryProvider.java->carregar} ========= Carregando conexoes =========
-[14/02/2013 13:13:37] [DEBUG] {ConexaoFactoryProvider.java->logConexao} ================================
-[14/02/2013 13:13:37] [DEBUG] {ConexaoFactoryProvider.java->logConexao} DNS da Conexão: INFRENDCON01
-[14/02/2013 13:13:37] [DEBUG] {ConexaoFactoryProvider.java->logConexao} Base de Dados: sqlserver
-[14/02/2013 13:13:37] [DEBUG] {ConexaoFactoryProvider.java->logConexao} Driver: net.sourceforge.jtds.jdbc.Driver
-[14/02/2013 13:13:37] [DEBUG] {ConexaoFactoryProvider.java->logConexao} URL: jdbc:jtds:sqlserver://srv2031:1433/infrend
-[14/02/2013 13:13:37] [DEBUG] {ConexaoFactoryProvider.java->logConexao} Usuário: u_infrend
-[14/02/2013 13:13:37] [DEBUG] {ConexaoFactoryProvider.java->logConexao} PWD: Fqt8v9H/Qh27DWI2FfN/Rw==
-[14/02/2013 13:13:37] [DEBUG] {ConexaoFactoryProvider.java->carregar} ========= Conexoes carregadas com sucesso =========
-[14/02/2013 13:13:37] [DEBUG] {OpconExec.java->logSystemProperties} &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
-[14/02/2013 13:13:37] [DEBUG] {OpconExec.java->logSystemProperties} System properties:
+[25/02/2013 09:56:00] [DEBUG] {OpconConfig.java->logProperties} %%%%%%%%%%%%%%%%%%%%%%%%%%%
+[25/02/2013 09:56:00] [DEBUG] {ConexaoFactoryProvider.java->carregar} ========= Carregando conexoes =========
+[25/02/2013 09:56:00] [DEBUG] {ConexaoFactoryProvider.java->logConexao} ================================
+[25/02/2013 09:56:00] [DEBUG] {ConexaoFactoryProvider.java->logConexao} DNS da Conexão: INFRENDCON01
+[25/02/2013 09:56:00] [DEBUG] {ConexaoFactoryProvider.java->logConexao} Base de Dados: sqlserver
+[25/02/2013 09:56:00] [DEBUG] {ConexaoFactoryProvider.java->logConexao} Driver: net.sourceforge.jtds.jdbc.Driver
+[25/02/2013 09:56:00] [DEBUG] {ConexaoFactoryProvider.java->logConexao} URL: jdbc:jtds:sqlserver://srv2031:1433/infrend
+[25/02/2013 09:56:00] [DEBUG] {ConexaoFactoryProvider.java->logConexao} Usuário: u_infrend
+[25/02/2013 09:56:00] [DEBUG] {ConexaoFactoryProvider.java->logConexao} PWD: Fqt8v9H/Qh27DWI2FfN/Rw==
+[25/02/2013 09:56:01] [DEBUG] {ConexaoFactoryProvider.java->carregar} ========= Conexoes carregadas com sucesso =========
+[25/02/2013 09:56:01] [DEBUG] {OpconExec.java->logSystemProperties} &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+[25/02/2013 09:56:01] [DEBUG] {OpconExec.java->logSystemProperties} System properties:
 java.runtime.name=Java(TM) SE Runtime Environment
 exec.mainClass=br.com.bancoamazonia.integracao.opcon.OpconExec
-sun.boot.library.path=C:\Program Files\Java\jdk1.6.0_37\jre\bin
-java.vm.version=20.12-b01
-java.vm.vendor=Sun Microsystems Inc.
-java.vendor.url=http://java.sun.com/
+sun.boot.library.path=C:\Program Files\Java\jdk1.7.0_15\jre\bin
+java.vm.version=23.7-b01
+java.vm.vendor=Oracle Corporation
+java.vendor.url=http://java.oracle.com/
 guice.disable.misplaced.annotation.check=true
 path.separator=;
 java.vm.name=Java HotSpot(TM) 64-Bit Server VM
 file.encoding.pkg=sun.io
-sun.java.launcher=SUN_STANDARD
 user.country=BR
+user.script=
+sun.java.launcher=SUN_STANDARD
 sun.os.patch.level=Service Pack 1
 java.vm.specification.name=Java Virtual Machine Specification
 user.dir=C:\Users\7485\git\infrend\infrend\infrend-job\infrend-job-core
-java.runtime.version=1.6.0_37-b06
+java.runtime.version=1.7.0_15-b03
 java.awt.graphicsenv=sun.awt.Win32GraphicsEnvironment
-java.endorsed.dirs=C:\Program Files\Java\jdk1.6.0_37\jre\lib\endorsed
+java.endorsed.dirs=C:\Program Files\Java\jdk1.7.0_15\jre\lib\endorsed
 os.arch=amd64
 java.io.tmpdir=C:\Users\7485\AppData\Local\Temp\
 line.separator=
 
-java.vm.specification.vendor=Sun Microsystems Inc.
+java.vm.specification.vendor=Oracle Corporation
 user.variant=
 os.name=Windows 7
-classworlds.conf=F:\dev\workspace\csban\.metadata\.plugins\org.eclipse.m2e.core\launches\m2conf1088448629615356645.tmp
+classworlds.conf=F:\dev\workspace\csban\.metadata\.plugins\org.eclipse.m2e.core\launches\m2conf3574306369867311199.tmp
 sun.jnu.encoding=Cp1252
-java.library.path=C:\Program Files\Java\jdk1.6.0_37\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Program Files/Java/jre6/bin/server;C:/Program Files/Java/jre6/bin;C:/Program Files/Java/jre6/lib/amd64;C:\oracle_client;F:\oracle\ora92\bin;C:\Program Files\Java\jre6\bin;C:\Program Files (x86)\Oracle\jre\1.1.8\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;c:\Program Files (x86)\Hewlett-Packard\HP ProtectTools Security Manager\Bin\;c:\Program Files\Intel\DMIX;C:\Program Files (x86)\Intel\Services\IPT\;C:\PROGRA~2\ULTRAE~1;C:\Program Files\Java\jdk1.6.0_37\bin;C:\Program Files (x86)\Microsoft SQL Server\90\Tools\binn\;F:\dev\eclipse-jee-juno-SR1-win32-x86_64;;.
+java.library.path=C:\Program Files\Java\jdk1.7.0_15\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Program Files/Java/jre6/bin/server;C:/Program Files/Java/jre6/bin;C:/Program Files/Java/jre6/lib/amd64;C:\oracle_client;F:\oracle\ora92\bin;C:\Program Files\Java\jre6\bin;C:\Program Files (x86)\Oracle\jre\1.1.8\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;c:\Program Files (x86)\Hewlett-Packard\HP ProtectTools Security Manager\Bin\;c:\Program Files\Intel\DMIX;C:\Program Files (x86)\Intel\Services\IPT\;C:\PROGRA~2\ULTRAE~1;C:\Program Files\Java\jdk1.7.0_15\bin;C:\Program Files (x86)\Microsoft SQL Server\90\Tools\binn\;F:\dev\eclipse-jee-juno-SR1-win32-x86_64;;.
 java.specification.name=Java Platform API Specification
-java.class.version=50.0
+java.class.version=51.0
 sun.management.compiler=HotSpot 64-Bit Tiered Compilers
 os.version=6.1
 user.home=C:\Users\7485
 user.timezone=GMT-03:00
 java.awt.printerjob=sun.awt.windows.WPrinterJob
 file.encoding=Cp1252
-java.specification.version=1.6
+java.specification.version=1.7
 java.class.path=/F:/dev/eclipse-jee-juno-SR1-win32-x86_64/configuration/org.eclipse.osgi/bundles/809/1/.cp/jars/plexus-classworlds-2.4.jar
 user.name=7485
-java.vm.specification.version=1.0
+java.vm.specification.version=1.7
 sun.java.command=org.codehaus.plexus.classworlds.launcher.Launcher -Pdesenvolvimento -B -s C:\Documents and Settings\7485\.m2\settings.xml exec:java -Dexec.mainClass=br.com.bancoamazonia.integracao.opcon.OpconExec -Dexec.args=0 -e
-java.home=C:\Program Files\Java\jdk1.6.0_37\jre
+java.home=C:\Program Files\Java\jdk1.7.0_15\jre
 sun.arch.data.model=64
 user.language=pt
-java.specification.vendor=Sun Microsystems Inc.
+java.specification.vendor=Oracle Corporation
 awt.toolkit=sun.awt.windows.WToolkit
 java.vm.info=mixed mode
-java.version=1.6.0_37
-java.ext.dirs=C:\Program Files\Java\jdk1.6.0_37\jre\lib\ext;C:\Windows\Sun\Java\lib\ext
-sun.boot.class.path=C:\Program Files\Java\jdk1.6.0_37\jre\lib\resources.jar;C:\Program Files\Java\jdk1.6.0_37\jre\lib\rt.jar;C:\Program Files\Java\jdk1.6.0_37\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.6.0_37\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.6.0_37\jre\lib\jce.jar;C:\Program Files\Java\jdk1.6.0_37\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.6.0_37\jre\lib\modules\jdk.boot.jar;C:\Program Files\Java\jdk1.6.0_37\jre\classes
-java.vendor=Sun Microsystems Inc.
+java.version=1.7.0_15
+java.ext.dirs=C:\Program Files\Java\jdk1.7.0_15\jre\lib\ext;C:\Windows\Sun\Java\lib\ext
+sun.boot.class.path=C:\Program Files\Java\jdk1.7.0_15\jre\lib\resources.jar;C:\Program Files\Java\jdk1.7.0_15\jre\lib\rt.jar;C:\Program Files\Java\jdk1.7.0_15\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.7.0_15\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.7.0_15\jre\lib\jce.jar;C:\Program Files\Java\jdk1.7.0_15\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.7.0_15\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.7.0_15\jre\classes
+java.vendor=Oracle Corporation
 maven.home=C:\Users\7485\git\infrend\infrend\infrend-job\infrend-job-core\EMBEDDED
 file.separator=\
-java.vendor.url.bug=http://java.sun.com/cgi-bin/bugreport.cgi
+java.vendor.url.bug=http://bugreport.sun.com/bugreport/
 sun.io.unicode.encoding=UnicodeLittle
 sun.cpu.endian=little
 exec.args=0
 sun.desktop=windows
 sun.cpu.isalist=amd64
 
-[14/02/2013 13:13:37] [DEBUG] {OpconExec.java->logSystemProperties} Default locale: pt_BR
-[14/02/2013 13:13:39] [DEBUG] {OpconExec.java->logSystemProperties} System info:
+[25/02/2013 09:56:01] [DEBUG] {OpconExec.java->logSystemProperties} Default locale: pt_BR
+[25/02/2013 09:56:17] [DEBUG] {OpconExec.java->logSystemProperties} System info:
 Retorno do comando "systeminfo": 0
 Saída do comando "systeminfo":
 
@@ -90,12 +91,12 @@ Propriet rio registrado:                   instalador
 Organiza‡Æo registrada:                    Hewlett-Packard Company
 Identifica‡Æo do produto:                  00371-OEM-8992671-00008
 Data da instala‡Æo original:               19/12/2012, 10:57:14
-Tempo de Inicializa‡Æo do Sistema:         14/02/2013, 08:10:06
+Tempo de Inicializa‡Æo do Sistema:         25/02/2013, 08:11:39
 Fabricante do sistema:                     Hewlett-Packard
 Modelo do sistema:                         HP Compaq 8200 Elite SFF PC
 Tipo de sistema:                           x64-based PC
 Processador(es):                           1 processador(es) instalado(s).
-                                           [01]: Intel64 Family 6 Model 42 Stepping 7 GenuineIntel ~3101 Mhz
+                                           [01]: Intel64 Family 6 Model 42 Stepping 7 GenuineIntel ~1674 Mhz
 VersÆo do BIOS:                            Hewlett-Packard J01 v02.06, 09/06/2011
 Pasta do Windows:                          C:\Windows
 Pasta do sistema:                          C:\Windows\system32
@@ -104,14 +105,14 @@ Localidade do sistema:                     pt-br;Portuguˆs (Brasil)
 Localidade de entrada:                     pt-br;Portuguˆs (Brasil)
 Fuso hor rio:                              (UTC-03:00) Bras¡lia
 Mem¢ria f¡sica total:                      3.984 MB
-Mem¢ria f¡sica dispon¡vel:                 937 MB
+Mem¢ria f¡sica dispon¡vel:                 761 MB
 Mem¢ria Virtual: Tamanho M ximo:           7.966 MB
-Mem¢ria Virtual: Dispon¡vel:               3.997 MB
-Mem¢ria Virtual: Em Uso:                   3.969 MB
+Mem¢ria Virtual: Dispon¡vel:               3.250 MB
+Mem¢ria Virtual: Em Uso:                   4.716 MB
 Local(is) de arquivo de pagina‡Æo:         C:\pagefile.sys
 Dom¡nio:                                   adm.bancoamazonia.sa
-Servidor de Logon:                         \\SRV4003
-Hotfix(es):                                29 hotfix(es) instalado(s).
+Servidor de Logon:                         \\SRV4004
+Hotfix(es):                                35 hotfix(es) instalado(s).
                                            [01]: KB982861
                                            [02]: 982861
                                            [03]: KB2393802
@@ -139,8 +140,14 @@ Hotfix(es):                                29 hotfix(es) instalado(s).
                                            [25]: KB2511250
                                            [26]: KB2511455
                                            [27]: KB2524375
-                                           [28]: KB2561821
-                                           [29]: KB976902
+                                           [28]: KB2552343
+                                           [29]: KB2561821
+                                           [30]: KB2718704
+                                           [31]: KB2727528
+                                           [32]: KB2749655
+                                           [33]: KB2792100
+                                           [34]: KB2799494
+                                           [35]: KB976902
 Placa(s) de Rede:                          1 NIC(s) instalado(s).
                                            [01]: Intel(R) 82579LM Gigabit Network Connection
                                                  Nome da conexÆo: ConexÆo local
@@ -151,52 +158,43 @@ Placa(s) de Rede:                          1 NIC(s) instalado(s).
                                                  [02]: fe80::6068:ccc4:6e0d:f933
 
 
-[14/02/2013 13:13:39] [DEBUG] {OpconExec.java->logSystemProperties} &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
-[14/02/2013 13:13:39] [DEBUG] {OpconExec.java->testarConexoes} Executando testes de conexão a banco de dados
-[14/02/2013 13:13:39] [DEBUG] {OpconExec.java->testarConexoes} Conexão 'INFRENDCON01' encontrada com sucesso
-[14/02/2013 13:13:39] [DEBUG] {Conexao.java->abrirConexao} Tentando abrir conexão 'INFRENDCON01'. (Driver: net.sourceforge.jtds.jdbc.Driver) (Url: jdbc:jtds:sqlserver://srv2031:1433/infrend) (Usuário: u_infrend)
-[14/02/2013 13:13:39] [DEBUG] {Conexao.java->abrirConexao} Conexão 'INFRENDCON01' aberta com sucesso. (Driver: net.sourceforge.jtds.jdbc.Driver) (Url: jdbc:jtds:sqlserver://srv2031:1433/infrend) (Usuário: u_infrend)
-[14/02/2013 13:13:39] [DEBUG] {Conexao.java->logDatabaseMetaData} **************************
-[14/02/2013 13:13:39] [DEBUG] {Conexao.java->logDatabaseMetaData} Metadados da conexão "INFRENDCON01"
-[14/02/2013 13:13:39] [DEBUG] {Conexao.java->logDatabaseMetaData} DatabaseProductName: Microsoft SQL Server
-[14/02/2013 13:13:39] [DEBUG] {Conexao.java->logDatabaseMetaData} DatabaseProductVersion: 09.00.4035
-[14/02/2013 13:13:39] [DEBUG] {Conexao.java->logDatabaseMetaData} DatabaseMajorVersion: 9
-[14/02/2013 13:13:39] [DEBUG] {Conexao.java->logDatabaseMetaData} DatabaseMinorVersion: 0
-[14/02/2013 13:13:39] [DEBUG] {Conexao.java->logDatabaseMetaData} DriverName: jTDS Type 4 JDBC Driver for MS SQL Server and Sybase
-[14/02/2013 13:13:39] [DEBUG] {Conexao.java->logDatabaseMetaData} DriverVersion: 1.2.4
-[14/02/2013 13:13:39] [DEBUG] {Conexao.java->logDatabaseMetaData} DriverMajorVersion: 1
-[14/02/2013 13:13:39] [DEBUG] {Conexao.java->logDatabaseMetaData} DriverMinorVersion: 2
-[14/02/2013 13:13:39] [DEBUG] {Conexao.java->logDatabaseMetaData} JDBCMajorVersion: 3
-[14/02/2013 13:13:39] [DEBUG] {Conexao.java->logDatabaseMetaData} JDBCMinorVersion: 0
-[14/02/2013 13:13:39] [DEBUG] {Conexao.java->logDatabaseMetaData} **************************
-[14/02/2013 13:13:39] [DEBUG] {OpconExec.java->testarConexoes} Conexão 'INFRENDCON01' aberta com sucesso
-[14/02/2013 13:13:39] [DEBUG] {OpconExec.java->testarConexoes} Teste de conexões executado com sucesso
-[14/02/2013 13:13:39] [DEBUG] {OpconExec.java->executarFases} 	Executando as fases do sistema
-[14/02/2013 13:13:39] [ INFO] {OpconExec.java->executarFases} Executando a fase 0...
-[14/02/2013 13:13:39] [DEBUG] {OpconEventManagerImpl.java->createEventFile} event file name: F:\opcon\msgindir\OpconExec18187639822038
-[14/02/2013 13:13:41] [ INFO] {Core.java->execute} Iniciando processamento dos arquivos...
-[14/02/2013 13:13:41] [ INFO] {Core.java->execute} Processando arquivo \\castanha\Integracao\FUNDOSNOR\INFREND\FUNDOSNOR_INFREND_2012123100000IRPF.000...
-[14/02/2013 13:13:42] [ INFO] {Core.java->execute} \\castanha\Integracao\FUNDOSNOR\INFREND\FUNDOSNOR_INFREND_2012123100000IRPF.000 processado com status PROCESSADO_OK
-[14/02/2013 13:13:42] [ INFO] {Core.java->execute} Processando arquivo \\castanha\Integracao\FUNDOSNOR\INFREND\FUNDOSNOR_INFREND_2012123100000IRPJ.000...
-[14/02/2013 13:13:42] [ INFO] {Core.java->execute} \\castanha\Integracao\FUNDOSNOR\INFREND\FUNDOSNOR_INFREND_2012123100000IRPJ.000 processado com status PROCESSADO_OK
-[14/02/2013 13:13:42] [ INFO] {Core.java->execute} Processando arquivo \\castanha\Integracao\POUP\INFREND\POUP_INFREND_2012123100000IRPF.000...
-[14/02/2013 13:22:05] [ INFO] {Core.java->execute} \\castanha\Integracao\POUP\INFREND\POUP_INFREND_2012123100000IRPF.000 processado com status PROCESSADO_OK
-[14/02/2013 13:22:05] [ INFO] {Core.java->execute} Processando arquivo \\castanha\Integracao\POUP\INFREND\POUP_INFREND_2012123100000IRPJ.000...
-[14/02/2013 13:22:12] [ INFO] {Core.java->execute} \\castanha\Integracao\POUP\INFREND\POUP_INFREND_2012123100000IRPJ.000 processado com status PROCESSADO_OK
-[14/02/2013 13:22:12] [ INFO] {Core.java->execute} Processando arquivo \\castanha\Integracao\PRAZO\INFREND\PRAZO_INFREND_2012123100000IRPF.000...
-[14/02/2013 13:22:27] [ INFO] {Core.java->execute} \\castanha\Integracao\PRAZO\INFREND\PRAZO_INFREND_2012123100000IRPF.000 processado com status PROCESSADO_OK
-[14/02/2013 13:22:27] [ INFO] {Core.java->execute} Processando arquivo \\castanha\Integracao\PRAZO\INFREND\PRAZO_INFREND_2012123100000IRPJ.000...
-[14/02/2013 13:22:29] [ INFO] {Core.java->execute} \\castanha\Integracao\PRAZO\INFREND\PRAZO_INFREND_2012123100000IRPJ.000 processado com status PROCESSADO_OK
-[14/02/2013 13:22:29] [ INFO] {Core.java->execute} Processando arquivo \\castanha\Integracao\CCOR\INFREND\CCOR_INFREND_2012123100000IRPF.000...
-[14/02/2013 13:32:39] [ INFO] {Core.java->execute} \\castanha\Integracao\CCOR\INFREND\CCOR_INFREND_2012123100000IRPF.000 processado com status PROCESSADO_OK
-[14/02/2013 13:32:39] [ INFO] {Core.java->execute} Processando arquivo \\castanha\Integracao\CCOR\INFREND\CCOR_INFREND_2012123100000IRPJ.000...
-[14/02/2013 13:35:10] [ INFO] {Core.java->execute} \\castanha\Integracao\CCOR\INFREND\CCOR_INFREND_2012123100000IRPJ.000 processado com status PROCESSADO_OK
-[14/02/2013 13:35:10] [ INFO] {Core.java->execute} Processando arquivo \\castanha\Integracao\CCI\INFREND\CCI_INFREND_2012123100000IRPF.000...
-[14/02/2013 13:35:12] [ INFO] {Core.java->execute} \\castanha\Integracao\CCI\INFREND\CCI_INFREND_2012123100000IRPF.000 processado com status PROCESSADO_OK
-[14/02/2013 13:35:12] [ INFO] {Core.java->execute} Processando arquivo \\castanha\Integracao\CCI\INFREND\CCI_INFREND_2012123100000IRPJ.000...
-[14/02/2013 13:35:12] [ INFO] {Core.java->execute} \\castanha\Integracao\CCI\INFREND\CCI_INFREND_2012123100000IRPJ.000 processado com status PROCESSADO_OK
-[14/02/2013 13:35:12] [ INFO] {Core.java->execute} Processamento dos arquivos finalizado!
-[14/02/2013 13:35:12] [ INFO] {OpconExec.java->executarFases} Fase 0 concluida com sucesso
-[14/02/2013 13:35:12] [DEBUG] {OpconEventManagerImpl.java->createEventFile} event file name: F:\opcon\msgindir\OpconExec19479821809449
-[14/02/2013 13:35:12] [ INFO] {OpconExec.java->showEndProcessOk} Processamento realizado com sucesso
-[14/02/2013 13:35:12] [ INFO] {OpconExec.java->showEndProcessOk} &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+[25/02/2013 09:56:17] [DEBUG] {OpconExec.java->logSystemProperties} &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+[25/02/2013 09:56:17] [DEBUG] {OpconExec.java->testarConexoes} Executando testes de conexão a banco de dados
+[25/02/2013 09:56:17] [DEBUG] {OpconExec.java->testarConexoes} Conexão 'INFRENDCON01' encontrada com sucesso
+[25/02/2013 09:56:17] [DEBUG] {Conexao.java->abrirConexao} Tentando abrir conexão 'INFRENDCON01'. (Driver: net.sourceforge.jtds.jdbc.Driver) (Url: jdbc:jtds:sqlserver://srv2031:1433/infrend) (Usuário: u_infrend)
+[25/02/2013 09:56:17] [DEBUG] {Conexao.java->abrirConexao} Conexão 'INFRENDCON01' aberta com sucesso. (Driver: net.sourceforge.jtds.jdbc.Driver) (Url: jdbc:jtds:sqlserver://srv2031:1433/infrend) (Usuário: u_infrend)
+[25/02/2013 09:56:17] [DEBUG] {Conexao.java->logDatabaseMetaData} **************************
+[25/02/2013 09:56:17] [DEBUG] {Conexao.java->logDatabaseMetaData} Metadados da conexão "INFRENDCON01"
+[25/02/2013 09:56:17] [DEBUG] {Conexao.java->logDatabaseMetaData} DatabaseProductName: Microsoft SQL Server
+[25/02/2013 09:56:17] [DEBUG] {Conexao.java->logDatabaseMetaData} DatabaseProductVersion: 09.00.4035
+[25/02/2013 09:56:17] [DEBUG] {Conexao.java->logDatabaseMetaData} DatabaseMajorVersion: 9
+[25/02/2013 09:56:17] [DEBUG] {Conexao.java->logDatabaseMetaData} DatabaseMinorVersion: 0
+[25/02/2013 09:56:17] [DEBUG] {Conexao.java->logDatabaseMetaData} DriverName: jTDS Type 4 JDBC Driver for MS SQL Server and Sybase
+[25/02/2013 09:56:17] [DEBUG] {Conexao.java->logDatabaseMetaData} DriverVersion: 1.2.4
+[25/02/2013 09:56:17] [DEBUG] {Conexao.java->logDatabaseMetaData} DriverMajorVersion: 1
+[25/02/2013 09:56:17] [DEBUG] {Conexao.java->logDatabaseMetaData} DriverMinorVersion: 2
+[25/02/2013 09:56:17] [DEBUG] {Conexao.java->logDatabaseMetaData} JDBCMajorVersion: 3
+[25/02/2013 09:56:17] [DEBUG] {Conexao.java->logDatabaseMetaData} JDBCMinorVersion: 0
+[25/02/2013 09:56:17] [DEBUG] {Conexao.java->logDatabaseMetaData} **************************
+[25/02/2013 09:56:17] [DEBUG] {OpconExec.java->testarConexoes} Conexão 'INFRENDCON01' aberta com sucesso
+[25/02/2013 09:56:17] [DEBUG] {OpconExec.java->testarConexoes} Teste de conexões executado com sucesso
+[25/02/2013 09:56:17] [DEBUG] {OpconExec.java->executarFases} 	Executando as fases do sistema
+[25/02/2013 09:56:17] [ INFO] {OpconExec.java->executarFases} Executando a fase 0...
+[25/02/2013 09:56:17] [DEBUG] {OpconEventManagerImpl.java->createEventFile} event file name: F:\opcon\msgindir\OpconExec6278249825367
+[25/02/2013 09:56:19] [ INFO] {Core.java->execute} Iniciando processamento dos arquivos...
+[25/02/2013 09:56:19] [ WARN] {Core.java->execute} Arquivo nao localizado em:\\castanha\Integracao\FUNDOSNOR\INFREND; ID_SPEC_ARQUIVO: 3
+[25/02/2013 09:56:19] [ WARN] {Core.java->execute} Arquivo nao localizado em:\\castanha\Integracao\FUNDOSNOR\INFREND; ID_SPEC_ARQUIVO: 4
+[25/02/2013 09:56:19] [ WARN] {Core.java->execute} Arquivo nao localizado em:\\castanha\Integracao\POUP\INFREND; ID_SPEC_ARQUIVO: 5
+[25/02/2013 09:56:19] [ WARN] {Core.java->execute} Arquivo nao localizado em:\\castanha\Integracao\POUP\INFREND; ID_SPEC_ARQUIVO: 6
+[25/02/2013 09:56:19] [ INFO] {Core.java->execute} Reprocessando arquivo \\castanha\Integracao\PRAZO\INFREND\PRAZO_INFREND_2012123100000IRPF.000...
+[25/02/2013 09:56:30] [ INFO] {Core.java->execute} \\castanha\Integracao\PRAZO\INFREND\PRAZO_INFREND_2012123100000IRPF.000 processado com status PROCESSADO_OK
+[25/02/2013 09:56:30] [ WARN] {Core.java->execute} Arquivo nao localizado em:\\castanha\Integracao\PRAZO\INFREND; ID_SPEC_ARQUIVO: 8
+[25/02/2013 09:56:30] [ WARN] {Core.java->execute} Arquivo nao localizado em:\\castanha\Integracao\CCOR\INFREND; ID_SPEC_ARQUIVO: 16
+[25/02/2013 09:56:30] [ WARN] {Core.java->execute} Arquivo nao localizado em:\\castanha\Integracao\CCOR\INFREND; ID_SPEC_ARQUIVO: 17
+[25/02/2013 09:56:30] [ WARN] {Core.java->execute} Arquivo nao localizado em:\\castanha\Integracao\CCI\INFREND; ID_SPEC_ARQUIVO: 18
+[25/02/2013 09:56:30] [ WARN] {Core.java->execute} Arquivo nao localizado em:\\castanha\Integracao\CCI\INFREND; ID_SPEC_ARQUIVO: 19
+[25/02/2013 09:56:30] [ INFO] {Core.java->execute} Processamento dos arquivos finalizado!
+[25/02/2013 09:56:30] [ INFO] {OpconExec.java->executarFases} Fase 0 concluida com sucesso
+[25/02/2013 09:56:30] [DEBUG] {OpconEventManagerImpl.java->createEventFile} event file name: F:\opcon\msgindir\OpconExec6291726154840
+[25/02/2013 09:56:31] [ INFO] {OpconExec.java->showEndProcessOk} Processamento realizado com sucesso
+[25/02/2013 09:56:31] [ INFO] {OpconExec.java->showEndProcessOk} &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&

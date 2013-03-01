@@ -382,7 +382,7 @@ SECRETARIA DA RECEITA FEDERAL]]></text>
 				<textElement textAlignment="Right">
 					<font size="6"/>
 				</textElement>
-				<text><![CDATA[ANO  CALEND�?RIO  DE]]></text>
+				<text><![CDATA[ANO  CALENDÁRIO  DE]]></text>
 			</staticText>
 			<textField>
 				<reportElement uuid="b9e7bb92-cb03-4b52-a8a1-91cec5bcf011" x="291" y="8" width="60" height="8"/>
@@ -404,7 +404,7 @@ SECRETARIA DA RECEITA FEDERAL]]></text>
 				<textElement textAlignment="Center">
 					<font size="6"/>
 				</textElement>
-				<text><![CDATA[IMPOSTO  DE  RENDA -  PESSOA JUR�?DICA]]></text>
+				<text><![CDATA[IMPOSTO  DE  RENDA -  PESSOA JURÍDICA]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="402fab9a-ac3e-4b51-a236-7db81b32f150" x="351" y="62" width="204" height="12"/>
@@ -518,7 +518,7 @@ SECRETARIA DA RECEITA FEDERAL]]></text>
 					<font fontName="SansSerif" size="9" isBold="true" isItalic="true" pdfFontName="Helvetica-Bold" isPdfEmbedded="false"/>
 					<paragraph leftIndent="5"/>
 				</textElement>
-				<text><![CDATA[2  -  PESSOA JUR�?DICA BENEFICI�?RIA DOS  RENDIMENTOS]]></text>
+				<text><![CDATA[2  -  PESSOA JURÍDICA BENEFICIÁRIA DOS  RENDIMENTOS]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="87c481c7-e95f-4e7e-8240-15d0196b0009" style="table" x="101" y="126" width="250" height="35"/>

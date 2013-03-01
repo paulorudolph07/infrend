@@ -13,22 +13,23 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 
 import br.com.bancoamazonia.infrend.web.services.SeguClientService;
-
-public class TransactionAuthorizationListener implements PhaseListener
-{
+/**
+ * Valida se a pagina (link) requisitada pertence as transacoes do usuario
+ * @author 7485
+ *
+ */
+public class TransactionAuthorizationListener implements PhaseListener {
 	private static final long serialVersionUID = 1L;
 
 	@Override
-	public void afterPhase(PhaseEvent event)
-	{
+	public void afterPhase(PhaseEvent event) {
 		FacesContext context = event.getFacesContext();
 		HttpSession session = (HttpSession)context.getExternalContext().getSession(true);
 				
 		ApplicationContext webContext = WebApplicationContextUtils.getWebApplicationContext((ServletContext)context.getExternalContext().getContext());
 		SeguClientService seguClientService = webContext.getBean(SeguClientService.class);
 		String authKey = (String)session.getAttribute("authkey");
-		if(authKey != null && !authKey.equals(""))
-		{
+		if(authKey != null && !authKey.equals("")) {
 			try {
 				String transactions = seguClientService.getTransactionsAsTextByAuthKey(authKey);
 				if(!transactions.contains(context.getViewRoot().getViewId())) {
@@ -50,14 +51,10 @@ public class TransactionAuthorizationListener implements PhaseListener
 	}
 
 	@Override
-	public void beforePhase(PhaseEvent arg0)
-	{
-		
-	}
+	public void beforePhase(PhaseEvent arg0) {}
 
 	@Override
-	public PhaseId getPhaseId()
-	{
+	public PhaseId getPhaseId() {
 		return PhaseId.RESTORE_VIEW;
 	}
 

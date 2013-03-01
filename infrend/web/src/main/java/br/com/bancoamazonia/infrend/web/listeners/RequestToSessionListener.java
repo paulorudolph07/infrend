@@ -22,7 +22,7 @@ public class RequestToSessionListener implements PhaseListener {
 		try {
 			String link = request.getParameter("currentLink");
 			if(link != null && !link.equals(""))
-				session.setAttribute("currentLink", request.getParameter("currentLink"));
+				session.setAttribute("currentLink", link);
 		}
 		catch (Exception e) {
 			e.printStackTrace();

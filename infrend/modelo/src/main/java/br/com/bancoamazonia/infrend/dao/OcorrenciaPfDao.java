@@ -1,6 +1,7 @@
 package br.com.bancoamazonia.infrend.dao;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 import org.hibernate.criterion.DetachedCriteria;
 import org.hibernate.criterion.Projections;
@@ -33,6 +34,16 @@ public class OcorrenciaPfDao extends Dao<OcorrenciaPessoaFisica> {
 		.add(Restrictions.eq("db.cliente.id", cliente.getId()));
 		BigDecimal sum = (BigDecimal)DataAccessUtils.uniqueResult(getHibernateTemplate().findByCriteria(criteria));
 		return sum!=null?sum:new BigDecimal(0);
+	}
+	@SuppressWarnings("unchecked")
+	public List<OcorrenciaPessoaFisica> listByCodigoAndAno(String codigo, Integer ano) {
+		DetachedCriteria criteria = DetachedCriteria.forClass(OcorrenciaPessoaFisica.class, "o");
+		criteria
+		.createAlias("o.dadoBancario", "db")
+		.createAlias("db.cliente", "c")
+		.add(Restrictions.eq("c.codigo", codigo))
+		.add(Restrictions.eq("o.ano", ano));
+		return (List<OcorrenciaPessoaFisica>)getHibernateTemplate().findByCriteria(criteria);
 	}
 	
 }

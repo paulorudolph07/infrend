@@ -33,7 +33,11 @@
 	<bean id="specArquivoTabBean" class="br.com.bancoamazonia.infrend.web.beans.tabs.SpecArquivoTabBean" scope="view">
 		<aop:scoped-proxy/>
 	</bean>
-	
+	<!-- scope=session pois sera criado e menu dinamicamente a partir das transacoes do usuario, apenas na conexao do mesmo (criacao da sessao) -->
+	<!-- <bean id="panel" class="org.primefaces.component.accordionpanel.AccordionPanel" scope="request" />
+	<bean id="accordionBean" class="br.com.bancoamazonia.infrend.web.beans.AccordionBean" scope="request">
+		<property name="panel" ref="panel"/>
+	</bean> -->
 	<bean id="accordionBean" class="br.com.bancoamazonia.infrend.web.beans.AccordionBean" scope="view">
 		<aop:scoped-proxy/>
 	</bean>
@@ -50,18 +54,6 @@
 		<property name="layoutArquivoService"><ref bean="layoutArquivoService"/></property>
 		<property name="layoutArquivoTabBean"><ref bean="layoutArquivoTabBean"/></property>
 	</bean>
-	
-	<!-- spring-security -->
-	<!-- <bean id="loginBean" class="br.com.bancoamazonia.infrend.web.beans.LoginBean" scope="request">
-		<aop:scoped-proxy/>
-		<property name="authenticationService"><ref bean="authenticationService"/></property>
-	</bean>
-	
-	<bean id="faceletsViewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver">
-		<property name="viewClass" value="org.springframework.faces.mvc.JsfView"/>
-		<property name="prefix" value="/WEB-INF/" />
-		<property name="suffix" value=".xhtml" />
-	</bean> -->
 	
 	<bean id="propriedadeBean" class="br.com.bancoamazonia.infrend.web.beans.PropriedadeBean" scope="view">
 		<aop:scoped-proxy/>

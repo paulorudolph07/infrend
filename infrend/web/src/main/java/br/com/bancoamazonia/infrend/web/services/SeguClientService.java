@@ -2,6 +2,8 @@ package br.com.bancoamazonia.infrend.web.services;
 
 import java.io.IOException;
 import java.rmi.RemoteException;
+import java.util.Arrays;
+import java.util.List;
 
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -71,9 +73,8 @@ public class SeguClientService
 		return seguServiceProxy.validarUsuarioByAuthKey(authKey);
 	}
 	
-	public TransacaoBean[] getTransactionsByAuthKey(String authKey) throws RemoteException
-	{
-		return seguServiceProxy.obterTransacoesByAuthKey(authKey, sigla).getTransacoes();
+	public List<TransacaoBean> getTransactionsByAuthKey(String authKey) throws RemoteException {
+		return Arrays.asList(seguServiceProxy.obterTransacoesByAuthKey(authKey, sigla).getTransacoes());
 	}
 	
 	public String getTransactionsAsTextByAuthKey(String authKey) throws RemoteException
