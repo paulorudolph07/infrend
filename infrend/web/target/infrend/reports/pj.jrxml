@@ -1,0 +1,2599 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version last-->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="331f7bad-6d52-495b-b7b2-7e1fd43fcb57">
+	<property name="ireport.zoom" value="1.0000000000000002"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="175"/>
+	<style name="table">
+		<pen lineWidth="0.0" lineStyle="Solid"/>
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TH" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_CH" mode="Opaque" backcolor="#FFBFBF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3" mode="Opaque" forecolor="#FFFFFF" backcolor="#FFFFFF" fill="Solid">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3_TH" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3_CH" mode="Opaque" backcolor="#FFBFBF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="SansSerif-Italic-Bold" forecolor="#000000" backcolor="#FFFFFF" fill="Solid" fontSize="9" isBold="true" isUnderline="false" isStrikeThrough="false" pdfFontName="Helvetica-Bold"/>
+	<subDataset name="poupanca_dataset" uuid="375400c0-9bbd-448a-873d-d9ee55b4a3f6">
+		<parameter name="poupanca_rendimento_1" class="java.lang.String">
+			<defaultValueExpression><![CDATA[$P{poupanca_rendimento_1}==null?"":$P{poupanca_rendimento_1}]]></defaultValueExpression>
+		</parameter>
+		<parameter name="poupanca_rendimento_2" class="java.lang.String">
+			<defaultValueExpression><![CDATA[$P{poupanca_rendimento_2}==null?"":$P{poupanca_rendimento_2}]]></defaultValueExpression>
+		</parameter>
+		<parameter name="poupanca_rendimento_3" class="java.lang.String">
+			<defaultValueExpression><![CDATA[$P{poupanca_rendimento_3}==null?"":$P{poupanca_rendimento_3}]]></defaultValueExpression>
+		</parameter>
+		<parameter name="poupanca_rendimento_4" class="java.lang.String">
+			<defaultValueExpression><![CDATA[$P{poupanca_rendimento_4}==null?"":$P{poupanca_rendimento_4}]]></defaultValueExpression>
+		</parameter>
+		<parameter name="poupanca_rendimento_5" class="java.lang.String">
+			<defaultValueExpression><![CDATA[$P{poupanca_rendimento_5}==null?"":$P{poupanca_rendimento_5}]]></defaultValueExpression>
+		</parameter>
+		<parameter name="poupanca_rendimento_6" class="java.lang.String">
+			<defaultValueExpression><![CDATA[$P{poupanca_rendimento_6}==null?"":$P{poupanca_rendimento_6}]]></defaultValueExpression>
+		</parameter>
+		<parameter name="poupanca_rendimento_7" class="java.lang.String">
+			<defaultValueExpression><![CDATA[$P{poupanca_rendimento_7}==null?"":$P{poupanca_rendimento_7}]]></defaultValueExpression>
+		</parameter>
+		<parameter name="poupanca_rendimento_8" class="java.lang.String">
+			<defaultValueExpression><![CDATA[$P{poupanca_rendimento_8}==null?"":$P{poupanca_rendimento_8}]]></defaultValueExpression>
+		</parameter>
+		<parameter name="poupanca_rendimento_9" class="java.lang.String">
+			<defaultValueExpression><![CDATA[$P{poupanca_rendimento_9}==null?"":$P{poupanca_rendimento_9}]]></defaultValueExpression>
+		</parameter>
+		<parameter name="poupanca_rendimento_10" class="java.lang.String">
+			<defaultValueExpression><![CDATA[$P{poupanca_rendimento_10}==null?"":$P{poupanca_rendimento_10}]]></defaultValueExpression>
+		</parameter>
+		<parameter name="poupanca_rendimento_11" class="java.lang.String">
+			<defaultValueExpression><![CDATA[$P{poupanca_rendimento_11}==null?"":$P{poupanca_rendimento_11}]]></defaultValueExpression>
+		</parameter>
+		<parameter name="poupanca_rendimento_12" class="java.lang.String">
+			<defaultValueExpression><![CDATA[$P{poupanca_rendimento_12}==null?"":$P{poupanca_rendimento_12}]]></defaultValueExpression>
+		</parameter>
+		<parameter name="poupanca_imposto_1" class="java.lang.String">
+			<defaultValueExpression><![CDATA[$P{poupanca_imposto_1}==null?"":$P{poupanca_imposto_1}]]></defaultValueExpression>
+		</parameter>
+		<parameter name="poupanca_imposto_2" class="java.lang.String">
+			<defaultValueExpression><![CDATA[$P{poupanca_imposto_2}==null?"":$P{poupanca_imposto_2}]]></defaultValueExpression>
+		</parameter>
+		<parameter name="poupanca_imposto_3" class="java.lang.String">
+			<defaultValueExpression><![CDATA[$P{poupanca_imposto_3}==null?"":$P{poupanca_imposto_3}]]></defaultValueExpression>
+		</parameter>
+		<parameter name="poupanca_imposto_4" class="java.lang.String">
+			<defaultValueExpression><![CDATA[$P{poupanca_imposto_4}==null?"":$P{poupanca_imposto_4}]]></defaultValueExpression>
+		</parameter>
+		<parameter name="poupanca_imposto_5" class="java.lang.String">
+			<defaultValueExpression><![CDATA[$P{poupanca_imposto_5}==null?"":$P{poupanca_imposto_5}]]></defaultValueExpression>
+		</parameter>
+		<parameter name="poupanca_imposto_6" class="java.lang.String">
+			<defaultValueExpression><![CDATA[$P{poupanca_imposto_6}==null?"":$P{poupanca_imposto_6}]]></defaultValueExpression>
+		</parameter>
+		<parameter name="poupanca_imposto_7" class="java.lang.String">
+			<defaultValueExpression><![CDATA[$P{poupanca_imposto_7}==null?"":$P{poupanca_imposto_7}]]></defaultValueExpression>
+		</parameter>
+		<parameter name="poupanca_imposto_8" class="java.lang.String">
+			<defaultValueExpression><![CDATA[$P{poupanca_imposto_8}==null?"":$P{poupanca_imposto_8}]]></defaultValueExpression>
+		</parameter>
+		<parameter name="poupanca_imposto_9" class="java.lang.String">
+			<defaultValueExpression><![CDATA[$P{poupanca_imposto_9}==null?"":$P{poupanca_imposto_9}]]></defaultValueExpression>
+		</parameter>
+		<parameter name="poupanca_imposto_10" class="java.lang.String">
+			<defaultValueExpression><![CDATA[$P{poupanca_imposto_10}==null?"":$P{poupanca_imposto_10}]]></defaultValueExpression>
+		</parameter>
+		<parameter name="poupanca_imposto_11" class="java.lang.String">
+			<defaultValueExpression><![CDATA[$P{poupanca_imposto_11}==null?"":$P{poupanca_imposto_11}]]></defaultValueExpression>
+		</parameter>
+		<parameter name="poupanca_imposto_12" class="java.lang.String">
+			<defaultValueExpression><![CDATA[$P{poupanca_imposto_12}==null?"":$P{poupanca_imposto_12}]]></defaultValueExpression>
+		</parameter>
+	</subDataset>
+	<subDataset name="fundos_dataset" uuid="89be44bc-c748-4b44-943b-b8d34e0cb7ee">
+		<parameter name="fundos_rendimento_1" class="java.lang.String">
+			<defaultValueExpression><![CDATA[$P{fundos_rendimento_1}==null?"":$P{fundos_rendimento_1}]]></defaultValueExpression>
+		</parameter>
+		<parameter name="fundos_rendimento_2" class="java.lang.String">
+			<defaultValueExpression><![CDATA[$P{fundos_rendimento_2}==null?"":$P{fundos_rendimento_2}]]></defaultValueExpression>
+		</parameter>
+		<parameter name="fundos_rendimento_3" class="java.lang.String">
+			<defaultValueExpression><![CDATA[$P{fundos_rendimento_3}==null?"":$P{fundos_rendimento_3}]]></defaultValueExpression>
+		</parameter>
+		<parameter name="fundos_rendimento_4" class="java.lang.String">
+			<defaultValueExpression><![CDATA[$P{fundos_rendimento_4}==null?"":$P{fundos_rendimento_4}]]></defaultValueExpression>
+		</parameter>
+		<parameter name="fundos_rendimento_5" class="java.lang.String">
+			<defaultValueExpression><![CDATA[$P{fundos_rendimento_5}==null?"":$P{fundos_rendimento_5}]]></defaultValueExpression>
+		</parameter>
+		<parameter name="fundos_rendimento_6" class="java.lang.String">
+			<defaultValueExpression><![CDATA[$P{fundos_rendimento_6}==null?"":$P{fundos_rendimento_6}]]></defaultValueExpression>
+		</parameter>
+		<parameter name="fundos_rendimento_7" class="java.lang.String">
+			<defaultValueExpression><![CDATA[$P{fundos_rendimento_7}==null?"":$P{fundos_rendimento_7}]]></defaultValueExpression>
+		</parameter>
+		<parameter name="fundos_rendimento_8" class="java.lang.String">
+			<defaultValueExpression><![CDATA[$P{fundos_rendimento_8}==null?"":$P{fundos_rendimento_8}]]></defaultValueExpression>
+		</parameter>
+		<parameter name="fundos_rendimento_9" class="java.lang.String">
+			<defaultValueExpression><![CDATA[$P{fundos_rendimento_9}==null?"":$P{fundos_rendimento_9}]]></defaultValueExpression>
+		</parameter>
+		<parameter name="fundos_rendimento_10" class="java.lang.String">
+			<defaultValueExpression><![CDATA[$P{fundos_rendimento_10}==null?"":$P{fundos_rendimento_10}]]></defaultValueExpression>
+		</parameter>
+		<parameter name="fundos_rendimento_11" class="java.lang.String">
+			<defaultValueExpression><![CDATA[$P{fundos_rendimento_11}==null?"":$P{fundos_rendimento_11}]]></defaultValueExpression>
+		</parameter>
+		<parameter name="fundos_rendimento_12" class="java.lang.String">
+			<defaultValueExpression><![CDATA[$P{fundos_rendimento_12}==null?"":$P{fundos_rendimento_12}]]></defaultValueExpression>
+		</parameter>
+		<parameter name="fundos_imposto_1" class="java.lang.String">
+			<defaultValueExpression><![CDATA[$P{fundos_imposto_1}==null?"":$P{fundos_imposto_1}]]></defaultValueExpression>
+		</parameter>
+		<parameter name="fundos_imposto_2" class="java.lang.String">
+			<defaultValueExpression><![CDATA[$P{fundos_imposto_2}==null?"":$P{fundos_imposto_2}]]></defaultValueExpression>
+		</parameter>
+		<parameter name="fundos_imposto_3" class="java.lang.String">
+			<defaultValueExpression><![CDATA[$P{fundos_imposto_3}==null?"":$P{fundos_imposto_3}]]></defaultValueExpression>
+		</parameter>
+		<parameter name="fundos_imposto_4" class="java.lang.String">
+			<defaultValueExpression><![CDATA[$P{fundos_imposto_4}==null?"":$P{fundos_imposto_4}]]></defaultValueExpression>
+		</parameter>
+		<parameter name="fundos_imposto_5" class="java.lang.String">
+			<defaultValueExpression><![CDATA[$P{fundos_imposto_5}==null?"":$P{fundos_imposto_5}]]></defaultValueExpression>
+		</parameter>
+		<parameter name="fundos_imposto_6" class="java.lang.String">
+			<defaultValueExpression><![CDATA[$P{fundos_imposto_6}==null?"":$P{fundos_imposto_6}]]></defaultValueExpression>
+		</parameter>
+		<parameter name="fundos_imposto_7" class="java.lang.String">
+			<defaultValueExpression><![CDATA[$P{fundos_imposto_7}==null?"":$P{fundos_imposto_7}]]></defaultValueExpression>
+		</parameter>
+		<parameter name="fundos_imposto_8" class="java.lang.String">
+			<defaultValueExpression><![CDATA[$P{fundos_imposto_8}==null?"":$P{fundos_imposto_8}]]></defaultValueExpression>
+		</parameter>
+		<parameter name="fundos_imposto_9" class="java.lang.String">
+			<defaultValueExpression><![CDATA[$P{fundos_imposto_9}==null?"":$P{fundos_imposto_9}]]></defaultValueExpression>
+		</parameter>
+		<parameter name="fundos_imposto_10" class="java.lang.String">
+			<defaultValueExpression><![CDATA[$P{fundos_imposto_10}==null?"":$P{fundos_imposto_10}]]></defaultValueExpression>
+		</parameter>
+		<parameter name="fundos_imposto_11" class="java.lang.String">
+			<defaultValueExpression><![CDATA[$P{fundos_imposto_11}==null?"":$P{fundos_imposto_11}]]></defaultValueExpression>
+		</parameter>
+		<parameter name="fundos_imposto_12" class="java.lang.String">
+			<defaultValueExpression><![CDATA[$P{fundos_imposto_12}==null?"":$P{fundos_imposto_12}]]></defaultValueExpression>
+		</parameter>
+	</subDataset>
+	<subDataset name="prazo_dataset" uuid="78655730-85c7-49f9-8d2d-8d8f93d7f0ca">
+		<parameter name="prazo_rendimento_1" class="java.lang.String">
+			<defaultValueExpression><![CDATA[$P{prazo_rendimento_1}==null?"":$P{prazo_rendimento_1}]]></defaultValueExpression>
+		</parameter>
+		<parameter name="prazo_rendimento_2" class="java.lang.String">
+			<defaultValueExpression><![CDATA[$P{prazo_rendimento_2}==null?"":$P{prazo_rendimento_2}]]></defaultValueExpression>
+		</parameter>
+		<parameter name="prazo_rendimento_3" class="java.lang.String">
+			<defaultValueExpression><![CDATA[$P{prazo_rendimento_3}==null?"":$P{prazo_rendimento_3}]]></defaultValueExpression>
+		</parameter>
+		<parameter name="prazo_rendimento_4" class="java.lang.String">
+			<defaultValueExpression><![CDATA[$P{prazo_rendimento_4}==null?"":$P{prazo_rendimento_4}]]></defaultValueExpression>
+		</parameter>
+		<parameter name="prazo_rendimento_5" class="java.lang.String">
+			<defaultValueExpression><![CDATA[$P{prazo_rendimento_5}==null?"":$P{prazo_rendimento_5}]]></defaultValueExpression>
+		</parameter>
+		<parameter name="prazo_rendimento_6" class="java.lang.String">
+			<defaultValueExpression><![CDATA[$P{prazo_rendimento_6}==null?"":$P{prazo_rendimento_6}]]></defaultValueExpression>
+		</parameter>
+		<parameter name="prazo_rendimento_7" class="java.lang.String">
+			<defaultValueExpression><![CDATA[$P{prazo_rendimento_7}==null?"":$P{prazo_rendimento_7}]]></defaultValueExpression>
+		</parameter>
+		<parameter name="prazo_rendimento_8" class="java.lang.String">
+			<defaultValueExpression><![CDATA[$P{prazo_rendimento_8}==null?"":$P{prazo_rendimento_8}]]></defaultValueExpression>
+		</parameter>
+		<parameter name="prazo_rendimento_9" class="java.lang.String">
+			<defaultValueExpression><![CDATA[$P{prazo_rendimento_9}==null?"":$P{prazo_rendimento_9}]]></defaultValueExpression>
+		</parameter>
+		<parameter name="prazo_rendimento_10" class="java.lang.String">
+			<defaultValueExpression><![CDATA[$P{prazo_rendimento_10}==null?"":$P{prazo_rendimento_10}]]></defaultValueExpression>
+		</parameter>
+		<parameter name="prazo_rendimento_11" class="java.lang.String">
+			<defaultValueExpression><![CDATA[$P{prazo_rendimento_11}==null?"":$P{prazo_rendimento_11}]]></defaultValueExpression>
+		</parameter>
+		<parameter name="prazo_rendimento_12" class="java.lang.String">
+			<defaultValueExpression><![CDATA[$P{prazo_rendimento_12}==null?"":$P{prazo_rendimento_12}]]></defaultValueExpression>
+		</parameter>
+		<parameter name="prazo_imposto_1" class="java.lang.String">
+			<defaultValueExpression><![CDATA[$P{prazo_imposto_1}==null?"":$P{prazo_imposto_1}]]></defaultValueExpression>
+		</parameter>
+		<parameter name="prazo_imposto_2" class="java.lang.String">
+			<defaultValueExpression><![CDATA[$P{prazo_imposto_2}==null?"":$P{prazo_imposto_2}]]></defaultValueExpression>
+		</parameter>
+		<parameter name="prazo_imposto_3" class="java.lang.String">
+			<defaultValueExpression><![CDATA[$P{prazo_imposto_3}==null?"":$P{prazo_imposto_3}]]></defaultValueExpression>
+		</parameter>
+		<parameter name="prazo_imposto_4" class="java.lang.String">
+			<defaultValueExpression><![CDATA[$P{prazo_imposto_4}==null?"":$P{prazo_imposto_4}]]></defaultValueExpression>
+		</parameter>
+		<parameter name="prazo_imposto_5" class="java.lang.String">
+			<defaultValueExpression><![CDATA[$P{prazo_imposto_5}==null?"":$P{prazo_imposto_5}]]></defaultValueExpression>
+		</parameter>
+		<parameter name="prazo_imposto_6" class="java.lang.String">
+			<defaultValueExpression><![CDATA[$P{prazo_imposto_6}==null?"":$P{prazo_imposto_6}]]></defaultValueExpression>
+		</parameter>
+		<parameter name="prazo_imposto_7" class="java.lang.String">
+			<defaultValueExpression><![CDATA[$P{prazo_imposto_7}==null?"":$P{prazo_imposto_7}]]></defaultValueExpression>
+		</parameter>
+		<parameter name="prazo_imposto_8" class="java.lang.String">
+			<defaultValueExpression><![CDATA[$P{prazo_imposto_8}==null?"":$P{prazo_imposto_8}]]></defaultValueExpression>
+		</parameter>
+		<parameter name="prazo_imposto_9" class="java.lang.String">
+			<defaultValueExpression><![CDATA[$P{prazo_imposto_9}==null?"":$P{prazo_imposto_9}]]></defaultValueExpression>
+		</parameter>
+		<parameter name="prazo_imposto_10" class="java.lang.String">
+			<defaultValueExpression><![CDATA[$P{prazo_imposto_10}==null?"":$P{prazo_imposto_10}]]></defaultValueExpression>
+		</parameter>
+		<parameter name="prazo_imposto_11" class="java.lang.String">
+			<defaultValueExpression><![CDATA[$P{prazo_imposto_11}==null?"":$P{prazo_imposto_11}]]></defaultValueExpression>
+		</parameter>
+		<parameter name="prazo_imposto_12" class="java.lang.String">
+			<defaultValueExpression><![CDATA[$P{prazo_imposto_12}==null?"":$P{prazo_imposto_12}]]></defaultValueExpression>
+		</parameter>
+	</subDataset>
+	<subDataset name="swap" uuid="df454c2b-3649-4369-b0d6-9ad6f7649250"/>
+	<parameter name="nome" class="java.lang.String"/>
+	<parameter name="codigo" class="java.lang.String"/>
+	<parameter name="trimestre" class="java.lang.Integer"/>
+	<parameter name="conta_corrente_1" class="java.lang.String"/>
+	<parameter name="conta_corrente_2" class="java.lang.String"/>
+	<parameter name="ano" class="java.lang.Integer"/>
+	<title>
+		<band height="168" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="a572584c-0884-41f5-b7d5-addc6a2de752" style="table" x="0" y="0" width="181" height="35"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="6"/>
+				</textElement>
+				<text><![CDATA[MINIST�RIO  DA FAZENDA
+SECRETARIA DA RECEITA FEDERAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7d70396f-949a-45dd-8573-414617d738c1" style="table" x="181" y="0" width="170" height="8"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5" lineColor="#FFFFFF"/>
+					<rightPen lineWidth="0.5" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="6"/>
+				</textElement>
+				<text><![CDATA[INFORME  DE  RENDIMENTOS  FINANCEIROS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="7627dd34-370e-440f-9baf-55d099139708" x="247" y="23" width="104" height="12"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5" lineColor="#FFFFFF"/>
+					<leftPen lineWidth="0.5" lineColor="#FFFFFF"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<text><![CDATA[� TRIMESTRE]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="c4fb3837-0d9b-4c40-a00f-96629796f551" x="181" y="23" width="66" height="12"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5" lineColor="#000000"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Right">
+					<font size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{trimestre}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="df8847d5-f2c4-403e-8532-a529e52446a8" x="181" y="8" width="110" height="8"/>
+				<box>
+					<leftPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right">
+					<font size="6"/>
+				</textElement>
+				<text><![CDATA[ANO  CALEND�RIO  DE]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="b9e7bb92-cb03-4b52-a8a1-91cec5bcf011" x="291" y="8" width="60" height="8"/>
+				<box>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font size="6"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{ano}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="9b6176c3-878f-4f1e-ae58-eaf42a19a6cb" x="181" y="15" width="170" height="8"/>
+				<box>
+					<leftPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="6"/>
+				</textElement>
+				<text><![CDATA[IMPOSTO  DE  RENDA -  PESSOA JUR�DICA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="402fab9a-ac3e-4b51-a236-7db81b32f150" x="351" y="62" width="204" height="12"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="9" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[OUVIDORIA BANCO DA AMAZ�NIA
+
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="d1e26b6b-f90f-4e7b-ba90-8db008b5b8a6" x="351" y="126" width="204" height="35"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[Central de Atendimento ao Cotista
+0800 913232]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="787d27b4-2a29-4b27-929d-dbb28fbe4245" x="351" y="71" width="204" height="26"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font size="20" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[0800 722 21 71]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="1cc805dd-7c99-499e-b2ea-a75d113c5651" style="table" x="181" y="62" width="170" height="35"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="c7224d14-5d84-4405-b380-d4967d6d5bf8" style="table" x="0" y="62" width="181" height="35"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" isBold="true" pdfFontName="Helvetica-Bold"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="9486c3db-1a5b-4562-8b73-12e59aa2f198" style="SansSerif-Italic-Bold" x="0" y="42" width="351" height="20"/>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font size="9" isBold="true" isItalic="true" isPdfEmbedded="true"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[1  -  IDENTIFICA��O  DA FONTE  PAGADORA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="1ef74f4b-d472-42fc-9b09-4232a75ba565" x="0" y="62" width="181" height="10"/>
+				<textElement>
+					<font size="6"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[Raz�o  Social]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="34c3a3bb-b12e-4356-9264-d1e084e544aa" x="181" y="62" width="170" height="10"/>
+				<textElement>
+					<font size="6"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[N�  de  CNPJ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="17ea3502-a5e6-4388-8656-a3477ce8bb59" x="101" y="126" width="250" height="10"/>
+				<textElement>
+					<font size="6"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[Raz�o  Social]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="6eed2e90-fb4d-40be-adf7-232e6b3ff93e" x="0" y="126" width="102" height="10"/>
+				<textElement>
+					<font size="6"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[CNPJ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f62dcabe-d738-49f5-85c4-75565bf7d8ea" style="table" x="0" y="126" width="101" height="35"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="44b180f2-95a3-4aba-afa4-0cd461f0ef67" x="0" y="106" width="351" height="20"/>
+				<textElement verticalAlignment="Middle" markup="styled">
+					<font fontName="SansSerif" size="9" isBold="true" isItalic="true" pdfFontName="Helvetica-Bold" isPdfEmbedded="false"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[2  -  PESSOA JUR�DICA BENEFICI�RIA DOS  RENDIMENTOS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="87c481c7-e95f-4e7e-8240-15d0196b0009" style="table" x="101" y="126" width="250" height="35"/>
+				<box>
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="9f01ae2a-a8cf-4d22-8c19-b356b7c28855" x="101" y="136" width="250" height="25"/>
+				<textElement textAlignment="Center">
+					<font size="9"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nome}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="91161fff-6de4-43ad-acfb-ad10a17a6657" x="0" y="136" width="101" height="25"/>
+				<textElement textAlignment="Center">
+					<font size="9"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{codigo}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="aaeed6d0-0921-4458-a028-9d8ee2e159ef" x="0" y="71" width="181" height="26"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" pdfFontName="Helvetica-Bold"/>
+					<paragraph leftIndent="10"/>
+				</textElement>
+				<text><![CDATA[BANCO  DA AMAZ�NIA S/A]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="9426e2ad-7017-4db2-a631-dd471ff66dd6" x="181" y="71" width="170" height="26"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10" pdfFontName="Helvetica-Bold"/>
+					<paragraph leftIndent="10"/>
+				</textElement>
+				<text><![CDATA[04.902.979/0001-44]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="77">
+			<componentElement>
+				<reportElement uuid="837db3c5-48cd-4854-9503-07d74172fc90" key="table 3" style="table 3" x="0" y="20" width="555" height="50"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="poupanca_dataset" uuid="227d1b17-5d15-41bf-8c01-6c57bc5ae269">
+						<parametersMapExpression><![CDATA[$P{REPORT_PARAMETERS_MAP}]]></parametersMapExpression>
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource(1)]]></dataSourceExpression>
+					</datasetRun>
+					<jr:column width="78" uuid="f96391d2-62ad-4ffc-9a88-ec685eae0b94">
+						<jr:tableHeader style="table 3" height="17" rowSpan="1">
+							<staticText>
+								<reportElement uuid="47bcf0d4-c320-45ed-b3af-e7db67fa18f3" x="0" y="0" width="78" height="17"/>
+								<box>
+									<pen lineWidth="0.5"/>
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="7"/>
+								</textElement>
+								<text><![CDATA[MESES]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnHeader style="table" height="17" rowSpan="1">
+							<staticText>
+								<reportElement uuid="d3b08e48-deae-4608-80e5-ae0db221abb6" x="0" y="0" width="78" height="17"/>
+								<box>
+									<pen lineWidth="0.5"/>
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="7"/>
+								</textElement>
+								<text><![CDATA[Rendimentos]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table" height="17" rowSpan="1">
+							<staticText>
+								<reportElement uuid="2a3830be-5353-4095-a3b6-1a1c1783a363" x="0" y="0" width="78" height="17"/>
+								<box>
+									<pen lineWidth="0.5"/>
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="7"/>
+								</textElement>
+								<text><![CDATA[Imposto Retido]]></text>
+							</staticText>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="78" uuid="58fafb7e-bbe2-4c5d-818e-9e50308e47e9">
+						<jr:tableHeader style="table" height="17" rowSpan="1">
+							<staticText>
+								<reportElement uuid="249d12f3-ccb1-4e91-813f-1b30f16e1e21" x="0" y="0" width="78" height="17"/>
+								<box>
+									<pen lineWidth="0.5"/>
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="7"/>
+								</textElement>
+								<text><![CDATA[JANEIRO]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnHeader style="table" height="17" rowSpan="1">
+							<textField>
+								<reportElement uuid="a2b4aa61-f055-4c6f-8944-2262024099e8" x="0" y="0" width="78" height="17"/>
+								<box>
+									<pen lineWidth="0.5"/>
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font size="8"/>
+									<paragraph rightIndent="5"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{poupanca_rendimento_1}]]></textFieldExpression>
+							</textField>
+						</jr:columnHeader>
+						<jr:detailCell style="table" height="17" rowSpan="1">
+							<textField>
+								<reportElement uuid="e07c461e-23e3-4810-b522-6dd541da76de" x="0" y="0" width="78" height="17"/>
+								<box>
+									<pen lineWidth="0.5"/>
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font size="8"/>
+									<paragraph rightIndent="5"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{poupanca_imposto_1}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="78" uuid="00734e2f-3a37-4602-bbbd-bf01cefa6c7c">
+						<jr:tableHeader style="table" height="17" rowSpan="1">
+							<staticText>
+								<reportElement uuid="721aadff-f768-4adb-976f-c5e9b86d97c6" x="0" y="0" width="78" height="17"/>
+								<box>
+									<pen lineWidth="0.5"/>
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="7"/>
+								</textElement>
+								<text><![CDATA[FEVEREIRO]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnHeader style="table" height="17" rowSpan="1">
+							<textField>
+								<reportElement uuid="c0852efd-fe22-4653-9fc6-bb74db3c2979" x="0" y="0" width="78" height="17"/>
+								<box>
+									<pen lineWidth="0.5"/>
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font size="8"/>
+									<paragraph rightIndent="5"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{poupanca_rendimento_2}]]></textFieldExpression>
+							</textField>
+						</jr:columnHeader>
+						<jr:detailCell style="table" height="17" rowSpan="1">
+							<textField>
+								<reportElement uuid="cbc137aa-5308-42ff-ae9f-18b162892148" x="0" y="0" width="78" height="17"/>
+								<box>
+									<pen lineWidth="0.5"/>
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font size="8"/>
+									<paragraph rightIndent="5"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{poupanca_imposto_2}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="78" uuid="621b70f3-aea4-40e2-89c6-0c6eb3295ab8">
+						<jr:tableHeader style="table" height="17" rowSpan="1">
+							<staticText>
+								<reportElement uuid="972e80d6-035f-42c4-ae8b-af87860beb23" x="0" y="0" width="78" height="17"/>
+								<box>
+									<pen lineWidth="0.5"/>
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="7"/>
+								</textElement>
+								<text><![CDATA[MAR�O]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnHeader style="table" height="17" rowSpan="1">
+							<textField>
+								<reportElement uuid="fa36eb2d-9a33-433c-8b18-a288dff5a27f" x="0" y="0" width="78" height="17"/>
+								<box>
+									<pen lineWidth="0.5"/>
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font size="8"/>
+									<paragraph rightIndent="5"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{poupanca_rendimento_3}]]></textFieldExpression>
+							</textField>
+						</jr:columnHeader>
+						<jr:detailCell style="table" height="17" rowSpan="1">
+							<textField>
+								<reportElement uuid="0855e47d-2763-462e-83a0-cbc0e03f2a9e" x="0" y="0" width="78" height="17"/>
+								<box>
+									<pen lineWidth="0.5"/>
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font size="8"/>
+									<paragraph rightIndent="5"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{poupanca_imposto_3}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="78" uuid="262071aa-0c7f-4cb3-818f-740d9ae6d2a9">
+						<jr:tableHeader style="table" height="17" rowSpan="1">
+							<staticText>
+								<reportElement uuid="766be212-3197-427d-821c-aacca9c32fd0" x="0" y="0" width="78" height="17"/>
+								<box>
+									<pen lineWidth="0.5"/>
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="7"/>
+								</textElement>
+								<text><![CDATA[ABRIL]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnHeader style="table" height="17" rowSpan="1">
+							<textField>
+								<reportElement uuid="7c1657b0-e269-4b78-9e25-c61d4a3f69a2" x="0" y="0" width="78" height="17"/>
+								<box>
+									<pen lineWidth="0.5"/>
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font size="8"/>
+									<paragraph rightIndent="5"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{poupanca_rendimento_4}]]></textFieldExpression>
+							</textField>
+						</jr:columnHeader>
+						<jr:detailCell style="table" height="17" rowSpan="1">
+							<textField>
+								<reportElement uuid="8bb19d69-5aa5-4007-aad2-794b53739a32" x="0" y="0" width="78" height="17"/>
+								<box>
+									<pen lineWidth="0.5"/>
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font size="8"/>
+									<paragraph rightIndent="5"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{poupanca_imposto_4}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="78" uuid="5924106d-3d48-4083-a40b-4aee90e84626">
+						<jr:tableHeader style="table" height="17" rowSpan="1">
+							<staticText>
+								<reportElement uuid="7f5fbfa2-d493-4759-b10a-2b369f55b026" x="0" y="0" width="78" height="17"/>
+								<box>
+									<pen lineWidth="0.5"/>
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="7"/>
+								</textElement>
+								<text><![CDATA[MAIO]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnHeader style="table" height="17" rowSpan="1">
+							<textField>
+								<reportElement uuid="b8ea0ffb-876b-48c2-9aab-0bbffc61c373" x="0" y="0" width="78" height="17"/>
+								<box>
+									<pen lineWidth="0.5"/>
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font size="8"/>
+									<paragraph rightIndent="5"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{poupanca_rendimento_5}]]></textFieldExpression>
+							</textField>
+						</jr:columnHeader>
+						<jr:detailCell style="table" height="17" rowSpan="1">
+							<textField>
+								<reportElement uuid="2cbb814c-9f69-4a0b-b1f5-587a9edf1eec" x="0" y="0" width="78" height="17"/>
+								<box>
+									<pen lineWidth="0.5"/>
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font size="8"/>
+									<paragraph rightIndent="5"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{poupanca_imposto_5}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="adda8cfd-1c28-4d23-baac-d0b1b464cde1">
+						<jr:tableHeader style="table" height="17" rowSpan="1">
+							<staticText>
+								<reportElement uuid="a08423d6-5915-449f-a800-a210b1f4b40d" x="0" y="0" width="90" height="17"/>
+								<box>
+									<pen lineWidth="0.5"/>
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="7"/>
+								</textElement>
+								<text><![CDATA[JUNHO]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnHeader style="table" height="17" rowSpan="1">
+							<textField>
+								<reportElement uuid="cf9b6c37-1dbf-4968-bde0-001b285333c3" x="0" y="0" width="90" height="17"/>
+								<box>
+									<pen lineWidth="0.5"/>
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font size="8"/>
+									<paragraph rightIndent="5"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{poupanca_rendimento_6}]]></textFieldExpression>
+							</textField>
+						</jr:columnHeader>
+						<jr:detailCell style="table" height="17" rowSpan="1">
+							<textField>
+								<reportElement uuid="59ad318e-d610-424a-a98d-1b127a6259c5" x="0" y="0" width="90" height="17"/>
+								<box>
+									<pen lineWidth="0.5"/>
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font size="8"/>
+									<paragraph rightIndent="5"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{poupanca_imposto_6}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<staticText>
+				<reportElement uuid="fbfb8214-9842-4a08-96da-985e16777b24" x="0" y="0" width="351" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font size="9" isBold="true" isItalic="true" pdfFontName="Helvetica-Bold"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[3  -  POUPAN�A -  VALORES  EM  REAIS]]></text>
+			</staticText>
+		</band>
+		<band height="56">
+			<componentElement>
+				<reportElement uuid="19c898dd-73e8-4bef-8262-c84e4bb0b587" key="table 3" style="table 3" x="0" y="0" width="555" height="50"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="poupanca_dataset" uuid="ad9c06fa-9e8b-43a0-8174-b6092ee52788">
+						<parametersMapExpression><![CDATA[$P{REPORT_PARAMETERS_MAP}]]></parametersMapExpression>
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource(1)]]></dataSourceExpression>
+					</datasetRun>
+					<jr:column width="78" uuid="8371151b-ab25-4e51-80fc-cb154972d26f">
+						<jr:tableHeader style="table 3" height="17" rowSpan="1">
+							<staticText>
+								<reportElement uuid="d690c711-53fc-40ae-8cda-28ccb77f177c" x="0" y="0" width="78" height="17"/>
+								<box>
+									<pen lineWidth="0.0"/>
+									<topPen lineWidth="0.0"/>
+									<leftPen lineWidth="0.0"/>
+									<bottomPen lineWidth="0.0"/>
+									<rightPen lineWidth="0.0"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="7"/>
+								</textElement>
+								<text><![CDATA[MESES]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnHeader style="table" height="17" rowSpan="1">
+							<staticText>
+								<reportElement uuid="20eaf4dc-a8eb-411c-b99b-49f6d0a88e15" x="0" y="0" width="78" height="17"/>
+								<box>
+									<pen lineWidth="0.5"/>
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="7"/>
+								</textElement>
+								<text><![CDATA[Rendimentos]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table" height="17" rowSpan="1">
+							<staticText>
+								<reportElement uuid="08f5586c-a171-4a63-9740-c6552cc18d03" x="0" y="0" width="78" height="17"/>
+								<box>
+									<pen lineWidth="0.5"/>
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="7"/>
+								</textElement>
+								<text><![CDATA[Imposto Retido]]></text>
+							</staticText>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="78" uuid="0f9565eb-9d93-4f60-b427-8d00a07e741c">
+						<jr:tableHeader style="table" height="17" rowSpan="1">
+							<staticText>
+								<reportElement uuid="bcefd52f-05da-4e9e-9646-fa0ff39a1ddb" x="0" y="0" width="78" height="17"/>
+								<box>
+									<pen lineWidth="0.0"/>
+									<topPen lineWidth="0.0"/>
+									<leftPen lineWidth="0.0"/>
+									<bottomPen lineWidth="0.0"/>
+									<rightPen lineWidth="0.0"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="7"/>
+								</textElement>
+								<text><![CDATA[JULHO]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnHeader style="table" height="17" rowSpan="1">
+							<textField>
+								<reportElement uuid="259c22cd-090b-4161-bd64-e9d14dc6e848" x="0" y="0" width="78" height="17"/>
+								<box>
+									<pen lineWidth="0.5"/>
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font size="8"/>
+									<paragraph rightIndent="5"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{poupanca_rendimento_7}]]></textFieldExpression>
+							</textField>
+						</jr:columnHeader>
+						<jr:detailCell style="table" height="17" rowSpan="1">
+							<textField>
+								<reportElement uuid="e7adc9d2-931b-4bf8-b1f0-ce920dd0467f" x="0" y="0" width="78" height="17"/>
+								<box>
+									<pen lineWidth="0.5"/>
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font size="8"/>
+									<paragraph rightIndent="5"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{poupanca_imposto_7}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="78" uuid="3c69cdbb-dc28-4320-a4f1-f478fe6267b5">
+						<jr:tableHeader style="table" height="17" rowSpan="1">
+							<staticText>
+								<reportElement uuid="c60ee529-a0d5-45b4-b119-b3fcc8163747" x="0" y="0" width="78" height="17"/>
+								<box>
+									<pen lineWidth="0.0"/>
+									<topPen lineWidth="0.0"/>
+									<leftPen lineWidth="0.0"/>
+									<bottomPen lineWidth="0.0"/>
+									<rightPen lineWidth="0.0"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="7"/>
+								</textElement>
+								<text><![CDATA[AGOSTO]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnHeader style="table" height="17" rowSpan="1">
+							<textField>
+								<reportElement uuid="fcaf7995-8453-4644-9c2c-bb97f32b2bad" x="0" y="0" width="78" height="17"/>
+								<box>
+									<pen lineWidth="0.5"/>
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font size="8"/>
+									<paragraph rightIndent="5"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{poupanca_rendimento_8}]]></textFieldExpression>
+							</textField>
+						</jr:columnHeader>
+						<jr:detailCell style="table" height="17" rowSpan="1">
+							<textField>
+								<reportElement uuid="c3cc370d-af3b-406f-b2b0-e382ec5c27e3" x="0" y="0" width="78" height="17"/>
+								<box>
+									<pen lineWidth="0.5"/>
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font size="8"/>
+									<paragraph rightIndent="5"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{poupanca_imposto_8}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="78" uuid="f7b746a1-c3d2-49c9-99d3-f22bcf306eb8">
+						<jr:tableHeader style="table" height="17" rowSpan="1">
+							<staticText>
+								<reportElement uuid="5e135ac3-2a02-49d6-b39f-0d111ac6f746" x="0" y="0" width="78" height="17"/>
+								<box>
+									<pen lineWidth="0.0"/>
+									<topPen lineWidth="0.0"/>
+									<leftPen lineWidth="0.0"/>
+									<bottomPen lineWidth="0.0"/>
+									<rightPen lineWidth="0.0"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="7"/>
+								</textElement>
+								<text><![CDATA[SETEMBRO]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnHeader style="table" height="17" rowSpan="1">
+							<textField>
+								<reportElement uuid="a2137900-fbd7-448b-962b-9934381a42bb" x="0" y="0" width="78" height="17"/>
+								<box>
+									<pen lineWidth="0.5"/>
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font size="8"/>
+									<paragraph rightIndent="5"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{poupanca_rendimento_9}]]></textFieldExpression>
+							</textField>
+						</jr:columnHeader>
+						<jr:detailCell style="table" height="17" rowSpan="1">
+							<textField>
+								<reportElement uuid="7d49dad9-5311-4d17-84af-3744f9951ea1" x="0" y="0" width="78" height="17"/>
+								<box>
+									<pen lineWidth="0.5"/>
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font size="8"/>
+									<paragraph rightIndent="5"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{poupanca_imposto_9}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="78" uuid="0aa1a588-39f8-4d0e-981b-201affd3ab2a">
+						<jr:tableHeader style="table" height="17" rowSpan="1">
+							<staticText>
+								<reportElement uuid="47868dee-c781-48c2-beee-4f7b383f68dd" x="0" y="0" width="78" height="17"/>
+								<box>
+									<pen lineWidth="0.0"/>
+									<topPen lineWidth="0.0"/>
+									<leftPen lineWidth="0.0"/>
+									<bottomPen lineWidth="0.0"/>
+									<rightPen lineWidth="0.0"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="7"/>
+								</textElement>
+								<text><![CDATA[OUTUBRO]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnHeader style="table" height="17" rowSpan="1">
+							<textField>
+								<reportElement uuid="0d6fed0e-336a-4efe-b80d-0a7ba0855819" x="0" y="0" width="78" height="17"/>
+								<box>
+									<pen lineWidth="0.5"/>
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font size="8"/>
+									<paragraph rightIndent="5"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{poupanca_rendimento_10}]]></textFieldExpression>
+							</textField>
+						</jr:columnHeader>
+						<jr:detailCell style="table" height="17" rowSpan="1">
+							<textField>
+								<reportElement uuid="3bcade62-3176-4b05-a8ae-1910a53e3273" x="0" y="0" width="78" height="17"/>
+								<box>
+									<pen lineWidth="0.5"/>
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font size="8"/>
+									<paragraph rightIndent="5"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{poupanca_imposto_10}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="78" uuid="525c450c-1830-4418-8cb8-1ccb10fbbf6c">
+						<jr:tableHeader style="table" height="17" rowSpan="1">
+							<staticText>
+								<reportElement uuid="44c79140-4e86-40bf-864e-94f4d4165121" x="0" y="0" width="78" height="17"/>
+								<box>
+									<pen lineWidth="0.0"/>
+									<topPen lineWidth="0.0"/>
+									<leftPen lineWidth="0.0"/>
+									<bottomPen lineWidth="0.0"/>
+									<rightPen lineWidth="0.0"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="7"/>
+								</textElement>
+								<text><![CDATA[NOVEMBRO]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnHeader style="table" height="17" rowSpan="1">
+							<textField>
+								<reportElement uuid="15eb485f-b425-4b1b-bc37-8574950c82ac" x="0" y="0" width="78" height="17"/>
+								<box>
+									<pen lineWidth="0.5"/>
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font size="8"/>
+									<paragraph rightIndent="5"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{poupanca_rendimento_11}]]></textFieldExpression>
+							</textField>
+						</jr:columnHeader>
+						<jr:detailCell style="table" height="17" rowSpan="1">
+							<textField>
+								<reportElement uuid="4a5eed0f-953f-43f7-b305-87227301d6f7" x="0" y="0" width="78" height="17"/>
+								<box>
+									<pen lineWidth="0.5"/>
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font size="8"/>
+									<paragraph rightIndent="5"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{poupanca_imposto_11}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="e647d6b9-b24a-470b-8ce8-b5ab4ca27815">
+						<jr:tableHeader style="table" height="17" rowSpan="1">
+							<staticText>
+								<reportElement uuid="e7d309a6-144e-49ef-a101-2f8047d61ea4" x="0" y="0" width="90" height="17"/>
+								<box>
+									<pen lineWidth="0.0"/>
+									<topPen lineWidth="0.0"/>
+									<leftPen lineWidth="0.0"/>
+									<bottomPen lineWidth="0.0"/>
+									<rightPen lineWidth="0.0"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="7"/>
+								</textElement>
+								<text><![CDATA[DEZEMBRO]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnHeader style="table" height="17" rowSpan="1">
+							<textField>
+								<reportElement uuid="3d6398c2-7918-4959-8b8b-fec82704f85a" x="0" y="0" width="90" height="17"/>
+								<box>
+									<pen lineWidth="0.5"/>
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font size="8"/>
+									<paragraph rightIndent="5"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{poupanca_rendimento_12}]]></textFieldExpression>
+							</textField>
+						</jr:columnHeader>
+						<jr:detailCell style="table" height="17" rowSpan="1">
+							<textField>
+								<reportElement uuid="e6f0cfde-3e45-409e-9dd0-851876c4888d" x="0" y="0" width="90" height="17"/>
+								<box>
+									<pen lineWidth="0.5"/>
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font size="8"/>
+									<paragraph rightIndent="5"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{poupanca_imposto_12}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+		<band height="76">
+			<componentElement>
+				<reportElement uuid="518bfc41-4153-4e0d-a940-d08ffda3e016" key="table 3" style="table 3" x="0" y="18" width="555" height="50"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="fundos_dataset" uuid="13082d21-cde0-4c52-b5a3-76e8523ea83c">
+						<parametersMapExpression><![CDATA[$P{REPORT_PARAMETERS_MAP}]]></parametersMapExpression>
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource(1)]]></dataSourceExpression>
+					</datasetRun>
+					<jr:column width="78" uuid="21e0b9a2-6508-4f97-9b19-b7b968041414">
+						<jr:tableHeader style="table" height="17" rowSpan="1">
+							<staticText>
+								<reportElement uuid="f29dc9f8-adcf-4dae-b0ea-c99ecb6c3cb3" x="0" y="0" width="78" height="17"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="7"/>
+								</textElement>
+								<text><![CDATA[MESES]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnHeader style="table" height="17" rowSpan="1">
+							<staticText>
+								<reportElement uuid="3cc9c78f-7ac9-4625-895d-f8e23253818d" x="0" y="0" width="78" height="17"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="7"/>
+								</textElement>
+								<text><![CDATA[Rendimentos]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table" height="17" rowSpan="1">
+							<staticText>
+								<reportElement uuid="f6b092eb-743f-4f42-b32c-05adcd32ab08" x="0" y="0" width="78" height="17"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="7"/>
+								</textElement>
+								<text><![CDATA[Imposto Retido]]></text>
+							</staticText>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="78" uuid="4b91fa72-b20b-4dac-ba8c-b129775ab091">
+						<jr:tableHeader style="table" height="17" rowSpan="1">
+							<staticText>
+								<reportElement uuid="d128d32b-729f-4cdc-85fd-884322cce5b1" x="0" y="0" width="78" height="17"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="7"/>
+								</textElement>
+								<text><![CDATA[JANEIRO]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnHeader style="table" height="17" rowSpan="1">
+							<textField>
+								<reportElement uuid="a0a3f422-675d-453f-b69d-8068fbc69149" x="0" y="0" width="78" height="17"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font size="8"/>
+									<paragraph rightIndent="5"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{fundos_rendimento_1}]]></textFieldExpression>
+							</textField>
+						</jr:columnHeader>
+						<jr:detailCell style="table" height="17" rowSpan="1">
+							<textField>
+								<reportElement uuid="7a7dba6b-b72d-4141-971d-6dc33a2c2599" x="0" y="0" width="78" height="17"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font size="8"/>
+									<paragraph rightIndent="5"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{fundos_imposto_1}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="78" uuid="71fc564c-ea08-46b7-a4e3-58548109f706">
+						<jr:tableHeader style="table" height="17" rowSpan="1">
+							<staticText>
+								<reportElement uuid="e807b662-ef4d-4e6d-ad4d-3a6e2b659503" x="0" y="0" width="78" height="17"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="7"/>
+								</textElement>
+								<text><![CDATA[FEVEREIRO]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnHeader style="table" height="17" rowSpan="1">
+							<textField>
+								<reportElement uuid="63f52f2b-c7f4-4bc5-82cb-206389f69023" x="0" y="0" width="78" height="17"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font size="8"/>
+									<paragraph rightIndent="5"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{fundos_rendimento_2}]]></textFieldExpression>
+							</textField>
+						</jr:columnHeader>
+						<jr:detailCell style="table" height="17" rowSpan="1">
+							<textField>
+								<reportElement uuid="fdc77d5d-953f-4842-b21a-d1f4e276fa6c" x="0" y="0" width="78" height="17"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font size="8"/>
+									<paragraph rightIndent="5"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{fundos_imposto_2}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="78" uuid="82d5fb46-0e74-4033-92a0-043459a946ca">
+						<jr:tableHeader style="table" height="17" rowSpan="1">
+							<staticText>
+								<reportElement uuid="e7839082-af1a-4689-b134-8d6fc7cea367" x="0" y="0" width="78" height="17"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="7"/>
+								</textElement>
+								<text><![CDATA[MAR�O]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnHeader style="table" height="17" rowSpan="1">
+							<textField>
+								<reportElement uuid="b82433fe-db8e-4aaf-9224-a940d15f3e93" x="0" y="0" width="78" height="17"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font size="8"/>
+									<paragraph rightIndent="5"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{fundos_rendimento_3}]]></textFieldExpression>
+							</textField>
+						</jr:columnHeader>
+						<jr:detailCell style="table" height="17" rowSpan="1">
+							<textField>
+								<reportElement uuid="ace1754e-4130-446a-b0d1-bbfa986a9d84" x="0" y="0" width="78" height="17"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font size="8"/>
+									<paragraph rightIndent="5"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{fundos_imposto_3}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="78" uuid="c8054e71-b6ce-4491-bb36-0af4dfde5666">
+						<jr:tableHeader style="table" height="17" rowSpan="1">
+							<staticText>
+								<reportElement uuid="eaa3f02e-e640-4638-90ca-30073e3afc49" x="0" y="0" width="78" height="17"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="7"/>
+								</textElement>
+								<text><![CDATA[ABRIL]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnHeader style="table" height="17" rowSpan="1">
+							<textField>
+								<reportElement uuid="6ade17dc-bb48-4fca-a72a-fab782d5bcff" x="0" y="0" width="78" height="17"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font size="8"/>
+									<paragraph rightIndent="5"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{fundos_rendimento_4}]]></textFieldExpression>
+							</textField>
+						</jr:columnHeader>
+						<jr:detailCell style="table" height="17" rowSpan="1">
+							<textField>
+								<reportElement uuid="7006b3f4-703b-44ee-9b60-136e1553016d" x="0" y="0" width="78" height="17"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font size="8"/>
+									<paragraph rightIndent="5"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{fundos_imposto_4}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="78" uuid="148ed8de-2a11-4006-a3db-7196c93d0b32">
+						<jr:tableHeader style="table" height="17" rowSpan="1">
+							<staticText>
+								<reportElement uuid="94f21a1a-acbe-41ab-8d25-6bd49490de1b" x="0" y="0" width="78" height="17"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="7"/>
+								</textElement>
+								<text><![CDATA[MAIO]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnHeader style="table" height="17" rowSpan="1">
+							<textField>
+								<reportElement uuid="5f4314a7-e457-41a6-991c-9377dfe3cad8" x="0" y="0" width="78" height="17"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font size="8"/>
+									<paragraph rightIndent="5"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{fundos_rendimento_5}]]></textFieldExpression>
+							</textField>
+						</jr:columnHeader>
+						<jr:detailCell style="table" height="17" rowSpan="1">
+							<textField>
+								<reportElement uuid="a905bf2a-ad39-47bf-a086-cf4b74c532be" x="0" y="0" width="78" height="17"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font size="8"/>
+									<paragraph rightIndent="5"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{fundos_imposto_5}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="7a3bfa16-e70b-45e3-b5d9-042ed04d3a5b">
+						<jr:tableHeader style="table" height="17" rowSpan="1">
+							<staticText>
+								<reportElement uuid="50f69b08-55c1-4f4a-be91-d6708c0495b3" x="0" y="0" width="90" height="17"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="7"/>
+								</textElement>
+								<text><![CDATA[JUNHO]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnHeader style="table" height="17" rowSpan="1">
+							<textField>
+								<reportElement uuid="1387476b-7d78-4d3b-83cd-b0e156df1ed4" x="0" y="0" width="90" height="17"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font size="8"/>
+									<paragraph rightIndent="5"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{fundos_rendimento_6}]]></textFieldExpression>
+							</textField>
+						</jr:columnHeader>
+						<jr:detailCell style="table" height="17" rowSpan="1">
+							<textField>
+								<reportElement uuid="4d7f32f9-459e-4536-a155-74433f8d9cdd" x="0" y="0" width="90" height="17"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font size="8"/>
+									<paragraph rightIndent="5"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{fundos_imposto_6}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<staticText>
+				<reportElement uuid="700ae5b1-ec7f-41cb-a375-fe35d934f4db" x="0" y="0" width="351" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font size="9" isBold="true" isItalic="true" pdfFontName="Helvetica-Bold"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[4  -  FUNDO DE INVESTIMENTO  -  VALORES  EM  REAIS]]></text>
+			</staticText>
+		</band>
+		<band height="58">
+			<componentElement>
+				<reportElement uuid="e23899eb-be14-4cab-9a61-2f7045733302" key="table 3" style="table 3" x="0" y="0" width="555" height="50"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="fundos_dataset" uuid="acacfe37-8464-48df-9db9-14e9de1f8630">
+						<parametersMapExpression><![CDATA[$P{REPORT_PARAMETERS_MAP}]]></parametersMapExpression>
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource(1)]]></dataSourceExpression>
+					</datasetRun>
+					<jr:column width="78" uuid="f54f0b8e-e50a-40f8-b5b1-3efbbd9a2f17">
+						<jr:tableHeader style="table" height="17" rowSpan="1">
+							<staticText>
+								<reportElement uuid="5934456a-bbe5-4daa-b8d1-44d5e09278b0" x="0" y="0" width="78" height="17"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="7"/>
+								</textElement>
+								<text><![CDATA[MESES]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnHeader style="table" height="17" rowSpan="1">
+							<staticText>
+								<reportElement uuid="5e9f244c-8073-4ec1-bf55-2abdb657707b" x="0" y="0" width="78" height="17"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="7"/>
+								</textElement>
+								<text><![CDATA[Rendimentos]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table" height="17" rowSpan="1">
+							<staticText>
+								<reportElement uuid="e422c687-07c2-4fca-8431-1cf2755f655d" x="0" y="0" width="78" height="17"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="7"/>
+								</textElement>
+								<text><![CDATA[Imposto Retido]]></text>
+							</staticText>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="78" uuid="bc2cd2c1-ce63-4135-9727-eec28e263c81">
+						<jr:tableHeader style="table" height="17" rowSpan="1">
+							<staticText>
+								<reportElement uuid="b0b70b84-06ad-4a07-9778-3f1893006d7c" x="0" y="0" width="78" height="17"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="7"/>
+								</textElement>
+								<text><![CDATA[JULHO]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnHeader style="table" height="17" rowSpan="1">
+							<textField>
+								<reportElement uuid="e00fbb6c-c97d-49ba-b86c-69f1f2e7d4e6" x="0" y="0" width="78" height="17"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font size="8"/>
+									<paragraph rightIndent="5"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{fundos_rendimento_7}]]></textFieldExpression>
+							</textField>
+						</jr:columnHeader>
+						<jr:detailCell style="table" height="17" rowSpan="1">
+							<textField>
+								<reportElement uuid="c2cfbfb0-2b34-4c9b-ae30-0b4f09a56629" x="0" y="0" width="78" height="17"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font size="8"/>
+									<paragraph rightIndent="5"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{fundos_imposto_7}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="78" uuid="7ed2c70b-cc5d-43ec-bd13-39680e5e3295">
+						<jr:tableHeader style="table" height="17" rowSpan="1">
+							<staticText>
+								<reportElement uuid="94b5c76a-c57c-4df6-957a-3a46475a3999" x="0" y="0" width="78" height="17"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="7"/>
+								</textElement>
+								<text><![CDATA[AGOSTO]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnHeader style="table" height="17" rowSpan="1">
+							<textField>
+								<reportElement uuid="7c5f01c8-b628-425d-9eb0-bfbc7455e987" x="0" y="0" width="78" height="17"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font size="8"/>
+									<paragraph rightIndent="5"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{fundos_rendimento_8}]]></textFieldExpression>
+							</textField>
+						</jr:columnHeader>
+						<jr:detailCell style="table" height="17" rowSpan="1">
+							<textField>
+								<reportElement uuid="e2ec154c-a90e-4b68-833b-84ecbaacdbf6" x="0" y="0" width="78" height="17"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font size="8"/>
+									<paragraph rightIndent="5"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{fundos_imposto_8}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="78" uuid="86a3ecf6-2eaa-414a-b338-e3b4a7fa9c78">
+						<jr:tableHeader style="table" height="17" rowSpan="1">
+							<staticText>
+								<reportElement uuid="ec95b2bb-6f2c-434b-a9e4-6d9db1ed102f" x="0" y="0" width="78" height="17"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="7"/>
+								</textElement>
+								<text><![CDATA[SETEMBRO]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnHeader style="table" height="17" rowSpan="1">
+							<textField>
+								<reportElement uuid="0b86386f-3106-4052-9b41-bb18891568a0" x="0" y="0" width="78" height="17"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font size="8"/>
+									<paragraph rightIndent="5"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{fundos_rendimento_9}]]></textFieldExpression>
+							</textField>
+						</jr:columnHeader>
+						<jr:detailCell style="table" height="17" rowSpan="1">
+							<textField>
+								<reportElement uuid="eb634ee2-d60d-404b-bacc-32f74d5f9610" x="0" y="0" width="78" height="17"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font size="8"/>
+									<paragraph rightIndent="5"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{fundos_imposto_9}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="78" uuid="b4da8b65-33e4-4e40-92d1-f8581804b2f7">
+						<jr:tableHeader style="table" height="17" rowSpan="1">
+							<staticText>
+								<reportElement uuid="aff135fd-a264-4ccf-8a21-ca370c53e086" x="0" y="0" width="78" height="17"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="7"/>
+								</textElement>
+								<text><![CDATA[OUTUBRO]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnHeader style="table" height="17" rowSpan="1">
+							<textField>
+								<reportElement uuid="bce875fd-0c12-4467-9e63-b21ab301ab87" x="0" y="0" width="78" height="17"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font size="8"/>
+									<paragraph rightIndent="5"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{fundos_rendimento_10}]]></textFieldExpression>
+							</textField>
+						</jr:columnHeader>
+						<jr:detailCell style="table" height="17" rowSpan="1">
+							<textField>
+								<reportElement uuid="4d2719c9-6432-46d7-81d5-68b82e603fab" x="0" y="0" width="78" height="17"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font size="8"/>
+									<paragraph rightIndent="5"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{fundos_imposto_10}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="78" uuid="f6bee032-0ae9-4058-a09d-58fa8f92f767">
+						<jr:tableHeader style="table" height="17" rowSpan="1">
+							<staticText>
+								<reportElement uuid="b09de29c-fd5b-4b9e-8728-8ea641e22319" x="0" y="0" width="78" height="17"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="7"/>
+								</textElement>
+								<text><![CDATA[NOVEMBRO]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnHeader style="table" height="17" rowSpan="1">
+							<textField>
+								<reportElement uuid="b082ebc2-f916-4926-8818-586550a280ed" x="0" y="0" width="78" height="17"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font size="8"/>
+									<paragraph rightIndent="5"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{fundos_rendimento_11}]]></textFieldExpression>
+							</textField>
+						</jr:columnHeader>
+						<jr:detailCell style="table" height="17" rowSpan="1">
+							<textField>
+								<reportElement uuid="b5a4b0fb-1b23-4622-b5b1-65791dbc9835" x="0" y="0" width="78" height="17"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font size="8"/>
+									<paragraph rightIndent="5"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{fundos_imposto_11}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="44e9fc7f-5740-4bd6-ac1a-ade8985e1d94">
+						<jr:tableHeader style="table" height="17" rowSpan="1">
+							<staticText>
+								<reportElement uuid="0f04732c-2fae-4537-8176-564648e7d2d8" x="0" y="0" width="90" height="17"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="7"/>
+								</textElement>
+								<text><![CDATA[DEZEMBRO]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnHeader style="table" height="17" rowSpan="1">
+							<textField>
+								<reportElement uuid="23a0d41f-b227-492e-af7a-d3fede893a73" x="0" y="0" width="90" height="17"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font size="8"/>
+									<paragraph rightIndent="5"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{fundos_rendimento_12}]]></textFieldExpression>
+							</textField>
+						</jr:columnHeader>
+						<jr:detailCell style="table" height="17" rowSpan="1">
+							<textField>
+								<reportElement uuid="a951b2b6-51eb-4d21-91a8-df63e27bfd51" x="0" y="0" width="90" height="17"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font size="8"/>
+									<paragraph rightIndent="5"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{fundos_imposto_12}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+		<band height="76">
+			<componentElement>
+				<reportElement uuid="e76e7a9b-eb7a-4768-8961-e35534967d56" key="table 3" style="table 3" x="0" y="18" width="555" height="50"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="prazo_dataset" uuid="e45accd2-f566-41f5-bbd6-94264a139334">
+						<parametersMapExpression><![CDATA[$P{REPORT_PARAMETERS_MAP}]]></parametersMapExpression>
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource(1)]]></dataSourceExpression>
+					</datasetRun>
+					<jr:column width="78" uuid="c812a6ef-d5bc-4ae5-b688-dc7c2d9fb27f">
+						<jr:tableHeader style="table" height="17" rowSpan="1">
+							<staticText>
+								<reportElement uuid="ce048991-e6fc-4168-bdb9-9918e54de1ec" x="0" y="0" width="78" height="17"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="7"/>
+								</textElement>
+								<text><![CDATA[MESES]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnHeader style="table" height="17" rowSpan="1">
+							<staticText>
+								<reportElement uuid="f35790ae-c304-41b5-92e4-0e2d1a92dc26" x="0" y="0" width="78" height="17"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="7"/>
+								</textElement>
+								<text><![CDATA[Rendimentos]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table" height="17" rowSpan="1">
+							<staticText>
+								<reportElement uuid="bd4cb7e9-5cc4-4f9e-b756-1a8eee74a4e9" x="0" y="0" width="78" height="17"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="7"/>
+								</textElement>
+								<text><![CDATA[Imposto Retido]]></text>
+							</staticText>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="78" uuid="a9953a53-f6e2-42fe-a5a7-cda9972863dc">
+						<jr:tableHeader style="table" height="17" rowSpan="1">
+							<staticText>
+								<reportElement uuid="d1cae353-9a51-42e5-8c5b-e23d66fc7027" x="0" y="0" width="78" height="17"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="7"/>
+								</textElement>
+								<text><![CDATA[JANEIRO]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnHeader style="table" height="17" rowSpan="1">
+							<textField>
+								<reportElement uuid="aa3b36ef-d99d-46e4-8032-62c21d0ddcb6" x="0" y="0" width="78" height="17"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font size="8"/>
+									<paragraph rightIndent="5"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{prazo_rendimento_1}]]></textFieldExpression>
+							</textField>
+						</jr:columnHeader>
+						<jr:detailCell style="table" height="17" rowSpan="1">
+							<textField>
+								<reportElement uuid="c3af7bbc-57cd-497e-b9ab-0f365eb4648b" x="0" y="0" width="78" height="17"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font size="8"/>
+									<paragraph rightIndent="5"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{prazo_imposto_1}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="78" uuid="1287cc9d-3d54-4810-8bce-6cb364b50ba2">
+						<jr:tableHeader style="table" height="17" rowSpan="1">
+							<staticText>
+								<reportElement uuid="2179adc0-59e7-4a58-b46d-4653ae9c4e50" x="0" y="0" width="78" height="17"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="7"/>
+								</textElement>
+								<text><![CDATA[FEVEREIRO]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnHeader style="table" height="17" rowSpan="1">
+							<textField>
+								<reportElement uuid="88e68502-ed18-452c-9ee7-1e366669bb23" x="0" y="0" width="78" height="17"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font size="8"/>
+									<paragraph rightIndent="5"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{prazo_rendimento_2}]]></textFieldExpression>
+							</textField>
+						</jr:columnHeader>
+						<jr:detailCell style="table" height="17" rowSpan="1">
+							<textField>
+								<reportElement uuid="2e08bb69-9b43-426b-84f9-d0be0a297bcb" x="0" y="0" width="78" height="17"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font size="8"/>
+									<paragraph rightIndent="5"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{prazo_imposto_2}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="78" uuid="49b1219c-20d9-4ceb-a140-99daba3c6da0">
+						<jr:tableHeader style="table" height="17" rowSpan="1">
+							<staticText>
+								<reportElement uuid="277512e8-0c3c-419b-9be0-40d6d75dc23f" x="0" y="0" width="78" height="17"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="7"/>
+								</textElement>
+								<text><![CDATA[MAR�O]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnHeader style="table" height="17" rowSpan="1">
+							<textField>
+								<reportElement uuid="479eb2b0-6f3b-40f7-8061-2b7a1e41b224" x="0" y="0" width="78" height="17"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font size="8"/>
+									<paragraph rightIndent="5"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{prazo_rendimento_3}]]></textFieldExpression>
+							</textField>
+						</jr:columnHeader>
+						<jr:detailCell style="table" height="17" rowSpan="1">
+							<textField>
+								<reportElement uuid="6767f432-122c-4a9c-bae1-eed50842c993" x="0" y="0" width="78" height="17"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font size="8"/>
+									<paragraph rightIndent="5"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{prazo_imposto_3}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="78" uuid="b3762d69-d001-45e7-83a8-b982777dbae6">
+						<jr:tableHeader style="table" height="17" rowSpan="1">
+							<staticText>
+								<reportElement uuid="edf16b4f-8863-4a77-bfb6-b081fe1e9afa" x="0" y="0" width="78" height="17"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="7"/>
+								</textElement>
+								<text><![CDATA[ABRIL]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnHeader style="table" height="17" rowSpan="1">
+							<textField>
+								<reportElement uuid="d894c3a8-4f4d-4b4a-9a8e-b67730c695ed" x="0" y="0" width="78" height="17"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font size="8"/>
+									<paragraph rightIndent="5"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{prazo_rendimento_4}]]></textFieldExpression>
+							</textField>
+						</jr:columnHeader>
+						<jr:detailCell style="table" height="17" rowSpan="1">
+							<textField>
+								<reportElement uuid="b5a30dab-e054-4dd3-a347-5a72abff98bb" x="0" y="0" width="78" height="17"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font size="8"/>
+									<paragraph rightIndent="5"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{prazo_imposto_4}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="78" uuid="9cefa613-ce51-4cf5-b6ce-faeab6fac4a3">
+						<jr:tableHeader style="table" height="17" rowSpan="1">
+							<staticText>
+								<reportElement uuid="85195344-df93-407b-a38b-f6265bd1518f" x="0" y="0" width="78" height="17"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="7"/>
+								</textElement>
+								<text><![CDATA[MAIO]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnHeader style="table" height="17" rowSpan="1">
+							<textField>
+								<reportElement uuid="4727f356-e057-4dd5-89d1-d26df975cec7" x="0" y="0" width="78" height="17"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font size="8"/>
+									<paragraph rightIndent="5"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{prazo_rendimento_5}]]></textFieldExpression>
+							</textField>
+						</jr:columnHeader>
+						<jr:detailCell style="table" height="17" rowSpan="1">
+							<textField>
+								<reportElement uuid="ccf72299-e0ac-4354-b56c-0c0724420e33" x="0" y="0" width="78" height="17"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font size="8"/>
+									<paragraph rightIndent="5"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{prazo_imposto_5}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="4bd1d965-87a8-47e4-bc13-285db24a7131">
+						<jr:tableHeader style="table" height="17" rowSpan="1">
+							<staticText>
+								<reportElement uuid="8a0b4132-3831-44bf-ac76-5cfc285b832d" x="0" y="0" width="90" height="17"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="7"/>
+								</textElement>
+								<text><![CDATA[JUNHO]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnHeader style="table" height="17" rowSpan="1">
+							<textField>
+								<reportElement uuid="b9fc7f42-c791-4d03-bc8b-b39e42af7afd" x="0" y="0" width="90" height="17"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font size="8"/>
+									<paragraph rightIndent="5"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{prazo_rendimento_6}]]></textFieldExpression>
+							</textField>
+						</jr:columnHeader>
+						<jr:detailCell style="table" height="17" rowSpan="1">
+							<textField>
+								<reportElement uuid="c27247df-756d-4f26-bcf3-96326fb2d61e" x="0" y="0" width="90" height="17"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font size="8"/>
+									<paragraph rightIndent="5"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{prazo_imposto_6}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<staticText>
+				<reportElement uuid="4159645d-f530-4ccd-9d97-1451ced728c2" x="0" y="0" width="351" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font size="9" isBold="true" isItalic="true" pdfFontName="Helvetica-Bold"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[5  - APLICA��ES  DE  RENDA FIXA -  VALORES  EM  REAIS]]></text>
+			</staticText>
+		</band>
+		<band height="57">
+			<componentElement>
+				<reportElement uuid="5447b14f-73e8-462e-93dc-396fe247779b" key="table 3" style="table 3" x="0" y="0" width="555" height="50"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="prazo_dataset" uuid="df693c9d-2e03-4d89-acc5-03ccde985ba8">
+						<parametersMapExpression><![CDATA[$P{REPORT_PARAMETERS_MAP}]]></parametersMapExpression>
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource(1)]]></dataSourceExpression>
+					</datasetRun>
+					<jr:column width="78" uuid="2cb1e93e-e67f-480a-b96a-0417ef54c763">
+						<jr:tableHeader style="table" height="17" rowSpan="1">
+							<staticText>
+								<reportElement uuid="6df1838e-f06a-42b7-8cce-12b363b99562" x="0" y="0" width="78" height="17"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="7"/>
+								</textElement>
+								<text><![CDATA[MESES]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnHeader style="table" height="17" rowSpan="1">
+							<staticText>
+								<reportElement uuid="40f5e6df-339a-4da5-a974-3a01b17a7a75" x="0" y="0" width="78" height="17"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="7"/>
+								</textElement>
+								<text><![CDATA[Rendimentos]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table" height="17" rowSpan="1">
+							<staticText>
+								<reportElement uuid="151676c6-fce2-437e-be7c-78398b9b3e0a" x="0" y="0" width="78" height="17"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="7"/>
+								</textElement>
+								<text><![CDATA[Imposto Retido]]></text>
+							</staticText>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="78" uuid="6ac4bb96-85a1-4e10-96ea-bfe26976a63c">
+						<jr:tableHeader style="table" height="17" rowSpan="1">
+							<staticText>
+								<reportElement uuid="aa1f3669-eace-4143-9af2-1f45cc6fd8f5" x="0" y="0" width="78" height="17"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="7"/>
+								</textElement>
+								<text><![CDATA[JULHO]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnHeader style="table" height="17" rowSpan="1">
+							<textField>
+								<reportElement uuid="b074ee16-e5f8-4784-bb82-fd33991c0846" x="0" y="0" width="78" height="17"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font size="8"/>
+									<paragraph rightIndent="5"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{prazo_rendimento_7}]]></textFieldExpression>
+							</textField>
+						</jr:columnHeader>
+						<jr:detailCell style="table" height="17" rowSpan="1">
+							<textField>
+								<reportElement uuid="8f668c5b-8562-4e79-9ebe-9d6b6919838b" x="0" y="0" width="78" height="17"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font size="8"/>
+									<paragraph rightIndent="5"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{prazo_imposto_7}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="78" uuid="0e7d81b7-deba-4ca0-afd9-9c6683a973aa">
+						<jr:tableHeader style="table" height="17" rowSpan="1">
+							<staticText>
+								<reportElement uuid="92755dba-4aee-4dc2-8e9b-f10e1bf85ab2" x="0" y="0" width="78" height="17"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="7"/>
+								</textElement>
+								<text><![CDATA[AGOSTO]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnHeader style="table" height="17" rowSpan="1">
+							<textField>
+								<reportElement uuid="41cd1e2d-a889-46b0-8f64-e4b73ffec9c4" x="0" y="0" width="78" height="17"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font size="8"/>
+									<paragraph rightIndent="5"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{prazo_rendimento_8}]]></textFieldExpression>
+							</textField>
+						</jr:columnHeader>
+						<jr:detailCell style="table" height="17" rowSpan="1">
+							<textField>
+								<reportElement uuid="7337bf2a-a937-4893-9d66-667d701b3177" x="0" y="0" width="78" height="17"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font size="8"/>
+									<paragraph rightIndent="5"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{prazo_imposto_8}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="78" uuid="31506747-723f-4387-927d-6fac2ac3dc57">
+						<jr:tableHeader style="table" height="17" rowSpan="1">
+							<staticText>
+								<reportElement uuid="cbeef5e2-61dc-4dbb-9114-bc04e32fafb4" x="0" y="0" width="78" height="17"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="7"/>
+								</textElement>
+								<text><![CDATA[SETEMBRO]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnHeader style="table" height="17" rowSpan="1">
+							<textField>
+								<reportElement uuid="3a192849-3052-493c-bcdc-3c872dbe1c81" x="0" y="0" width="78" height="17"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font size="8"/>
+									<paragraph rightIndent="5"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{prazo_rendimento_9}]]></textFieldExpression>
+							</textField>
+						</jr:columnHeader>
+						<jr:detailCell style="table" height="17" rowSpan="1">
+							<textField>
+								<reportElement uuid="7f2e8c3a-e1bc-4db5-9f24-eda5eeee8b8e" x="0" y="0" width="78" height="17"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font size="8"/>
+									<paragraph rightIndent="5"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{prazo_imposto_9}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="78" uuid="cb4e47e0-1ecf-4871-8e98-f7110c8cf5d5">
+						<jr:tableHeader style="table" height="17" rowSpan="1">
+							<staticText>
+								<reportElement uuid="59d0bb64-aaa1-4579-8861-40a9ce785d6b" x="0" y="0" width="78" height="17"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="7"/>
+								</textElement>
+								<text><![CDATA[OUTUBRO]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnHeader style="table" height="17" rowSpan="1">
+							<textField>
+								<reportElement uuid="0c0f4b9f-6982-424a-899a-976acac94e70" x="0" y="0" width="78" height="17"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font size="8"/>
+									<paragraph rightIndent="5"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{prazo_rendimento_10}]]></textFieldExpression>
+							</textField>
+						</jr:columnHeader>
+						<jr:detailCell style="table" height="17" rowSpan="1">
+							<textField>
+								<reportElement uuid="3cbdbd5b-263c-413b-b8f9-f5297621e5d4" x="0" y="0" width="78" height="17"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font size="8"/>
+									<paragraph rightIndent="5"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{prazo_imposto_10}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="78" uuid="3de1ec9e-a744-41f0-be1b-03998b1eb6ad">
+						<jr:tableHeader style="table" height="17" rowSpan="1">
+							<staticText>
+								<reportElement uuid="fc449d78-af5f-4e0f-9241-e5a70b8c9cb4" x="0" y="0" width="78" height="17"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="7"/>
+								</textElement>
+								<text><![CDATA[NOVEMBRO]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnHeader style="table" height="17" rowSpan="1">
+							<textField>
+								<reportElement uuid="74da2210-704c-4098-8944-f99a5fdffaca" x="0" y="0" width="78" height="17"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font size="8"/>
+									<paragraph rightIndent="5"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{prazo_rendimento_11}]]></textFieldExpression>
+							</textField>
+						</jr:columnHeader>
+						<jr:detailCell style="table" height="17" rowSpan="1">
+							<textField>
+								<reportElement uuid="4d3ad48f-3651-4cf0-8127-b0b66eb58f42" x="0" y="0" width="78" height="17"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font size="8"/>
+									<paragraph rightIndent="5"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{prazo_imposto_11}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="47a7e46f-155a-4571-a500-0255c780443d">
+						<jr:tableHeader style="table" height="17" rowSpan="1">
+							<staticText>
+								<reportElement uuid="60d5bfd8-9906-4c44-8eae-c128fba327ca" x="0" y="0" width="90" height="17"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="7"/>
+								</textElement>
+								<text><![CDATA[DEZEMBRO]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnHeader style="table" height="17" rowSpan="1">
+							<textField>
+								<reportElement uuid="043683b2-38ef-438e-b2f7-85345d37511b" x="0" y="0" width="90" height="17"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font size="8"/>
+									<paragraph rightIndent="5"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{prazo_rendimento_12}]]></textFieldExpression>
+							</textField>
+						</jr:columnHeader>
+						<jr:detailCell style="table" height="17" rowSpan="1">
+							<textField>
+								<reportElement uuid="d41d9d30-f595-4c89-bcdf-cba7c485dad2" x="0" y="0" width="90" height="17"/>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font size="8"/>
+									<paragraph rightIndent="5"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{prazo_imposto_12}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+		<band height="77">
+			<componentElement>
+				<reportElement uuid="b5d55ecc-47b5-494e-94f4-c26075bc838f" key="table 3" style="table 3" x="0" y="18" width="555" height="50"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="swap" uuid="15f10e06-d627-4404-b8b8-02dc48505a5b">
+						<parametersMapExpression><![CDATA[$P{REPORT_PARAMETERS_MAP}]]></parametersMapExpression>
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource(1)]]></dataSourceExpression>
+					</datasetRun>
+					<jr:column width="78" uuid="798b4b83-e9fc-47df-a181-853319d93633">
+						<jr:tableHeader style="table" height="17" rowSpan="1">
+							<staticText>
+								<reportElement uuid="5cc2d6e2-8c87-474a-83b5-c89ffdf5c951" x="0" y="0" width="78" height="17"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="7"/>
+								</textElement>
+								<text><![CDATA[MESES]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnHeader style="table" height="17" rowSpan="1">
+							<staticText>
+								<reportElement uuid="96c9275e-bbf6-415a-acc5-c22ab1cec82f" x="0" y="0" width="78" height="17"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="7"/>
+								</textElement>
+								<text><![CDATA[Rendimentos]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table" height="17" rowSpan="1">
+							<staticText>
+								<reportElement uuid="20e6923c-72be-48ae-831e-a211b788a638" x="0" y="0" width="78" height="17"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="7"/>
+								</textElement>
+								<text><![CDATA[Imposto Retido]]></text>
+							</staticText>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="78" uuid="1ce219ae-b00c-4f2a-99c2-b13c501b3024">
+						<jr:tableHeader style="table" height="17" rowSpan="1">
+							<staticText>
+								<reportElement uuid="f9810418-8ee4-47b3-b8e6-a2aa9216163c" x="0" y="0" width="78" height="17"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="7"/>
+								</textElement>
+								<text><![CDATA[JANEIRO]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnHeader style="table" height="17" rowSpan="1"/>
+						<jr:detailCell style="table" height="17" rowSpan="1"/>
+					</jr:column>
+					<jr:column width="78" uuid="9cc575ad-c128-4f6e-9fa4-30c171c95322">
+						<jr:tableHeader style="table" height="17" rowSpan="1">
+							<staticText>
+								<reportElement uuid="9def4c0f-3808-4b35-9430-fcac5475e4ed" x="0" y="0" width="78" height="17"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="7"/>
+								</textElement>
+								<text><![CDATA[FEVEREIRO]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnHeader style="table" height="17" rowSpan="1"/>
+						<jr:detailCell style="table" height="17" rowSpan="1"/>
+					</jr:column>
+					<jr:column width="78" uuid="1a64cce8-c658-4b9f-8940-fde374dc8ccb">
+						<jr:tableHeader style="table" height="17" rowSpan="1">
+							<staticText>
+								<reportElement uuid="7415b6fd-aa69-4cee-ba0c-b01844a6bc9a" x="0" y="0" width="78" height="17"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="7"/>
+								</textElement>
+								<text><![CDATA[MAR�O]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnHeader style="table" height="17" rowSpan="1"/>
+						<jr:detailCell style="table" height="17" rowSpan="1"/>
+					</jr:column>
+					<jr:column width="78" uuid="f6a33340-a9cb-45bd-9ebe-f0d0090e8154">
+						<jr:tableHeader style="table" height="17" rowSpan="1">
+							<staticText>
+								<reportElement uuid="0bdd26aa-58d1-43c0-abfd-1306cadd16ce" x="0" y="0" width="78" height="17"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="7"/>
+								</textElement>
+								<text><![CDATA[ABRIL]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnHeader style="table" height="17" rowSpan="1"/>
+						<jr:detailCell style="table" height="17" rowSpan="1"/>
+					</jr:column>
+					<jr:column width="78" uuid="2e93f269-d097-4420-8bab-08051da89ee7">
+						<jr:tableHeader style="table" height="17" rowSpan="1">
+							<staticText>
+								<reportElement uuid="16e89d94-df98-42da-92e9-d90db864759b" x="0" y="0" width="78" height="17"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="7"/>
+								</textElement>
+								<text><![CDATA[MAIO]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnHeader style="table" height="17" rowSpan="1"/>
+						<jr:detailCell style="table" height="17" rowSpan="1"/>
+					</jr:column>
+					<jr:column width="90" uuid="853afa69-e3b5-4138-8a38-166d814f73ed">
+						<jr:tableHeader style="table" height="17" rowSpan="1">
+							<staticText>
+								<reportElement uuid="a899bfba-75d7-4f5d-9044-a58b27f81f4c" x="0" y="0" width="90" height="17"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="7"/>
+								</textElement>
+								<text><![CDATA[JUNHO]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnHeader style="table" height="17" rowSpan="1"/>
+						<jr:detailCell style="table" height="17" rowSpan="1"/>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<staticText>
+				<reportElement uuid="450bc837-13a3-4ec7-ab2b-6211e0f5575c" x="0" y="0" width="351" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font size="9" isBold="true" isItalic="true" pdfFontName="Helvetica-Bold"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[6  -  OPERA��ES   DE  SWAP -  VALORES  EM  REAIS]]></text>
+			</staticText>
+		</band>
+		<band height="56">
+			<componentElement>
+				<reportElement uuid="9c51e4c7-41ec-4c07-9d47-6d4c859a8367" key="table 3" style="table 3" x="0" y="0" width="555" height="50"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="swap" uuid="4494ee28-7046-4115-8d02-e59039d0bb54">
+						<parametersMapExpression><![CDATA[$P{REPORT_PARAMETERS_MAP}]]></parametersMapExpression>
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.JREmptyDataSource(1)]]></dataSourceExpression>
+					</datasetRun>
+					<jr:column width="78" uuid="d808f305-c5e8-4741-8576-98a89916652d">
+						<jr:tableHeader style="table" height="17" rowSpan="1">
+							<staticText>
+								<reportElement uuid="92a85896-f5a4-49bf-9ee8-2308f7fd098a" x="0" y="0" width="78" height="17"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="7"/>
+								</textElement>
+								<text><![CDATA[MESES]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnHeader style="table" height="17" rowSpan="1">
+							<staticText>
+								<reportElement uuid="0cec8b16-74ab-4481-9fb5-67070a3ef887" x="0" y="0" width="78" height="17"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="7"/>
+								</textElement>
+								<text><![CDATA[Rendimentos]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table" height="17" rowSpan="1">
+							<staticText>
+								<reportElement uuid="86945002-380d-49fb-9e6b-8256656eb732" x="0" y="0" width="78" height="17"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="7"/>
+								</textElement>
+								<text><![CDATA[Imposto Retido]]></text>
+							</staticText>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="78" uuid="610f7118-588d-447d-a977-e6b1af1aba4d">
+						<jr:tableHeader style="table" height="17" rowSpan="1">
+							<staticText>
+								<reportElement uuid="58c3f8c1-2252-4254-acef-e3af0405753e" x="0" y="0" width="78" height="17"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="7"/>
+								</textElement>
+								<text><![CDATA[JULHO]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnHeader style="table" height="17" rowSpan="1"/>
+						<jr:detailCell style="table" height="17" rowSpan="1"/>
+					</jr:column>
+					<jr:column width="78" uuid="bd77ecd6-1809-400f-a667-4a8ff697b429">
+						<jr:tableHeader style="table" height="17" rowSpan="1">
+							<staticText>
+								<reportElement uuid="f324336a-1881-44a5-bfa0-85315b2cceb9" x="0" y="0" width="78" height="17"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="7"/>
+								</textElement>
+								<text><![CDATA[AGOSTO]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnHeader style="table" height="17" rowSpan="1"/>
+						<jr:detailCell style="table" height="17" rowSpan="1"/>
+					</jr:column>
+					<jr:column width="78" uuid="f64a34d2-71b2-461c-95bd-65657d6afae7">
+						<jr:tableHeader style="table" height="17" rowSpan="1">
+							<staticText>
+								<reportElement uuid="bc5824f4-259b-464d-b584-27ec49ee9c18" x="0" y="0" width="78" height="17"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="7"/>
+								</textElement>
+								<text><![CDATA[SETEMBRO]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnHeader style="table" height="17" rowSpan="1"/>
+						<jr:detailCell style="table" height="17" rowSpan="1"/>
+					</jr:column>
+					<jr:column width="78" uuid="010be74b-4e24-4b3f-8baa-4c04846e20e7">
+						<jr:tableHeader style="table" height="17" rowSpan="1">
+							<staticText>
+								<reportElement uuid="e4300a08-fcea-49fd-81da-1e755b1ed2c9" x="0" y="0" width="78" height="17"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="7"/>
+								</textElement>
+								<text><![CDATA[OUTUBRO]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnHeader style="table" height="17" rowSpan="1"/>
+						<jr:detailCell style="table" height="17" rowSpan="1"/>
+					</jr:column>
+					<jr:column width="78" uuid="f1653aa3-9e9c-400c-b7c3-3063e539a9c9">
+						<jr:tableHeader style="table" height="17" rowSpan="1">
+							<staticText>
+								<reportElement uuid="468852b9-6e49-48f6-ba2e-0d2900097e17" x="0" y="0" width="78" height="17"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="7"/>
+								</textElement>
+								<text><![CDATA[NOVEMBRO]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnHeader style="table" height="17" rowSpan="1"/>
+						<jr:detailCell style="table" height="17" rowSpan="1"/>
+					</jr:column>
+					<jr:column width="90" uuid="1d75452f-94b9-4bfd-992b-5bbb5335eba9">
+						<jr:tableHeader style="table" height="17" rowSpan="1">
+							<staticText>
+								<reportElement uuid="8f8bd9d4-fa77-4fe6-b0b3-47ab6f58f525" x="0" y="0" width="90" height="17"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="7"/>
+								</textElement>
+								<text><![CDATA[DEZEMBRO]]></text>
+							</staticText>
+						</jr:tableHeader>
+						<jr:columnHeader style="table" height="17" rowSpan="1"/>
+						<jr:detailCell style="table" height="17" rowSpan="1"/>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+		<band height="43">
+			<staticText>
+				<reportElement uuid="97ea6b54-d8e9-4714-9a3c-f46777c3c7c7" x="2" y="0" width="349" height="20"/>
+				<textElement verticalAlignment="Middle">
+					<font size="9" isBold="true" isItalic="true" pdfFontName="Helvetica-Bold"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[7  -  CONTAS  CORRENTES  -  VALORES  EM  REAIS]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement uuid="f3e4d0fd-6ddc-4df5-9411-88f14babf0eb" x="1" y="19" width="100" height="20"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="df3ebc80-2251-4b0f-afd5-895d20dfd00e" x="101" y="19" width="100" height="20"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="72d4885d-8a2c-44a7-8659-8cbcbf685cd7" x="201" y="19" width="100" height="20"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="403fbecb-1d56-423a-8b89-85da409989fd" x="301" y="19" width="100" height="20"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement uuid="a2c05dcf-84dd-4c14-bf49-64bda8ec00ae" x="1" y="19" width="35" height="20"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[Saldo em:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="1c3926e1-fbf3-49b4-b077-11d81516050f" x="202" y="19" width="35" height="20"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[Saldo em:]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="a53d7b4d-bade-4d89-ad97-42b079d920fd" x="102" y="19" width="100" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{conta_corrente_1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="d4e19c6c-1c14-4cd9-9fa4-ce0a35cb3d4c" x="304" y="19" width="100" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{conta_corrente_2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="f226a347-6525-48bb-bdd4-a60c67ababab" x="65" y="19" width="36" height="20"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{ano}-1]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="c06884bb-617a-46e6-990e-41da49194231" x="266" y="19" width="35" height="20"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{ano}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="87a7ef1c-20f0-45f0-90f3-f606c2e153a2" x="237" y="19" width="29" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[31.12.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="0e5792c5-0afe-4514-bee8-02fc92a54186" x="36" y="19" width="29" height="20"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="7"/>
+				</textElement>
+				<text><![CDATA[31.12.]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="46">
+			<staticText>
+				<reportElement uuid="66f53c4b-2194-4ac6-858a-1f8d3ddb6278" x="0" y="0" width="313" height="20"/>
+				<textElement textAlignment="Left" verticalAlignment="Bottom">
+					<font size="6" isBold="true" isItalic="true" pdfFontName="Helvetica-Bold"/>
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<text><![CDATA[INFORMA��ES COMPLEMENTARES]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement uuid="17006706-4cf1-4f4f-8f36-e61542971fd2" x="0" y="20" width="555" height="26"/>
+				<graphicElement>
+					<pen lineWidth="0.5"/>
+				</graphicElement>
+			</rectangle>
+		</band>
+	</pageFooter>
+</jasperReport>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans 
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+						http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+						http://www.springframework.org/schema/aop
+        				http://www.springframework.org/schema/aop/spring-aop-3.1.xsd">
+						
+	<bean class="org.springframework.beans.factory.config.CustomScopeConfigurer">
+	    <property name="scopes">
+	        <map>
+	            <entry key="view">
+	                <bean class="br.com.bancoamazonia.infrend.web.scopes.ViewScope"/>
+	            </entry>
+	        </map>
+	    </property>
+	</bean>
+	<!-- tabBeans -->
+	<bean id="arquivoProcessadoTabBean" class="br.com.bancoamazonia.infrend.web.beans.tabs.ArquivoProcessadoTabBean" scope="view">
+		<aop:scoped-proxy/>
+	</bean>
+	
+	<bean id="layoutArquivoTabBean" class="br.com.bancoamazonia.infrend.web.beans.tabs.LayoutArquivoTabBean" scope="view">
+		<aop:scoped-proxy/>
+	</bean>
+	
+	<bean id="propriedadeTabBean" class="br.com.bancoamazonia.infrend.web.beans.tabs.PropriedadeTabBean" scope="view">
+		<aop:scoped-proxy/>
+	</bean>
+	
+	<bean id="specArquivoTabBean" class="br.com.bancoamazonia.infrend.web.beans.tabs.SpecArquivoTabBean" scope="view">
+		<aop:scoped-proxy/>
+	</bean>
+	<!-- scope=session pois sera criado e menu dinamicamente a partir das transacoes do usuario, apenas na conexao do mesmo (criacao da sessao) -->
+	<!-- <bean id="panel" class="org.primefaces.component.accordionpanel.AccordionPanel" scope="request" />
+	<bean id="accordionBean" class="br.com.bancoamazonia.infrend.web.beans.AccordionBean" scope="request">
+		<property name="panel" ref="panel"/>
+	</bean> -->
+	<bean id="accordionBean" class="br.com.bancoamazonia.infrend.web.beans.AccordionBean" scope="view">
+		<aop:scoped-proxy/>
+	</bean>
+	
+	<!-- backbeans -->
+	<bean id="arquivoProcessadoBean" class="br.com.bancoamazonia.infrend.web.beans.ArquivoProcessadoBean" scope="view">
+		<aop:scoped-proxy/>
+		<property name="arquivoProcessadoService"><ref bean="arquivoProcessadoService"/></property>
+		<property name="arquivoProcessadoTabBean"><ref bean="arquivoProcessadoTabBean"/></property>
+	</bean>
+	
+	<bean id="layoutArquivoBean" class="br.com.bancoamazonia.infrend.web.beans.LayoutArquivoBean" scope="view">
+		<aop:scoped-proxy/>
+		<property name="layoutArquivoService"><ref bean="layoutArquivoService"/></property>
+		<property name="layoutArquivoTabBean"><ref bean="layoutArquivoTabBean"/></property>
+	</bean>
+	
+	<bean id="propriedadeBean" class="br.com.bancoamazonia.infrend.web.beans.PropriedadeBean" scope="view">
+		<aop:scoped-proxy/>
+		<property name="propriedadeService"><ref bean="propriedadeService"/></property>
+		<property name="propriedadeTabBean"><ref bean="propriedadeTabBean"/></property>
+	</bean>
+	
+	<bean id="reportBean" class="br.com.bancoamazonia.infrend.web.beans.ReportBean" scope="view">
+		<aop:scoped-proxy/>
+		<property name="clienteService"><ref bean="clienteService"/></property>
+		<property name="ocorrenciaPfService"><ref bean="ocorrenciaPfService"/></property>
+		<property name="ocorrenciaPjService"><ref bean="ocorrenciaPjService"/></property>
+		<property name="reportService"><ref bean="reportService"/></property>
+	</bean>
+	
+	<bean id="specArquivoBean" class="br.com.bancoamazonia.infrend.web.beans.SpecArquivoBean" scope="view">
+		<aop:scoped-proxy/>
+		<property name="specArquivoService"><ref bean="specArquivoService"/></property>
+		<property name="specArquivoTabBean"><ref bean="specArquivoTabBean"/></property>
+		
+		<property name="propriedadeService"><ref bean="propriedadeService"/></property>
+	</bean>
+	
+	<bean id="statusArquivoBean" class="br.com.bancoamazonia.infrend.web.beans.StatusArquivoBean" scope="view">
+		<aop:scoped-proxy/>
+		<property name="statusArquivoService"><ref bean="statusArquivoService"/></property>
+	</bean>
+	
+	<bean id="operacaoBean" class="br.com.bancoamazonia.infrend.web.beans.OperacaoBean" scope="view">
+		<aop:scoped-proxy/>
+		<property name="operacaoService"><ref bean="operacaoService"/></property>
+	</bean>
+	
+	<bean id="tipoArquivoBean" class="br.com.bancoamazonia.infrend.web.beans.TipoArquivoBean" scope="view">
+		<aop:scoped-proxy/>
+		<property name="tipoArquivoService"><ref bean="tipoArquivoService"/></property>
+	</bean>
+	
+	<bean id="tipoPropriedadeBean" class="br.com.bancoamazonia.infrend.web.beans.TipoPropriedadeBean" scope="view">
+		<aop:scoped-proxy/>
+		<property name="tipoPropriedadeService"><ref bean="tipoPropriedadeService"/></property>
+	</bean>
+
+</beans>

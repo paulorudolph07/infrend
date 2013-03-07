@@ -1,0 +1,181 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+				xmlns:h="http://java.sun.com/jsf/html"
+				xmlns:f="http://java.sun.com/jsf/core"
+				xmlns:ui="http://java.sun.com/jsf/facelets"
+				xmlns:p="http://primefaces.org/ui">
+              
+	<!-- <p:dialog modal="true" widgetVar="statusDialog" header="Status"   
+	        draggable="false" closable="false">
+	    <h:graphicImage name="ajax-loading-bar.gif" library="images"/>
+	    <p:graphicImage value="#{request.contextPath}/images/ajax-loading-bar.gif" /> 
+	</p:dialog> 
+		
+	<f:event type="preRenderView" listener="#{MyBackingBean.load}"></f:event>
+	-->
+  
+  	<ui:define name="title">Informe de Rendimento</ui:define>
+  	
+  	<h:form id="report-tab-form" prependId="false" >
+  		
+		<p:messages autoUpdate="true" />
+	
+		<h:selectOneRadio styleClass="texto" id="selecao-tipo-pessoa" value="#{reportBean.tipoCliente}">
+			<f:selectItem id="selecao-pf" itemLabel="Pessoa Física" itemValue="pf" />
+			<br />
+			<f:selectItem id="selecao-pj" itemLabel="Pessoa Jurídica" itemValue="pj" />
+			<f:ajax event="click" render="report-tab-form" />
+		</h:selectOneRadio>
+	
+		<hr id="divisoria"></hr>
+	
+		<p:outputPanel id="cpf-panel" styleClass="texto" rendered="#{reportBean.tipoCliente == 'pf'}">
+			<h:panelGrid columns="2">
+				<h:outputLabel value="CPF" for="input-cpf" />
+				<p:inputMask mask="999.999.999-99" id="input-cpf"
+					value="#{reportBean.codigo}" validator="CPFValidator"
+					required="true" requiredMessage="Campo obrigatório CPF">
+					<p:ajax event="blur" render="cpf-panel" />
+				</p:inputMask>
+				
+				<h:outputLabel value="Ano" for="input-ano-cpf" />
+				<h:selectOneMenu value="#{reportBean.ano}" id="input-ano-cpf">
+					<f:selectItem itemLabel="2012" itemValue="2012" />
+					<f:selectItem itemLabel="2011" itemValue="2011" />
+					<f:ajax event="change" render="cpf-panel" />
+				</h:selectOneMenu>
+			</h:panelGrid>
+		</p:outputPanel>
+		<!-- as tabelas estao fora do outputPanel para manter o css padrao -->
+		<p:dataTable id="ocorrencia-pf-table"
+	    	rowIndexVar="rowIx" rowStyleClass="#{empty rowIx or rowIx mod 2 ne 0 ? 'even-row' : 'odd-row'}"
+	    	var="o" value="#{reportBean.ocorrenciaPfList}" rowKey="#{o.id}"
+	    	paginator="true" rows="5" paginatorPosition="bottom"
+	    	emptyMessage="Nao ha registro na base."
+	    	rendered="#{reportBean.tipoCliente == 'pf' and not empty reportBean.ocorrenciaPfList}">
+	    	
+	    	<p:column headerText="Operacao">
+	    		<h:outputText value="#{o.operacao.tipo}"/>
+	    	</p:column>
+	    	<p:column headerText="Agencia">
+	    		<h:outputText value="#{o.dadoBancario.numeroAgencia}"/>
+	    	</p:column>
+	    	<p:column headerText="Conta">
+	    		<h:outputText value="#{o.dadoBancario.numeroConta}" />
+	    	</p:column>
+	    	<p:column headerText="Saldo Anterior">
+	    		<h:outputText value="#{o.saldoAnterior}">
+	    			<f:convertNumber pattern="R$###,###,###,##0.00" />
+	    		</h:outputText>
+	    	</p:column>
+	    	<p:column headerText="Saldo Atual">
+	    		<h:outputText value="#{o.saldoAtual}">
+	    			<f:convertNumber pattern="R$###,###,###,##0.00" />
+	    		</h:outputText>
+	    	</p:column>
+	    	<p:column headerText="Rendimento">
+	    		<h:outputText value="#{o.rendimento}">
+	    			<f:convertNumber pattern="R$###,###,###,##0.00" />
+	    		</h:outputText>
+	    	</p:column>
+	    </p:dataTable>
+	
+		<p:outputPanel id="cnpj-panel" styleClass="texto" rendered="#{reportBean.tipoCliente == 'pj'}">
+			<h:panelGrid columns="2">
+				<h:outputLabel value="CNPJ" for="input-cnpj" />
+				<p:inputMask id="input-cnpj" mask="99.999.999/9999-99"
+					value="#{reportBean.codigo}" validator="CNPJValidator"
+					required="true" requiredMessage="Campo obrigatório CNPJ">
+					<p:ajax event="blur" render="cnpj-panel" />
+				</p:inputMask>
+	
+				<h:outputLabel value="Ano" for="input-ano-cnpj" />
+				<h:selectOneMenu value="#{reportBean.ano}" id="input-ano-cnpj">
+					<f:selectItem itemLabel="2012" itemValue="2012" />
+					<f:selectItem itemLabel="2011" itemValue="2011" />
+					<f:ajax event="change" render="cnpj-panel" />
+				</h:selectOneMenu>
+	
+				<h:outputLabel value="Trimestre" for="input-trimestre-cnpj" />
+				<h:selectOneMenu value="#{reportBean.trimestre}" id="input-trimestre-cnpj">
+					<f:selectItem itemLabel="Primeiro" itemValue="1" />
+					<f:selectItem itemLabel="Segundo" itemValue="2" />
+					<f:selectItem itemLabel="Terceiro" itemValue="3" />
+					<f:selectItem itemLabel="Quarto" itemValue="4" />
+				</h:selectOneMenu>
+			</h:panelGrid>
+			
+		</p:outputPanel>
+		
+		<p:dataTable id="ocorrencia-pj-table"
+	    	rowIndexVar="rowIx" rowStyleClass="#{empty rowIx or rowIx mod 2 ne 0 ? 'even-row' : 'odd-row'}"
+	    	var="o" value="#{reportBean.ocorrenciaPjList}" rowKey="#{o.id}"
+	    	paginator="true" rows="5" paginatorPosition="bottom"  
+               rowsPerPageTemplate="5,10,15"
+	    	emptyMessage="Nao ha registro na base."
+	    	rendered="#{reportBean.tipoCliente == 'pj' and not empty reportBean.ocorrenciaPjList}">
+	    	
+	    	<p:column headerText="Operacao">
+	    		<h:outputText value="#{o.operacao.tipo}"/>
+	    	</p:column>
+	    	<p:column headerText="Mes">
+	    		<h:outputText value="#{reportBean.getMonthName(o.mes)}"/>
+	    	</p:column>
+	    	<p:column headerText="Agencia">
+	    		<h:outputText value="#{o.dadoBancario.numeroAgencia}"/>
+	    	</p:column>
+	    	<p:column headerText="Conta">
+	    		<h:outputText value="#{o.dadoBancario.numeroConta}"/>
+	    	</p:column>
+	    	<p:column headerText="Rendimento">
+	    		<h:outputText value="#{o.rendimento}">
+	    			<f:convertNumber pattern="R$###,###,###,##0.00" />
+	    		</h:outputText>
+	    	</p:column>
+	    	<p:column headerText="Imposto Renda">
+	    		<h:outputText value="#{o.impostoRenda}">
+	    			<f:convertNumber pattern="R$###,###,###,##0.00" />
+	    		</h:outputText>
+	    	</p:column>
+	    </p:dataTable>
+		<br></br>
+		<p:dataTable id="conta-corrente-ocorrencia-pj-table"
+	    	rowIndexVar="rowIx" rowStyleClass="#{empty rowIx or rowIx mod 2 ne 0 ? 'even-row' : 'odd-row'}"
+	    	var="o" value="#{reportBean.contaCorrenteList}" rowKey="#{o.id}"
+	    	paginator="true" rows="5" paginatorPosition="bottom"  
+               rowsPerPageTemplate="5,10,15"
+	    	emptyMessage="Nao ha registro na base."
+	    	rendered="#{reportBean.tipoCliente == 'pj' and not empty reportBean.contaCorrenteList}">
+	    	<p:column headerText="Operacao" >
+	    		<h:outputText value="#{o.operacao.tipo}" />
+	    	</p:column>
+	    	<p:column headerText="Agencia" >
+	    		<h:outputText value="#{o.dadoBancario.numeroAgencia}" />
+	    	</p:column>
+	    	<p:column headerText="Conta" >
+	    		<h:outputText value="#{o.dadoBancario.numeroConta}" />
+	    	</p:column>
+	    	<p:column headerText="Saldo Anterior" >
+	    		<h:outputText value="#{o.rendimento}" >
+	    			<f:convertNumber pattern="R$###,###,###,##0.00" />
+	    		</h:outputText>
+	    	</p:column>
+	    	<p:column headerText="Saldo Atual" >
+	    		<h:outputText value="#{o.impostoRenda}" >
+	    			<f:convertNumber pattern="R$###,###,###,##0.00" />
+	    		</h:outputText>
+	    	</p:column>
+	    </p:dataTable>
+		
+		<div class="bgbotao">
+			<h:commandButton id="analytic-button" styleClass="botao" value="Analitico" 
+				action="#{reportBean.setOcorrenciaList}"
+				update="@form"/>
+		
+			<h:commandButton id="bot" styleClass="botao" value="Gerar Comprovante" 
+				ajax="false" actionListener="#{reportBean.loadReport}" style="width: 130px;">
+				<p:fileDownload value="#{reportBean.report}" /> <!-- contentDisposition="inline" -->
+			</h:commandButton>
+		</div>
+  	</h:form>
+</ui:composition> 

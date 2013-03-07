@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+				xmlns:h="http://java.sun.com/jsf/html"
+				xmlns:f="http://java.sun.com/jsf/core"
+				xmlns:ui="http://java.sun.com/jsf/facelets"
+				xmlns:p="http://primefaces.org/ui">
+				
+	<h:outputScript name="infrend.check.selected.propriedades.js" library="scripts" />
+				
+	<!-- inicializa a lista de as propriedades a serem selecionadas -->
+	<script type="text/javascript">
+  		#{specArquivoBean.init()};
+  	</script>
+  	
+  	<!-- 
+    	script encontra-se dentro de h:inputHidden para que o mesmo possa ser atualizado a cada paginacao
+    	do p:dataTable de id 'propriedades-table', para que com isso, seja reprocessado o 
+    	el expression '#{specArquivoBean.selectedPropriedades}'
+     -->
+  	<h:inputHidden id="create-script">
+    	<script type="text/javascript">
+			function checkSelectedPropriedades()
+			{
+				checkFrom(#{specArquivoBean.selectedPropriedades});	
+			}
+		</script>
+    </h:inputHidden>
+    
+    <!-- executado uma unica vez, ao redirecionar para esta pagina, para checkagem inicial -->
+    <script type="text/javascript">
+	    $(document).ready(function(){
+			checkSelectedPropriedades()
+		})
+  	</script>
+  
+  	<ui:define name="title">Criar Specificacao de Arquivo</ui:define>
+    
+    <h:form id="spec-arquivo-create-tab-form">
+    	<center>
+			<p:messages autoUpdate="true" />
+		</center>
+    	<h:panelGrid columns="2" style="width: 100%;">
+    		<h:outputLabel value="Operacao:" for="operacao" />
+    		<h:selectOneMenu value="#{specArquivoBean.newSpecArquivo.operacao}" converter="operacaoConverter">  
+                 <f:selectItems id="operacao" value="#{operacaoBean.list}"  
+                     var="o"   
+                     itemLabel="#{o.tipo}"  
+                     itemValue="#{o}" />  
+            </h:selectOneMenu>
+    		
+    		<h:outputLabel value="Padrao do nome:" for="pattern" />
+    		<p:inputText id="pattern" value="#{specArquivoBean.newSpecArquivo.pattern}"/>
+    		
+    		<h:outputLabel value="Diretorio Origem:" for="dir-origem" />
+    		<p:inputText id="dir-origem" value="#{specArquivoBean.newSpecArquivo.dirOrigem}"/>
+    		
+    		<h:outputLabel value="Diretorio Destino:" for="dir-destino" />
+    		<p:inputText id="dir-destino" value="#{specArquivoBean.newSpecArquivo.dirDestino}"/>
+    		
+    		<h:outputLabel value="Tipo:" for="tipo" />
+    		<h:selectOneMenu value="#{specArquivoBean.newSpecArquivo.tipo}" converter="tipoArquivoConverter">  
+                 <f:selectItems id="tipo" value="#{tipoArquivoBean.list}"  
+                     var="t"   
+                     itemLabel="#{t.descricao}"  
+                     itemValue="#{t}" />  
+            </h:selectOneMenu>
+			
+            <h:outputLabel value="Propriedades:" for="propriedades-table" />
+         	<p:dataTable id="propriedades-table"
+		    	rowIndexVar="rowIx" rowStyleClass="#{empty rowIx or rowIx mod 2 ne 0 ? 'even-row' : 'odd-row'}"
+		    	var="p" value="#{propriedadeBean.list}" rowKey="#{p.id}"
+		    	paginator="true" rows="10" paginatorPosition="bottom"
+		    	emptyMessage="Nao ha registro na base."
+		    	rendered="#{not empty propriedadeBean.list}">
+		    	
+		    	<!-- atualiza script (update) responsavel pelo carregamento da lista das propriedades selecionadas -->
+		    	<p:ajax event="page" update=":tab-view:create-script" oncomplete="checkSelectedPropriedades()"/>
+		    
+		    	<p:column style="width: 5%">
+			    	<p:selectBooleanCheckbox value="#{specArquivoBean.checked}">
+			            <p:ajax update="propriedades-table" listener="#{specArquivoBean.onCheckboxChange(p.id)}"/>  
+			        </p:selectBooleanCheckbox>
+		    	</p:column>
+		    	
+		    	<p:column style="width: 5%" headerText="ID">
+		    		<h:outputText class="selected-id" value="#{p.id}"/>
+		    	</p:column>
+		    	<p:column headerText="Nome">
+		    		<h:outputText value="#{p.nome}"/>
+		    	</p:column>
+		    	<p:column headerText="Descricao">
+		    		<h:outputText value="#{p.descricao}"/>
+		    	</p:column>
+		    	<p:column headerText="Tamanho">
+		    		<h:outputText value="#{p.tamanho}"/>
+		    	</p:column>
+		    	<p:column headerText="Ordem">
+		    		<h:outputText value="#{p.ordem}"/>
+		    	</p:column>
+		    	<p:column headerText="Tipo">
+		    		<h:outputText value="#{p.tipo.descricao}"/>
+		    	</p:column>
+		    	<p:column headerText="Layout">
+		    		<h:outputText value="#{p.layoutArquivo.descricao}"/>
+		    	</p:column>
+		    </p:dataTable>
+         </h:panelGrid>
+    	
+    	<div class="bgbotao">
+			<h:commandButton id="save-button" styleClass="botao" value="salvar" 
+				action="#{specArquivoBean.save}"
+				update="@form"/>
+		</div>
+    </h:form>
+</ui:composition> 
