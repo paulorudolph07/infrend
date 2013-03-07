@@ -36,8 +36,8 @@
 		<dependencies>
 			<dependency>
 		        <groupId>br.com.bancoamazonia.segu</groupId>
-		        <artifactId>dev-segu-client</artifactId>
-		        <version>1.0.0</version>
+		        <artifactId>segu-wsclient-desenv</artifactId>
+		        <version>0.0.1</version>
 		    </dependency>
 		</dependencies>
   	</profile>
@@ -47,7 +47,18 @@
 		<dependencies>
 			<dependency>
 		        <groupId>br.com.bancoamazonia.segu</groupId>
-		        <artifactId>hom-segu-client</artifactId>
+		        <artifactId>segu-wsclient-homo</artifactId>
+		        <version>0.1.0</version>
+		    </dependency>
+		</dependencies>
+  	</profile>
+  	
+  	<profile>
+  		<id>producao</id>
+		<dependencies>
+			<dependency>
+		        <groupId>br.com.bancoamazonia.segu</groupId>
+		        <artifactId>segu-wsclient-prod</artifactId>
 		        <version>1.0.0</version>
 		    </dependency>
 		</dependencies>
@@ -208,6 +219,6 @@
   </dependencies>
   
   <build>
-    <finalName>web</finalName>
+    <finalName>infrend</finalName>
   </build>
 </project>

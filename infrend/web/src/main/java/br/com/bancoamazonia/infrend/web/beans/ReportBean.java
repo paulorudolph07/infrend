@@ -128,7 +128,7 @@ public class ReportBean implements Serializable {
 				else if(tipoCliente.toLowerCase().equals("pj"))
 					params.putAll(ocorrenciaPjService.toMap(cliente, ano, trimestre));
 				InputStream conteudoRel = reportService.create(params);
-				report = new DefaultStreamedContent(conteudoRel, "application/pdf", "ir"
+				report = new DefaultStreamedContent(conteudoRel, "application/pdf;charset=ISO-8859-1", "ir"
 						+Util.rawCode(codigo)
 						+".pdf");
 			}

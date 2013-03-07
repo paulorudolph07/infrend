@@ -78,14 +78,14 @@ public class OcorrenciaPjService {
 	public Map<String, Object> toMap(Cliente cliente, Integer ano, Integer trimestre) {
 		Map<String, Object> params = new HashMap<String, Object>(); 
 		Integer mesFinal = 3*trimestre;
-		Integer mesInicial = mesFinal-2;
+		//Integer mesInicial = mesFinal-2;
+		Integer mesInicial = 1;
 		
 		List<Operacao> operacoes = operacaoService.pjOperacaoList();
 		
 		DecimalFormat formatador = new DecimalFormat("###,###,###,##0.00");
 		for(Operacao op : operacoes) {
-			for(int mes = mesInicial; mes <= mesFinal; mes++)
-			{
+			for(int mes = mesInicial; mes <= mesFinal; mes++) {
 				// criamos as chaves referentes aos nomes dos parametros no relatorio
 				String rendKey = op.getTipo().toLowerCase()+"_rendimento_"+mes;
 				String impostoKey = op.getTipo().toLowerCase()+"_imposto_"+mes;

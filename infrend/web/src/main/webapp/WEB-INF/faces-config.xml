@@ -33,7 +33,6 @@
   	<lifecycle> 
   		<phase-listener>br.com.bancoamazonia.infrend.web.listeners.RequestToSessionListener</phase-listener>
   		<phase-listener>br.com.bancoamazonia.infrend.web.listeners.MenuBuilderListener</phase-listener>
-  		<!-- <phase-listener>br.com.bancoamazonia.infrend.web.listeners.TransactionAuthorizationListener</phase-listener> -->
   		<phase-listener>br.com.bancoamazonia.infrend.web.listeners.AuthorizationListener</phase-listener>
   	</lifecycle>
 	

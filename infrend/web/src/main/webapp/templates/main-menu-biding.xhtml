@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+				xmlns:h="http://java.sun.com/jsf/html"
+				xmlns:f="http://java.sun.com/jsf/core"
+				xmlns:ui="http://java.sun.com/jsf/facelets"
+				xmlns:p="http://primefaces.org/ui">
+				
+	<!-- 
+		currentLink: eh processado pelo br.com.bancoamazonia.infrend.web.listeners.RequestToSessionListener 
+					para o texto de navegabilidade das paginas 
+		
+		p:tab title="": eh processado pelo br.com.bancoamazonia.infrend.web.beans.AccordionBean 
+						para o texto de navegabilidade das paginas
+	-->
+	<!-- <script type="text/javascript">
+	  	$(document).ready(function() {
+	  	    $("a.menu-item").each(function() {
+	  	    	$(this).append('<param name="currentLink" value="'+$(this).text()+'"/>')
+	  	    });
+	  	});
+	</script> -->
+	<h:form id="accordion-panel-form" prependId="true">
+		<p:accordionPanel binding="#{accordionBean.panel}" dynamic="false" multiple="false">
+			<p:ajax event="tabChange" listener="#{accordionBean.onTabChange}" />
+		</p:accordionPanel>
+	</h:form>
+</ui:composition>
+
