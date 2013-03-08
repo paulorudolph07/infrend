@@ -1,0 +1,14 @@
+br\com\bancoamazonia\infrend\service\OcorrenciaPjService.class
+br\com\bancoamazonia\infrend\service\TipoArquivoService.class
+br\com\bancoamazonia\infrend\service\TipoPropriedadeService.class
+br\com\bancoamazonia\infrend\service\ClienteService.class
+br\com\bancoamazonia\infrend\service\ArquivoProcessadoService.class
+br\com\bancoamazonia\infrend\service\ClienteService$ClienteServiceException.class
+br\com\bancoamazonia\infrend\service\OcorrenciaPfService.class
+br\com\bancoamazonia\infrend\service\OcorrenciaPjService$OcorrenciaPjServiceException.class
+br\com\bancoamazonia\infrend\service\SpecArquivoService.class
+br\com\bancoamazonia\infrend\service\OperacaoService.class
+br\com\bancoamazonia\infrend\service\OcorrenciaPfService$OcorrenciaPfServiceException.class
+br\com\bancoamazonia\infrend\service\PropriedadeService.class
+br\com\bancoamazonia\infrend\service\LayoutArquivoService.class
+br\com\bancoamazonia\infrend\service\StatusArquivoService.class

@@ -1,0 +1,6 @@
+br\com\bancoamazonia\infrend\job\core\exception\LostConnectionException.class
+br\com\bancoamazonia\infrend\job\core\Core.class
+br\com\bancoamazonia\infrend\job\core\exception\RegisterException.class
+br\com\bancoamazonia\infrend\job\core\fases\Fase0.class
+br\com\bancoamazonia\infrend\job\core\util\Util.class
+br\com\bancoamazonia\infrend\job\core\context\InfrendContext.class
