@@ -102,6 +102,7 @@ div.content {
 
 .botao {
 	margin-top: 10px;
+	margin-left: 20px;
 	font-family: Tahoma;
 	font-size: 11px;
 	font-weight: bold;
@@ -119,14 +120,57 @@ div.content {
 	border-right-color: #EBEBEB;
 	border-bottom-color: #EBEBEB;
 	border-left-color: #F3F3F3;
-	margin-left: 20px; height : 20px;
 	width: 90px;
 	height: 20px;
 }
 
+.bgbotao .ui-commandlink {
+	display: inline-block;
+	width: auto;
+	height: 17px;
+	
+	margin-left: 20px;
+	
+	padding-top: 5px;
+	padding-left: 10px;
+	padding-bottom: 2px;
+	padding-right: 10px;
+	
+	font-family: Tahoma;
+	font-size: 11px;
+	font-weight: bold;
+	color: #333333;
+	text-decoration: none;
+	text-align:center;
+	
+	background-color: #F8FEF0;
+	border-top-width: 1px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: ridge;
+	border-right-style: ridge;
+	border-bottom-style: ridge;
+	border-left-style: ridge;
+	border-top-color: #F2F2F2;
+	border-right-color: #EBEBEB;
+	border-bottom-color: #EBEBEB;
+	border-left-color: #F3F3F3;
+}
+
+.shadow {
+	-moz-box-shadow: 5px 5px 5px #888;
+	-webkit-box-shadow: 5px 5px 5px #888;
+	box-shadow: 5px 5px 5px #888;
+	/* For IE 8 */
+	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000')";
+	/* For IE 5.5 - 7 */
+	filter: progid:DXImageTransform.Microsoft.Shadow(Strength=4, Direction=135, Color='#000000');
+}
+
 .bgbotao {
 	background-image: url(../resources/images/bkg_tb_submit.gif);
-	padding-top: 5px;
+	padding-top: 10px;
 	background-repeat: repeat-x;
 	height: 50px;
 	margin-top: 50px;

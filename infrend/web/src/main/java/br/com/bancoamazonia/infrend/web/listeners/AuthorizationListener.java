@@ -43,10 +43,13 @@ public class AuthorizationListener implements PhaseListener {
 				AutenticaServiceWrapper autentica = seguClientService.validateUserByAuthKey(authKey);
 				
 				if(!autentica.getResultado().equals("0")) {seguClientService.login(response);return;}
+				if(!seguClientService.hasSystemAccess(authKey)) {seguClientService.logout(response, authKey);return;}
 				
 				session.setAttribute("authkey", authKey);
 				session.setAttribute("username", autentica.getUsuario().getNome());
 				session.setAttribute("authenticated", true);
+				// devendo ser configurado no /templates/main.xhtml
+				// session.setMaxInactiveInterval(5*60);
 			}
 			catch (Exception e) {
 				e.printStackTrace();

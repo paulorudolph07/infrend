@@ -23,8 +23,7 @@ public class TipoPropriedadeService {
 	{
 		return tipoPropriedadeDao.get(TipoPropriedade.class, id);
 	}
-	public List<TipoPropriedade> list()
-	{
+	public List<TipoPropriedade> list() {
 		return tipoPropriedadeDao.list(TipoPropriedade.class);
 	}
 }

@@ -9,24 +9,20 @@
         				http://www.springframework.org/schema/aop/spring-aop-3.1.xsd">
 
 	<!-- DataSources -->
-	<bean id="sqlServerDataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
         <property name="driverClassName" value="net.sourceforge.jtds.jdbc.Driver"/>
         <property name="url" value="jdbc:jtds:sqlserver://srv2031:1433/infrend"/>
         <property name="username" value="u_infrend"/>
         <property name="password" value="infrend123"/>
     </bean>
     
-    <!-- com autenticação do windows -->
-    <!-- <bean id="sqlServerDataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
-        <property name="driverClassName" value="net.sourceforge.jtds.jdbc.Driver"/>
-        <property name="url" value="jdbc:jtds:sqlserver://127.0.0.1:1433/infrend;useNTLMv2=true;domain=com.bancoamazonia.modelo"/>
-        <property name="username" value="rudolph"/>
-        <property name="password" value="jmml72"/>
-    </bean> -->
-    
+    <!-- <bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
+	    <property name="jndiName" value="java:comp/env/jdbc/infrend"/>
+	</bean> -->
+
     <!-- SessionFactorys -->
     <bean id="sessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean" scope="singleton"> 
-        <property name="dataSource" ref="sqlServerDataSource" />
+        <property name="dataSource" ref="dataSource" />
         <property name="annotatedClasses">
             <list>
                 <value>br.com.bancoamazonia.infrend.modelo.ArquivoProcessado</value>
@@ -102,58 +98,65 @@
 	    </property>
 	</bean>
 	
-	<bean id="hibernateTemplate" class="org.springframework.orm.hibernate3.HibernateTemplate" scope="prototype">   
-		<property name="sessionFactory" ref="sessionFactory"/>   
-		<property name="flushModeName" value="FLUSH_AUTO" />
-	</bean>
-	
 	<!-- DAOs -->
-	<bean id="arquivoProcessadoDao" class="br.com.bancoamazonia.infrend.dao.ArquivoProcessadoDao">
-		<property name="hibernateTemplate" ref="hibernateTemplate"/> 
+	<bean id="arquivoProcessadoDao" class="br.com.bancoamazonia.infrend.dao.ArquivoProcessadoDao" scope="request">
+		<aop:scoped-proxy/>
+		<property name="sessionFactory" ref="sessionFactory"/>  
 	</bean>
 	
-	<bean id="clienteDao" class="br.com.bancoamazonia.infrend.dao.ClienteDao">
-		<property name="hibernateTemplate" ref="hibernateTemplate"/> 
+	<bean id="clienteDao" class="br.com.bancoamazonia.infrend.dao.ClienteDao" scope="request">
+		<aop:scoped-proxy/>
+		<property name="sessionFactory" ref="sessionFactory"/> 
 	</bean>
 	
-	<bean id="layoutArquivoDao" class="br.com.bancoamazonia.infrend.dao.LayoutArquivoDao">
-		<property name="hibernateTemplate" ref="hibernateTemplate"/> 
+	<bean id="layoutArquivoDao" class="br.com.bancoamazonia.infrend.dao.LayoutArquivoDao" scope="request">
+		<aop:scoped-proxy/>
+		<property name="sessionFactory" ref="sessionFactory"/>
 	</bean>
 	
-	<bean id="ocorrenciaPfDao" class="br.com.bancoamazonia.infrend.dao.OcorrenciaPfDao">
-		<property name="hibernateTemplate" ref="hibernateTemplate"/> 
+	<bean id="ocorrenciaPfDao" class="br.com.bancoamazonia.infrend.dao.OcorrenciaPfDao" scope="request">
+		<aop:scoped-proxy/>
+		<property name="sessionFactory" ref="sessionFactory"/> 
 	</bean>
 	
-	<bean id="ocorrenciaPjDao" class="br.com.bancoamazonia.infrend.dao.OcorrenciaPjDao">
-		<property name="hibernateTemplate" ref="hibernateTemplate"/> 
+	<bean id="ocorrenciaPjDao" class="br.com.bancoamazonia.infrend.dao.OcorrenciaPjDao" scope="request">
+		<aop:scoped-proxy/>
+		<property name="sessionFactory" ref="sessionFactory"/> 
 	</bean>
 	
-	<bean id="operacaoDao" class="br.com.bancoamazonia.infrend.dao.OperacaoDao">
-		<property name="hibernateTemplate" ref="hibernateTemplate"/> 
+	<bean id="operacaoDao" class="br.com.bancoamazonia.infrend.dao.OperacaoDao" scope="request">
+		<aop:scoped-proxy/>
+		<property name="sessionFactory" ref="sessionFactory"/> 
 	</bean>
 	
-	<bean id="propriedadeDao" class="br.com.bancoamazonia.infrend.dao.PropriedadeDao">
-		<property name="hibernateTemplate" ref="hibernateTemplate"/> 
+	<bean id="propriedadeDao" class="br.com.bancoamazonia.infrend.dao.PropriedadeDao" scope="request">
+		<aop:scoped-proxy/>
+		<property name="sessionFactory" ref="sessionFactory"/>  
 	</bean>
 	
-	<bean id="specArquivoDao" class="br.com.bancoamazonia.infrend.dao.SpecArquivoDao">
-		<property name="hibernateTemplate" ref="hibernateTemplate"/> 
+	<bean id="specArquivoDao" class="br.com.bancoamazonia.infrend.dao.SpecArquivoDao" scope="request">
+		<aop:scoped-proxy/>
+		<property name="sessionFactory" ref="sessionFactory"/>  
 	</bean>
 
-	<bean id="statusArquivoDao" class="br.com.bancoamazonia.infrend.dao.StatusArquivoDao">
-		<property name="hibernateTemplate" ref="hibernateTemplate"/> 
+	<bean id="statusArquivoDao" class="br.com.bancoamazonia.infrend.dao.StatusArquivoDao" scope="request">
+		<aop:scoped-proxy/>
+		<property name="sessionFactory" ref="sessionFactory"/>  
 	</bean>
 	
-	<bean id="tipoArquivoDao" class="br.com.bancoamazonia.infrend.dao.TipoArquivoDao">
-		<property name="hibernateTemplate" ref="hibernateTemplate"/> 
+	<bean id="tipoArquivoDao" class="br.com.bancoamazonia.infrend.dao.TipoArquivoDao" scope="request">
+		<aop:scoped-proxy/>
+		<property name="sessionFactory" ref="sessionFactory"/>  
 	</bean>
 	
-	<bean id="tipoClienteDao" class="br.com.bancoamazonia.infrend.dao.TipoClienteDao">
-		<property name="hibernateTemplate" ref="hibernateTemplate"/> 
+	<bean id="tipoClienteDao" class="br.com.bancoamazonia.infrend.dao.TipoClienteDao" scope="request">
+		<aop:scoped-proxy/>
+		<property name="sessionFactory" ref="sessionFactory"/> 
 	</bean>
 	
-	<bean id="tipoPropriedadeDao" class="br.com.bancoamazonia.infrend.dao.TipoPropriedadeDao">
-		<property name="hibernateTemplate" ref="hibernateTemplate"/>
+	<bean id="tipoPropriedadeDao" class="br.com.bancoamazonia.infrend.dao.TipoPropriedadeDao" scope="request">
+		<aop:scoped-proxy/>
+		<property name="sessionFactory" ref="sessionFactory"/>
 	</bean>
 
 </beans>

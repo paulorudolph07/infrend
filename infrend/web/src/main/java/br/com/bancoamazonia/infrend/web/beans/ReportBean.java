@@ -36,15 +36,18 @@ public class ReportBean implements Serializable {
 	private OcorrenciaPjService ocorrenciaPjService;
 	private ReportService reportService; 
 	
+	private Cliente clientePf;
+	private Cliente clientePj;
 	private String tipoCliente = "pf";
-	private String codigo;
+	private String cpf;
+	private String cnpj;
 	private int ano;
 	private int trimestre;
 	private StreamedContent report;
 	private List<OcorrenciaPessoaFisica> ocorrenciaPfList;
 	private List<OcorrenciaPessoaJuridica> ocorrenciaPjList;
 	private List<OcorrenciaPessoaJuridica> contaCorrenteList;
-	private List<String> meses = Arrays.asList("NONE", "Janeiro", "Fevereiro", "Marco", "Abril", "Maio", "Junho", "Julho", "Agosto",
+	private List<String> meses = Arrays.asList("NONE", "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto",
 			"Setembro", "Outubro", "Novembro", "Dezembro");
 	
 	public void setClienteService(ClienteService clienteService) {
@@ -65,11 +68,29 @@ public class ReportBean implements Serializable {
 	public void setTipoCliente(String tipoCliente) {
 		this.tipoCliente = tipoCliente;
 	}
-	public String getCodigo() {
-		return codigo;
+	public Cliente getClientePf() {
+		return clientePf;
 	}
-	public void setCodigo(String codigo) {
-		this.codigo = codigo;
+	public void setClientePf(Cliente clientePf) {
+		this.clientePf = clientePf;
+	}
+	public Cliente getClientePj() {
+		return clientePj;
+	}
+	public void setClientePj(Cliente clientePj) {
+		this.clientePj = clientePj;
+	}
+	public String getCpf() {
+		return cpf;
+	}
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+	public String getCnpj() {
+		return cnpj;
+	}
+	public void setCnpj(String cnpj) {
+		this.cnpj = cnpj;
 	}
 	public int getAno() {
 		return ano;
@@ -90,16 +111,17 @@ public class ReportBean implements Serializable {
 		this.report = report;
 	}
 	public void setOcorrenciaList() {
-		if(tipoCliente.equalsIgnoreCase("pf"))
-			ocorrenciaPfList = ocorrenciaPfService.listByCodigoAndAno(Util.rawCode(codigo), ano);
-		else {
-			//ocorrenciaPjList = ocorrenciaPjService.listByCodigoAndAno(Util.rawCode(codigo), ano);
-			ocorrenciaPjList = ocorrenciaPjService.listByCodigoAndAnoAndOperacao(Util.rawCode(codigo), ano,
+		if(tipoCliente.equalsIgnoreCase("pf") && (clientePf = (clienteService.findByCodigo(Util.rawCode(cpf)))) != null) 
+			ocorrenciaPfList = ocorrenciaPfService.listByCodigoAndAno(clientePf.getCodigo(), ano);
+		else if (tipoCliente.equalsIgnoreCase("pj") && (clientePj = (clienteService.findByCodigo(Util.rawCode(cnpj)))) != null) {
+			ocorrenciaPjList = ocorrenciaPjService.listByCodigoAndAnoAndOperacao(clientePj.getCodigo(), ano,
 					new BigInteger[]{new BigInteger("2"), new BigInteger("3"), new BigInteger("5")});
-			contaCorrenteList = ocorrenciaPjService.listByCodigoAndAnoAndOperacao(Util.rawCode(codigo), ano,
+			contaCorrenteList = ocorrenciaPjService.listByCodigoAndAnoAndOperacao(clientePj.getCodigo(), ano,
 					new BigInteger[]{new BigInteger("1")});
 		}
-				
+		else
+			FacesContext.getCurrentInstance().addMessage(null, 
+					new FacesMessage(FacesMessage.SEVERITY_WARN, "A consulta nao retornou resultado!", "msg_detail"));
 	}
 	public List<OcorrenciaPessoaFisica> getOcorrenciaPfList() {
 		return ocorrenciaPfList;
@@ -116,23 +138,15 @@ public class ReportBean implements Serializable {
 	
 	public void loadReport(ActionEvent event) throws AbortProcessingException {
 		try	{
-			Cliente cliente = clienteService.findByCodigo(Util.rawCode(codigo));
-			if(cliente != null) {
-				Map<String, Object> params = clienteService.toMap(cliente);
-				params.put("codigo", codigo);
-				params.put("ano", ano);
-				params.put("trimestre", trimestre);
-				params.put("tipoCliente", tipoCliente);
-				if(tipoCliente.toLowerCase().equals("pf"))
-					params.putAll(ocorrenciaPfService.toMap(cliente, ano));
-				else if(tipoCliente.toLowerCase().equals("pj"))
-					params.putAll(ocorrenciaPjService.toMap(cliente, ano, trimestre));
-				InputStream conteudoRel = reportService.create(params);
-				report = new DefaultStreamedContent(conteudoRel, "application/pdf;charset=ISO-8859-1", "ir"
-						+Util.rawCode(codigo)
-						+".pdf");
+			if(tipoCliente.equalsIgnoreCase("pf")) {
+				clientePf = clienteService.findByCodigo(Util.rawCode(cpf));
+				loadBy(clientePf);
 			}
-			else throw new RuntimeException("A consulta nao retornou resultado!");
+			else {
+				clientePj = clienteService.findByCodigo(Util.rawCode(cnpj));
+				loadBy(clientePj);
+			}
+			
 		}
 		catch(Exception e) {
 			log.error(e);
@@ -140,6 +154,25 @@ public class ReportBean implements Serializable {
 					new FacesMessage(FacesMessage.SEVERITY_WARN, e.getMessage(), "msg_detail"));
 			throw new AbortProcessingException();
 		}
+	}
+	
+	private void loadBy(Cliente cliente) {
+		if(cliente != null) {
+			Map<String, Object> params = clienteService.toMap(cliente);
+			params.put("codigo", cliente.getCodigo());
+			params.put("ano", ano);
+			params.put("trimestre", trimestre);
+			params.put("tipoCliente", tipoCliente);
+			if(tipoCliente.toLowerCase().equals("pf"))
+				params.putAll(ocorrenciaPfService.toMap(cliente, ano));
+			else if(tipoCliente.toLowerCase().equals("pj"))
+				params.putAll(ocorrenciaPjService.toMap(cliente, ano, trimestre));
+			InputStream conteudoRel = reportService.create(params);
+			report = new DefaultStreamedContent(conteudoRel, "application/pdf;charset=ISO-8859-1", "ir"
+					+Util.rawCode(cliente.getCodigo())
+					+".pdf");
+		}
+		else throw new RuntimeException("A consulta nao retornou resultado!");
 	}
 	
 }

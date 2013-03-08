@@ -14,62 +14,56 @@ import br.com.pdcase.pdsegu.ws.Parametro;
 import br.com.pdcase.pdsegu.ws.SeguServiceProxy;
 import br.com.pdcase.pdsegu.ws.TransacaoBean;
 
-public class SeguClientService
-{
+public class SeguClientService {
 	private SeguServiceProxy seguServiceProxy;
 	private String sigla;
 	private String timeout;
-	public String getSigla()
-	{
+	public String getSigla() {
 		return sigla;
 	}
-	public void setSigla(String sigla)
-	{
+	public void setSigla(String sigla) {
 		this.sigla = sigla;
 	}
-	public String getTimeout()
-	{
+	public String getTimeout() {
 		return timeout;
 	}
-	public void setTimeout(String timeout)
-	{
+	public void setTimeout(String timeout) {
 		this.timeout = timeout;
 	}
-	public SeguServiceProxy getSeguServiceProxy()
-	{
+	public SeguServiceProxy getSeguServiceProxy() {
 		return seguServiceProxy;
 	}
-	public void setSeguServiceProxy(SeguServiceProxy seguServiceProxy)
-	{
+	public void setSeguServiceProxy(SeguServiceProxy seguServiceProxy) {
 		this.seguServiceProxy = seguServiceProxy;
 	}
 	
-	public void login(HttpServletResponse response) throws IOException
-	{
+	public void login(HttpServletResponse response) throws IOException {
 		Parametro parametro = seguServiceProxy.recuperarParametro("URL_LOGIN_PAGE");
 		String url = parametro.getValor();
 		response.sendRedirect(url+"?sigla="+sigla);
 	}
 	
 	public void logout(HttpServletResponse response, String authkey) throws IOException {
-		seguServiceProxy.logout(authkey);
 		Parametro parametro = seguServiceProxy.recuperarParametro("URL_LOGIN_PAGE");
 		String url = parametro.getValor();
 		response.sendRedirect(url);
 	}
 	
-	public void setSessionTimeout(HttpSession session) throws RemoteException
-	{
-		if(timeout == null || timeout.equals(""))
-		{
+	public void logout(HttpServletResponse response) throws IOException {
+		Parametro parametro = seguServiceProxy.recuperarParametro("URL_LOGIN_PAGE");
+		String url = parametro.getValor();
+		response.sendRedirect(url);
+	}
+	
+	public void setSessionTimeout(HttpSession session) throws RemoteException {
+		if(timeout == null || timeout.equals("")) {
 			Parametro parametro = seguServiceProxy.recuperarParametro("TEMPO_EXP_SESSAO");
 			timeout = parametro.getValor();
 		}
 		session.setMaxInactiveInterval(Integer.parseInt(timeout));
 	}
 	
-	public AutenticaServiceWrapper validateUserByAuthKey(String authKey) throws RemoteException
-	{
+	public AutenticaServiceWrapper validateUserByAuthKey(String authKey) throws RemoteException {
 		return seguServiceProxy.validarUsuarioByAuthKey(authKey);
 	}
 	
@@ -77,24 +71,26 @@ public class SeguClientService
 		return Arrays.asList(seguServiceProxy.obterTransacoesByAuthKey(authKey, sigla).getTransacoes());
 	}
 	
-	public String getTransactionsAsTextByAuthKey(String authKey) throws RemoteException
-	{
+	public String getTransactionsAsTextByAuthKey(String authKey) throws RemoteException {
 		return seguServiceProxy.obterTransacoesAsTextByAuthKey(authKey, sigla);
 	}
-	public GrupoBean[] getUserRolesByAuthKey(String authKey) throws RemoteException
-	{
+	
+	public GrupoBean[] getUserRolesByAuthKey(String authKey) throws RemoteException {
 		return seguServiceProxy.obterGruposUsuarioByAuthKey(authKey).getGrupos();
 	}
-	public String getUserRolesAsTextByAuthKey(String authKey) throws RemoteException
-	{
+	
+	public String getUserRolesAsTextByAuthKey(String authKey) throws RemoteException {
 		String roles = "";
 		for(GrupoBean g : seguServiceProxy.obterGruposUsuarioByAuthKey(authKey).getGrupos())
 			roles += g.getNome() + " ";
 		
 		return roles;
 	}
-	public AutenticaServiceWrapper validateUser(String username, String password) throws RemoteException
-	{
+	public AutenticaServiceWrapper validateUser(String username, String password) throws RemoteException {
 		return seguServiceProxy.validarUsuario(username, password);
+	}
+	
+	public boolean hasSystemAccess(String authkey) throws RemoteException {
+		return seguServiceProxy.obterSistemasAsTextByAuthKey(authkey).contains(sigla);
 	}
 }

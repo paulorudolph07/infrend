@@ -382,7 +382,7 @@ SECRETARIA DA RECEITA FEDERAL]]></text>
 				<textElement textAlignment="Right">
 					<font size="6"/>
 				</textElement>
-				<text><![CDATA[ANO  CALEND�RIO  DE]]></text>
+				<text><![CDATA[ANO  CALENDÁRIO  DE]]></text>
 			</staticText>
 			<textField>
 				<reportElement uuid="b9e7bb92-cb03-4b52-a8a1-91cec5bcf011" x="291" y="8" width="60" height="8"/>
@@ -404,7 +404,7 @@ SECRETARIA DA RECEITA FEDERAL]]></text>
 				<textElement textAlignment="Center">
 					<font size="6"/>
 				</textElement>
-				<text><![CDATA[IMPOSTO  DE  RENDA -  PESSOA JUR�DICA]]></text>
+				<text><![CDATA[IMPOSTO  DE  RENDA -  PESSOA JURÍDICA]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="402fab9a-ac3e-4b51-a236-7db81b32f150" x="351" y="62" width="204" height="12"/>
@@ -464,7 +464,7 @@ SECRETARIA DA RECEITA FEDERAL]]></text>
 					<font size="9" isBold="true" isItalic="true" isPdfEmbedded="true"/>
 					<paragraph leftIndent="5"/>
 				</textElement>
-				<text><![CDATA[1  -  IDENTIFICA��O  DA FONTE  PAGADORA]]></text>
+				<text><![CDATA[1  -  IDENTIFICAÇÃO  DA FONTE  PAGADORA]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="1ef74f4b-d472-42fc-9b09-4232a75ba565" x="0" y="62" width="181" height="10"/>
@@ -472,7 +472,7 @@ SECRETARIA DA RECEITA FEDERAL]]></text>
 					<font size="6"/>
 					<paragraph leftIndent="5"/>
 				</textElement>
-				<text><![CDATA[Raz�o  Social]]></text>
+				<text><![CDATA[Razão  Social]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="34c3a3bb-b12e-4356-9264-d1e084e544aa" x="181" y="62" width="170" height="10"/>
@@ -480,7 +480,7 @@ SECRETARIA DA RECEITA FEDERAL]]></text>
 					<font size="6"/>
 					<paragraph leftIndent="5"/>
 				</textElement>
-				<text><![CDATA[N�  de  CNPJ]]></text>
+				<text><![CDATA[Nº  de  CNPJ]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="17ea3502-a5e6-4388-8656-a3477ce8bb59" x="101" y="126" width="250" height="10"/>
@@ -488,7 +488,7 @@ SECRETARIA DA RECEITA FEDERAL]]></text>
 					<font size="6"/>
 					<paragraph leftIndent="5"/>
 				</textElement>
-				<text><![CDATA[Raz�o  Social]]></text>
+				<text><![CDATA[Razão  Social]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="6eed2e90-fb4d-40be-adf7-232e6b3ff93e" x="0" y="126" width="102" height="10"/>
@@ -518,7 +518,7 @@ SECRETARIA DA RECEITA FEDERAL]]></text>
 					<font fontName="SansSerif" size="9" isBold="true" isItalic="true" pdfFontName="Helvetica-Bold" isPdfEmbedded="false"/>
 					<paragraph leftIndent="5"/>
 				</textElement>
-				<text><![CDATA[2  -  PESSOA JUR�DICA BENEFICI�RIA DOS  RENDIMENTOS]]></text>
+				<text><![CDATA[2  -  PESSOA JURÍDICA BENEFICIÁRIA DOS  RENDIMENTOS]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="87c481c7-e95f-4e7e-8240-15d0196b0009" style="table" x="101" y="126" width="250" height="35"/>
@@ -556,7 +556,7 @@ SECRETARIA DA RECEITA FEDERAL]]></text>
 					<font size="10" pdfFontName="Helvetica-Bold"/>
 					<paragraph leftIndent="10"/>
 				</textElement>
-				<text><![CDATA[BANCO  DA AMAZ�NIA S/A]]></text>
+				<text><![CDATA[BANCO  DA AMAZÔNIA S/A]]></text>
 			</staticText>
 			<staticText>
 				<reportElement uuid="9426e2ad-7017-4db2-a631-dd471ff66dd6" x="181" y="71" width="170" height="26"/>
@@ -745,7 +745,7 @@ SECRETARIA DA RECEITA FEDERAL]]></text>
 								<textElement textAlignment="Center" verticalAlignment="Middle">
 									<font size="7"/>
 								</textElement>
-								<text><![CDATA[MAR�O]]></text>
+								<text><![CDATA[MARÇO]]></text>
 							</staticText>
 						</jr:tableHeader>
 						<jr:columnHeader style="table" height="17" rowSpan="1">
@@ -947,7 +947,7 @@ SECRETARIA DA RECEITA FEDERAL]]></text>
 					<font size="9" isBold="true" isItalic="true" pdfFontName="Helvetica-Bold"/>
 					<paragraph leftIndent="5"/>
 				</textElement>
-				<text><![CDATA[3  -  POUPAN�A -  VALORES  EM  REAIS]]></text>
+				<text><![CDATA[3  -  POUPANÇA -  VALORES  EM  REAIS]]></text>
 			</staticText>
 		</band>
 		<band height="56">
@@ -1429,7 +1429,7 @@ SECRETARIA DA RECEITA FEDERAL]]></text>
 								<textElement textAlignment="Center" verticalAlignment="Middle">
 									<font size="7"/>
 								</textElement>
-								<text><![CDATA[MAR�O]]></text>
+								<text><![CDATA[MARÇO]]></text>
 							</staticText>
 						</jr:tableHeader>
 						<jr:columnHeader style="table" height="17" rowSpan="1">
@@ -1889,7 +1889,7 @@ SECRETARIA DA RECEITA FEDERAL]]></text>
 								<textElement textAlignment="Center" verticalAlignment="Middle">
 									<font size="7"/>
 								</textElement>
-								<text><![CDATA[MAR�O]]></text>
+								<text><![CDATA[MARÇO]]></text>
 							</staticText>
 						</jr:tableHeader>
 						<jr:columnHeader style="table" height="17" rowSpan="1">
@@ -2014,7 +2014,7 @@ SECRETARIA DA RECEITA FEDERAL]]></text>
 					<font size="9" isBold="true" isItalic="true" pdfFontName="Helvetica-Bold"/>
 					<paragraph leftIndent="5"/>
 				</textElement>
-				<text><![CDATA[5  - APLICA��ES  DE  RENDA FIXA -  VALORES  EM  REAIS]]></text>
+				<text><![CDATA[5  - APLICAÇÕES  DE  RENDA FIXA -  VALORES  EM  REAIS]]></text>
 			</staticText>
 		</band>
 		<band height="57">
@@ -2313,7 +2313,7 @@ SECRETARIA DA RECEITA FEDERAL]]></text>
 								<textElement textAlignment="Center" verticalAlignment="Middle">
 									<font size="7"/>
 								</textElement>
-								<text><![CDATA[MAR�O]]></text>
+								<text><![CDATA[MARÇO]]></text>
 							</staticText>
 						</jr:tableHeader>
 						<jr:columnHeader style="table" height="17" rowSpan="1"/>
@@ -2366,7 +2366,7 @@ SECRETARIA DA RECEITA FEDERAL]]></text>
 					<font size="9" isBold="true" isItalic="true" pdfFontName="Helvetica-Bold"/>
 					<paragraph leftIndent="5"/>
 				</textElement>
-				<text><![CDATA[6  -  OPERA��ES   DE  SWAP -  VALORES  EM  REAIS]]></text>
+				<text><![CDATA[6  -  OPERAÇÕES   DE  SWAP -  VALORES  EM  REAIS]]></text>
 			</staticText>
 		</band>
 		<band height="56">
@@ -2586,7 +2586,7 @@ SECRETARIA DA RECEITA FEDERAL]]></text>
 					<font size="6" isBold="true" isItalic="true" pdfFontName="Helvetica-Bold"/>
 					<paragraph leftIndent="5"/>
 				</textElement>
-				<text><![CDATA[INFORMA��ES COMPLEMENTARES]]></text>
+				<text><![CDATA[INFORMAÇÕES COMPLEMENTARES]]></text>
 			</staticText>
 			<rectangle>
 				<reportElement uuid="17006706-4cf1-4f4f-8f36-e61542971fd2" x="0" y="20" width="555" height="26"/>

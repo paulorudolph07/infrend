@@ -61,6 +61,7 @@
 		<property name="propriedadeTabBean"><ref bean="propriedadeTabBean"/></property>
 	</bean>
 	
+	<!-- scope = request para limpar os dados a cada alteração (pj ou pf) -->
 	<bean id="reportBean" class="br.com.bancoamazonia.infrend.web.beans.ReportBean" scope="view">
 		<aop:scoped-proxy/>
 		<property name="clienteService"><ref bean="clienteService"/></property>
@@ -95,6 +96,15 @@
 	<bean id="tipoPropriedadeBean" class="br.com.bancoamazonia.infrend.web.beans.TipoPropriedadeBean" scope="view">
 		<aop:scoped-proxy/>
 		<property name="tipoPropriedadeService"><ref bean="tipoPropriedadeService"/></property>
+	</bean>
+	
+	<bean id="logoutBean" class="br.com.bancoamazonia.infrend.web.beans.LogoutBean" scope="view">
+		<aop:scoped-proxy/>
+		<property name="seguClientService" ref="seguClientService"/>
+	</bean>
+	
+	<bean id="idleMonitorController" class="br.com.bancoamazonia.infrend.web.beans.IdleMonitorController" scope="view">
+		<aop:scoped-proxy/>
 	</bean>
 
 </beans>

@@ -15,6 +15,12 @@
 	</h:head>
 	
 	<h:body id="body" style="font-size: 0.6em">
+		<p:growl id="sessionMessage" showDetail="true" sticky="true" /> 
+		<!-- o timeout deve ser confiugrado em br.com.bancoamazonia.infrend.web.listeners.AuthorizationListener -->
+		<p:idleMonitor timeout="300000" update="sessionMessage">
+			<p:ajax event="idle" listener="#{idleMonitorController.idleListener}" update="sessionMessage" />
+			<p:ajax event="active" listener="#{idleMonitorController.activeListener}" update="sessionMessage" />
+		</p:idleMonitor>
 		<!-- usado em todas as paginas e abas, sendo setado pelo script infrend.navegabilidade.js-->
 		<!-- sessionScope.accordionTitle setado em br.com.bancoamazonia.infrend.web.beans.AccordionBean -->
 		<!-- sessionScope.currentLink setado na criacao da tab em br.com.bancoamazonia.infrend.web.listeners.MenuBuilderListener-->

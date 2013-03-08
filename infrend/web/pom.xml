@@ -8,7 +8,6 @@
     <version>1.0.0</version>
   </parent>
   <artifactId>web</artifactId>
-  <version>0.1.0</version>
   <packaging>war</packaging>
   <name>web Maven Webapp</name>
   <url>http://maven.apache.org</url>
@@ -29,10 +28,13 @@
   <profiles>
   
   	<profile>
-  		<activation>
+		<id>desenvolvimento</id>
+		<activation>
 			<activeByDefault>true</activeByDefault>
 		</activation>
-		<id>desenvolvimento</id>
+		<properties>
+			<version>0.0.1</version>
+		</properties>
 		<dependencies>
 			<dependency>
 		        <groupId>br.com.bancoamazonia.segu</groupId>
@@ -44,6 +46,9 @@
   
   	<profile>
   		<id>homologacao</id>
+  		<properties>
+  			<version>0.1.0</version>
+  		</properties>
 		<dependencies>
 			<dependency>
 		        <groupId>br.com.bancoamazonia.segu</groupId>
@@ -55,6 +60,9 @@
   	
   	<profile>
   		<id>producao</id>
+  		<properties>
+  			<version>1.0.0</version>
+  		</properties>
 		<dependencies>
 			<dependency>
 		        <groupId>br.com.bancoamazonia.segu</groupId>
@@ -170,45 +178,6 @@
 	  <artifactId>spring-webmvc-portlet</artifactId>
 	  <version>${org.springframework.version}</version>
 	</dependency>
-    
-    <!-- spring-security -->
-    <!-- <dependency>
-		<groupId>org.springframework.security</groupId>
-		<artifactId>spring-security-core</artifactId>
-		<version>${org.springframework.security.version}</version>
-	</dependency>
-	<dependency>
-		<groupId>org.springframework.security</groupId>
-		<artifactId>spring-security-config</artifactId>
-		<version>${org.springframework.security.version}</version>
-	</dependency>
-	<dependency>
-		<groupId>org.springframework.security</groupId>
-		<artifactId>spring-security-web</artifactId>
-		<version>${org.springframework.security.version}</version>
-	</dependency>
-    <dependency>
-		<groupId>org.springframework.security</groupId>
-		<artifactId>spring-security-taglibs</artifactId>
-		<version>${org.springframework.security.version}</version>
-	</dependency>
-	<dependency>
-		<groupId>org.springframework.security</groupId>
-		<artifactId>spring-security-acl</artifactId>
-		<version>${org.springframework.security.version}</version>
-	</dependency> -->
-	
-	<!-- spring-security-taglib -->
-	<!-- <dependency>
-       <groupId>org.springframework.webflow</groupId>
-       <artifactId>spring-faces</artifactId>
-       <version>2.3.1.RELEASE</version>
-     </dependency>
-	<dependency>
-		<groupId>org.springframework.webflow</groupId>
-		<artifactId>org.springframework.faces</artifactId>
-		<version>2.0.5.RELEASE</version>
-	</dependency> -->
             
 	<dependency>
         <groupId>${project.groupId}</groupId>

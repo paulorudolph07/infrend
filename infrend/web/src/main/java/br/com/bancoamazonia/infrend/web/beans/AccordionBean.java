@@ -29,7 +29,10 @@ public class AccordionBean implements Serializable {
 	public void onTabChange(TabChangeEvent event) {
 		FacesContext context = FacesContext.getCurrentInstance();
 		HttpSession session = (HttpSession)context.getExternalContext().getSession(false);
-		session.setAttribute("accordionTitle", event.getTab().getTitle());
-		panel.setActiveIndex((String)event.getTab().getAttributes().get("index"));
+		// ao inativar a sessao event.getTab() torna-se null
+		if(session != null && event.getTab() != null) {
+			session.setAttribute("accordionTitle", event.getTab().getTitle());
+			panel.setActiveIndex((String)event.getTab().getAttributes().get("index"));
+		}
 	}
 }

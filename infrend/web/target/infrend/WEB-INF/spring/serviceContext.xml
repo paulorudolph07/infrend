@@ -18,7 +18,7 @@
 		<property name="seguServiceProxy">
 			<!-- beans de configuração, com valores estaticos -->
 			<bean id="seguServiceProxy" class="br.com.pdcase.pdsegu.ws.SeguServiceProxy" scope="singleton">
-				<constructor-arg type="java.lang.String" value="http://servoraem.bancoamazonia.sa:8080/pdseguws3/services/SeguService?wsdl"/>
+				<constructor-arg type="java.lang.String" value="http://mucajai02.bancoamazonia.sa:8080/pdseguws3/services/SeguService?wsdl"/>
 			</bean>
 		</property>
 	</bean>

@@ -5,14 +5,19 @@
 				xmlns:ui="http://java.sun.com/jsf/facelets"
 				xmlns:p="http://primefaces.org/ui">
               
-	<!-- <p:dialog modal="true" widgetVar="statusDialog" header="Status"   
-	        draggable="false" closable="false">
-	    <h:graphicImage name="ajax-loading-bar.gif" library="images"/>
-	    <p:graphicImage value="#{request.contextPath}/images/ajax-loading-bar.gif" /> 
-	</p:dialog> 
-		
-	<f:event type="preRenderView" listener="#{MyBackingBean.load}"></f:event>
-	-->
+	<p:dialog modal="true" widgetVar="statusDialog" header="Carregando..." 
+	    draggable="false" closable="false" resizable="true">  
+	    <h:graphicImage name="ajaxloadingbar.gif" library="images" />  
+	</p:dialog>
+	<script type="text/javascript">  
+	    function start() {  
+	        statusDialog.show();  
+	    }  
+	
+	    function stop() {  
+	        statusDialog.hide();  
+	    }  
+	</script> 
   
   	<ui:define name="title">Informe de Rendimento</ui:define>
   	
@@ -30,13 +35,14 @@
 		<hr id="divisoria"></hr>
 	
 		<p:outputPanel id="cpf-panel" styleClass="texto" rendered="#{reportBean.tipoCliente == 'pf'}">
-			<h:panelGrid columns="2">
+			<h:panelGrid columns="3">
 				<h:outputLabel value="CPF" for="input-cpf" />
-				<p:inputMask mask="999.999.999-99" id="input-cpf"
+				<p:inputMask mask="999.999.999-99" id="input-cpf" 
 					value="#{reportBean.codigo}" validator="CPFValidator"
 					required="true" requiredMessage="Campo obrigatório CPF">
 					<p:ajax event="blur" render="cpf-panel" />
 				</p:inputMask>
+				<h:outputText value="#{reportBean.cliente.nome}" />
 				
 				<h:outputLabel value="Ano" for="input-ano-cpf" />
 				<h:selectOneMenu value="#{reportBean.ano}" id="input-ano-cpf">
@@ -81,13 +87,14 @@
 	    </p:dataTable>
 	
 		<p:outputPanel id="cnpj-panel" styleClass="texto" rendered="#{reportBean.tipoCliente == 'pj'}">
-			<h:panelGrid columns="2">
+			<h:panelGrid columns="3">
 				<h:outputLabel value="CNPJ" for="input-cnpj" />
 				<p:inputMask id="input-cnpj" mask="99.999.999/9999-99"
 					value="#{reportBean.codigo}" validator="CNPJValidator"
 					required="true" requiredMessage="Campo obrigatório CNPJ">
 					<p:ajax event="blur" render="cnpj-panel" />
 				</p:inputMask>
+				<h:outputText value="#{reportBean.cliente.nome}" />
 	
 				<h:outputLabel value="Ano" for="input-ano-cnpj" />
 				<h:selectOneMenu value="#{reportBean.ano}" id="input-ano-cnpj">
@@ -95,6 +102,7 @@
 					<f:selectItem itemLabel="2011" itemValue="2011" />
 					<f:ajax event="change" render="cnpj-panel" />
 				</h:selectOneMenu>
+				<br/> <!-- para preencher a ultima coluna = columns='3' -->
 	
 				<h:outputLabel value="Trimestre" for="input-trimestre-cnpj" />
 				<h:selectOneMenu value="#{reportBean.trimestre}" id="input-trimestre-cnpj">
@@ -168,14 +176,16 @@
 	    </p:dataTable>
 		
 		<div class="bgbotao">
-			<h:commandButton id="analytic-button" styleClass="botao" value="Analitico" 
+			<p:commandLink id="analytic-button" value="Analitico" styleClass="shadow"
 				action="#{reportBean.setOcorrenciaList}"
 				update="@form"/>
 		
-			<h:commandButton id="bot" styleClass="botao" value="Gerar Comprovante" 
-				ajax="false" actionListener="#{reportBean.loadReport}" style="width: 130px;">
+			<p:commandLink value="Gerar Comprovante" styleClass="shadow"
+				ajax="false" actionListener="#{reportBean.loadReport}"
+				onclick="PrimeFaces.monitorDownload(start, stop)" >
 				<p:fileDownload value="#{reportBean.report}" /> <!-- contentDisposition="inline" -->
-			</h:commandButton>
+			</p:commandLink>
+			 
 		</div>
   	</h:form>
 </ui:composition> 
