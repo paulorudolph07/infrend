@@ -159,7 +159,7 @@ public class ReportBean implements Serializable {
 	private void loadBy(Cliente cliente) {
 		if(cliente != null) {
 			Map<String, Object> params = clienteService.toMap(cliente);
-			params.put("codigo", cliente.getCodigo());
+			params.put("codigo", (tipoCliente.equalsIgnoreCase("pf")?cpf:cnpj));
 			params.put("ano", ano);
 			params.put("trimestre", trimestre);
 			params.put("tipoCliente", tipoCliente);
